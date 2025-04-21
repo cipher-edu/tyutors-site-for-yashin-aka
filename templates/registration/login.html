@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Kirish | AppName{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Tizimga Kirish</h1>
+</div>
+
+<div class="card" style="max-width: 500px; margin: 30px auto;">
+    <div class="card-content">
+        <form method="post" action="{% url 'learning_platform:login' %}">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                    {% for error in form.non_field_errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}" class="form-label">{{ form.username.label }}</label>
+                <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}"
+                       class="form-control {% if form.username.errors %}is-invalid{% endif %}"
+                       required placeholder="Foydalanuvchi nomi">
+                {% if form.username.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}" class="form-label">{{ form.password.label }}</label>
+                <input type="password" name="{{ form.password.name }}" id="{{ form.password.id_for_label }}"
+                       class="form-control {% if form.password.errors %}is-invalid{% endif %}"
+                       required placeholder="Parol">
+                 {% if form.password.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Agar "Remember me" kerak bo'lsa -->
+            <!-- <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="remember-me">
+                <label class="form-check-label" for="remember-me">Meni eslab qol</label>
+            </div> -->
+
+            <button type="submit" class="btn btn-primary w-100" style="width: 100%; margin-top: 10px;">Kirish</button>
+
+             <!-- Keyingi viewga yo'naltirish uchun yashirin maydon (agar ?next= ishlatilsa) -->
+             <input type="hidden" name="next" value="{{ request.GET.next }}">
+        </form>
+        <hr style="margin: 20px 0;">
+        <p class="text-center card-text" style="text-align: center;">
+            Akkauntingiz yo'qmi? <a href="{% url 'learning_platform:register' %}">Ro'yxatdan o'ting</a>
+        </p>
+        <!-- <p class="text-center mt-2 card-text" style="text-align: center; margin-top: 10px;">
+            <a href="#">Parolni unutdingizmi?</a>
+        </p> -->
+    </div>
+</div>
+{% endblock %}

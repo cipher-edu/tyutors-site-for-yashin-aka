@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sertifikat: {{ certificate.module.title }} | AppName{% endblock %}
+
+{% block extra_head %}
+<style>
+/* Sertifikat uchun maxsus stillar */
+.certificate-container {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 10px solid var(--primary);
+    padding: 40px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 20px; /* Adjust as needed */
+    max-width: 800px; /* Control certificate width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.certificate-container::before {
+    content: "";
+    position: absolute;
+    top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 1px dashed var(--primary-light);
+    border-radius: calc(var(--border-radius) - 10px); /* Inner dashed border */
+}
+
+.certificate-logo {
+    /* Agar logo rasmi bo'lsa */
+    /* max-width: 150px; margin-bottom: 20px; */
+
+    /* Hozirgi logo */
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.certificate-logo .logo-icon {
+     width: 40px;
+     height: 40px;
+     font-size: 24px;
+}
+
+.certificate-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-family: serif; /* More formal font */
+}
+
+.certificate-recipient {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 30px 0;
+}
+
+.certificate-course {
+    font-size: 20px;
+    color: var(--dark);
+    margin-bottom: 30px;
+}
+
+.certificate-footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid var(--light-gray);
+    padding-top: 20px;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.certificate-date, .certificate-id {
+    line-height: 1.4;
+}
+
+.certificate-signature {
+    /* Imzo rasmi yoki stilize qilingan matn */
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .certificate-container { padding: 20px; border-width: 5px; }
+     .certificate-container::before { top: 5px; left: 5px; right: 5px; bottom: 5px; border-radius: calc(var(--border-radius) - 5px);}
+    .certificate-title { font-size: 24px; }
+    .certificate-recipient { font-size: 20px; margin: 20px 0; }
+    .certificate-course { font-size: 18px; margin-bottom: 20px; }
+     .certificate-footer { flex-direction: column; align-items: center; text-align: center; gap: 15px; }
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Sertifikat Ko'rish</h1>
+     <a href="{% url 'learning_platform:my_certificates' %}" class="btn btn-secondary btn-sm">
+        <i class="fas fa-arrow-left"></i> Mening Sertifikatlarimga
+    </a>
+</div>
+
+<div class="certificate-container">
+    <div class="certificate-logo">
+         <div class="logo-icon">A</div> <!-- Sizning Logotipingiz -->
+        <span>AppName</span>
+    </div>
+
+    <h2 class="certificate-title">SERTIFIKAT</h2>
+
+    <p style="font-size: 18px; margin-bottom: 30px;">Ushbu sertifikat</p>
+
+    <p class="certificate-recipient">
+        {{ certificate.user.get_full_name|default:certificate.user.username }}
+    </p>
+
+    <p style="font-size: 18px;">ga quyidagi modulni muvaffaqiyatli yakunlaganligi uchun taqdim etiladi:</p>
+
+    <p class="certificate-course">
+        <strong>"{{ certificate.module.title }}"</strong>
+    </p>
+
+    <div class="certificate-footer">
+        <div class="certificate-date">
+            <strong>Berilgan sana:</strong><br>
+            {{ certificate.issued_at|date:"d F Y" }}
+        </div>
+        <div class="certificate-id">
+            <strong>Unikal ID:</strong><br>
+            {{ certificate.certificate_id }}
+        </div>
+         <!-- Agar Imzo yoki Ma'sul shaxs bo'lsa -->
+        <!-- <div class="certificate-signature">
+            _________________________<br>
+            <span>(Platforma Rahbari)</span>
+        </div> -->
+    </div>
+
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <!-- <button class="btn btn-primary" onclick="window.print();">
+         <i class="fas fa-print"></i> Chop etish
+    </button> -->
+    <!-- PDF yuklash logikasi qo'shilishi mumkin -->
+    <!-- <a href="#" class="btn btn-success">
+         <i class="fas fa-download"></i> PDF Yuklash
+    </a> -->
+</div>
+
+
+{% endblock %}

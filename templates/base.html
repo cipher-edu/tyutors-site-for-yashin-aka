@@ -1,0 +1,262 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Dinamik Sarlavha -->
+    <title>{% block title %}AppName{% endblock %}</title>
+    <style>
+        /* --- Barcha CSS kodlari shu yerga joylashtiriladi (Namundan ko'chirilgan) --- */
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3f37c9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f5f7ff; color: var(--dark); line-height: 1.6; }
+        .container { display: flex; min-height: 100vh; }
+
+        /* Sidebar */
+        .sidebar { width: 260px; background-color: white; box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); padding: 30px 0; position: fixed; height: 100vh; }
+        .logo { font-size: 22px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; padding: 0 25px 30px; }
+        .logo-icon { width: 28px; height: 28px; background-color: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
+        .nav-menu { list-style: none; }
+        .nav-item { margin-bottom: 5px; }
+        .nav-link { display: flex; align-items: center; padding: 12px 25px; color: var(--gray); text-decoration: none; transition: var(--transition); }
+        .nav-link:hover, .nav-link.active { color: var(--primary); background-color: rgba(67, 97, 238, 0.05); border-left: 3px solid var(--primary); padding-left: 22px; /* Active border uchun joy */ }
+        .nav-link i { margin-right: 12px; font-size: 18px; width: 20px; text-align: center; /* Iconlarni to'g'rilash */}
+
+        /* Main Content */
+        .main-content { flex: 1; margin-left: 260px; padding: 30px; }
+        .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }
+        h1, h2, h3, h4, h5, h6 { color: var(--dark); margin-bottom: 0.5em; }
+        h1 { font-size: 28px; }
+        p { margin-bottom: 1em; }
+        a { color: var(--primary); text-decoration: none; transition: var(--transition); }
+        a:hover { color: var(--secondary); }
+
+        .search-bar { position: relative; width: 300px; max-width: 100%; }
+        .search-bar input { width: 100%; padding: 12px 15px 12px 40px; border: 1px solid var(--light-gray); border-radius: var(--border-radius); font-size: 16px; transition: var(--transition); }
+        .search-bar input:focus { outline: none; border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15); }
+        .search-bar i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--gray); }
+
+        /* Card Styles (Umumiy) */
+        .card { background-color: white; border-radius: var(--border-radius); box-shadow: var(--box-shadow); overflow: hidden; transition: var(--transition); margin-bottom: 25px; /* Grid yo'q joylarda margin */}
+        .card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); }
+        .card-content { padding: 20px; }
+        .card-title { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+        .card-text { color: var(--gray); font-size: 14px; }
+
+        /* Button Styles */
+        .btn {
+            padding: 10px 22px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-block;
+            text-align: center;
+            font-size: 15px;
+        }
+        .btn-primary { background-color: var(--primary); color: white; }
+        .btn-primary:hover { background-color: var(--secondary); }
+        .btn-secondary { background-color: var(--light-gray); color: var(--dark); }
+        .btn-secondary:hover { background-color: #ddd; }
+        .btn-success { background-color: #28a745; color: white; }
+        .btn-success:hover { background-color: #218838; }
+        .btn-danger { background-color: #dc3545; color: white; }
+        .btn-danger:hover { background-color: #c82333; }
+        .btn-sm { padding: 6px 15px; font-size: 14px; }
+
+        /* Form Styles */
+        .form-group { margin-bottom: 20px; }
+        .form-label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 15px; }
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        .form-control:focus { outline: none; border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15); }
+        .form-text { font-size: 13px; color: var(--gray); margin-top: 5px; }
+        .form-check-label { margin-left: 8px; }
+
+        /* Messages Framework */
+        .messages { list-style: none; padding: 0; margin: 0 0 20px 0; }
+        .messages li { padding: 15px; margin-bottom: 15px; border-radius: var(--border-radius); border: 1px solid transparent; }
+        .messages .success { color: #0f5132; background-color: #d1e7dd; border-color: #badbcc; }
+        .messages .info { color: #055160; background-color: #cff4fc; border-color: #b6effb; }
+        .messages .warning { color: #664d03; background-color: #fff3cd; border-color: #ffecb5; }
+        .messages .error { color: #842029; background-color: #f8d7da; border-color: #f5c2c7; }
+
+        /* List Group (Kurslar, sertifikatlar uchun) */
+        .list-group { list-style: none; padding: 0; margin-bottom: 20px; background-color: white; border-radius: var(--border-radius); box-shadow: var(--box-shadow); }
+        .list-group-item { padding: 15px 20px; border-bottom: 1px solid var(--light-gray); transition: background-color 0.2s ease; display: flex; justify-content: space-between; align-items: center; }
+        .list-group-item:last-child { border-bottom: none; }
+        .list-group-item a { display: block; color: var(--dark); text-decoration: none; }
+        .list-group-item:hover { background-color: #f8f9fa; }
+        .list-group-item .badge { background-color: var(--primary); color: white; padding: 5px 10px; border-radius: 15px; font-size: 12px; }
+
+        /* --- Namuna uslublarining moslashtirilgan versiyasi --- */
+        /* Kurs Karta Grid */
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        .course-card { /* .card'dan meros oladi */ margin-bottom: 0; /* Grid gap'ni boshqaradi */ }
+        .course-thumbnail { height: 160px; width: 100%; object-fit: cover; }
+        .course-content { padding: 20px; }
+        .course-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .course-title { font-size: 18px; font-weight: 600; margin-bottom: 5px; }
+        .course-instructor { color: var(--gray); font-size: 14px; }
+        .difficulty { padding: 4px 8px; background-color: rgba(67, 97, 238, 0.1); color: var(--primary); border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .course-description { color: var(--gray); margin: 15px 0; font-size: 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .progress-container { margin: 15px 0; }
+        .progress-info { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 14px; color: var(--gray); }
+        .progress-bar { height: 6px; background-color: var(--light-gray); border-radius: 3px; overflow: hidden; }
+        .progress-fill { height: 100%; background-color: var(--primary); border-radius: 3px; width: 0%; transition: width 0.5s ease; }
+        .course-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+        .course-duration { font-size: 14px; color: var(--gray); display: flex; align-items: center; }
+        .course-duration i { margin-right: 5px; }
+        /* End Kurs Karta Grid */
+
+        /* Test formasi uchun qo'shimcha stillar */
+        .test-question { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px dashed var(--light-gray); }
+        .test-question:last-child { border-bottom: none; }
+        .test-question label { font-weight: bold; display: block; margin-bottom: 10px; }
+        .test-options div { margin-bottom: 8px; }
+        .test-options label { font-weight: normal; margin-left: 5px; }
+
+
+        /* Responsive Design (Asliyatdagidek qoldiramiz) */
+        @media (max-width: 992px) { .sidebar { width: 220px; } .main-content { margin-left: 220px; } }
+        @media (max-width: 768px) {
+             /* Hide sidebar, show toggle button (JS needed) */
+             .sidebar { transform: translateX(-100%); position: fixed; z-index: 1000; transition: transform 0.3s ease; }
+             .sidebar.open { transform: translateX(0); }
+             .main-content { margin-left: 0; }
+            /* Mobile header (add a burger button here via JS/Template) */
+            .mobile-menu-toggle { display: block; /* Position it */ }
+             /* Or simply make sidebar scrollable at top */
+             /* .container { flex-direction: column; }
+             .sidebar { width: 100%; height: auto; position: relative; padding: 20px; transform: none !important; }
+             .nav-menu { display: flex; overflow-x: auto; padding-bottom: 10px; }
+             .nav-item { margin-bottom: 0; margin-right: 10px; flex-shrink: 0; }
+             .nav-link { border-left: none; border-bottom: 3px solid transparent; padding: 10px 15px; }
+             .nav-link:hover, .nav-link.active { border-left: none; border-bottom: 3px solid var(--primary); background: none; } */
+            .page-header { flex-direction: column; align-items: stretch; gap: 15px; }
+            .search-bar { width: 100%; }
+        }
+        @media (max-width: 480px) { .course-grid { grid-template-columns: 1fr; } }
+
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">A</div> <!-- Ilovangiz logotipi yoki nomi -->
+                <span>AppName</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{% url 'learning_platform:module_list' %}" class="nav-link {% if request.resolver_match.url_name == 'module_list' or request.resolver_match.url_name == 'module_detail' or request.resolver_match.url_name == 'course_detail' %}active{% endif %}">
+                        <i class="fas fa-book-open"></i>
+                        <span>Modullar</span>
+                    </a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="{% url 'learning_platform:my_certificates' %}" class="nav-link {% if request.resolver_match.url_name == 'my_certificates' or request.resolver_match.url_name == 'certificate_detail' %}active{% endif %}">
+                        <i class="fas fa-certificate"></i>
+                        <span>Sertifikatlarim</span>
+                    </a>
+                </li>
+                <!-- Kelajakda qo'shilishi mumkin bo'lgan linklar -->
+                <!--
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Profilim</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Sozlamalar</span>
+                    </a>
+                </li>
+                 -->
+                <li class="nav-item" style="margin-top: 30px; border-top: 1px solid var(--light-gray); padding-top: 15px;">
+                    <a href="{% url 'learning_platform:logout' %}" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Chiqish ({{ user.username }})</span>
+                    </a>
+                </li>
+                {% else %}
+                 <li class="nav-item">
+                    <a href="{% url 'learning_platform:login' %}" class="nav-link {% if request.resolver_match.url_name == 'login' %}active{% endif %}">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Kirish</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{% url 'learning_platform:register' %}" class="nav-link {% if request.resolver_match.url_name == 'register' %}active{% endif %}">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Ro'yxatdan o'tish</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Django Messages Framework -->
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% block content %}
+            <!-- Sahifaga xos kontent shu yerga tushadi -->
+            {% endblock %}
+        </main>
+    </div>
+
+    {% block extra_js %}{% endblock %}
+    <!-- Sidebar Toggle JS (agar kerak bo'lsa) -->
+    <!-- <script>
+        const sidebar = document.querySelector('.sidebar');
+        const toggleBtn = document.querySelector('.mobile-menu-toggle'); // yaratilishi kerak
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+        }
+        // Close sidebar if clicked outside on mobile
+        document.addEventListener('click', (event) => {
+             if (sidebar.classList.contains('open') && !sidebar.contains(event.target) && !toggleBtn.contains(event.target) ) {
+                sidebar.classList.remove('open');
+             }
+        });
+    </script> -->
+</body>
+</html>

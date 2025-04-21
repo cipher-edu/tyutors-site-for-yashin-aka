@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ro'yxatdan o'tish | AppName{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Ro'yxatdan O'tish</h1>
+</div>
+
+<div class="card" style="max-width: 500px; margin: 30px auto;">
+    <div class="card-content">
+        <form method="post" action="{% url 'learning_platform:register' %}">
+            {% csrf_token %}
+
+            {{ form.non_field_errors }}
+
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                <input type="{{ field.field.widget.input_type }}"
+                       name="{{ field.name }}"
+                       id="{{ field.id_for_label }}"
+                       class="form-control {% if field.errors %}is-invalid{% endif %}"
+                       placeholder="{{ field.label }}"
+                       {% if field.field.required %}required{% endif %}>
+                {% if field.help_text %}
+                    <small class="form-text">{{ field.help_text|safe }}</small>
+                {% endif %}
+                {% if field.errors %}
+                    <div class="invalid-feedback" style="color: var(--bs-danger); font-size: 0.875em; margin-top: 0.25rem;">
+                        {% for error in field.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+
+            <button type="submit" class="btn btn-primary w-100" style="width: 100%; margin-top: 10px;">Ro'yxatdan o'tish</button>
+        </form>
+        <hr style="margin: 20px 0;">
+        <p class="text-center card-text" style="text-align: center;">
+            Akkauntingiz bormi? <a href="{% url 'learning_platform:login' %}">Tizimga kiring</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

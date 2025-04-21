@@ -374,43 +374,49 @@
 <body>
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
-        <div class="logo">
-            <div class="logo-icon">A</div>
-            <span>AppName</span>
-        </div>
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="#" class="nav-link active">
-                    <i class="fas fa-user"></i>
-                    <span>Profile</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-book-open"></i>
-                    <span>My Courses</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Progress</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-certificate"></i>
-                    <span>Certificates</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-cog"></i>
-                    <span>Settings</span>
-                </a>
-            </li>
-        </ul>
-    </aside>
+            <div class="logo">
+                <div class="logo-icon">A</div>
+                <span>AppName</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{% url 'course_catalog' %}" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Bosh sahifa</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'course_catalog' %}" class="nav-link active">
+                        <i class="fas fa-book-open"></i>
+                        <span>Kurslar katalogi</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'user_profile' %}" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Profilim</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'user_sertificate' %}" class="nav-link">
+                        <i class="fas fa-certificate"></i>
+                        <span>Sertifikatlar</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Sozlamalar</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
 
     <!-- Main Content -->
     <main class="main-content">

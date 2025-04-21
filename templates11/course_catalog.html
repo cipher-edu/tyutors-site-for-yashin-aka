@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Catalog | AppName</title>
+    <title>Kurslar Katalogi | AppName</title>
     <style>
         :root {
             --primary: #4361ee;
@@ -387,12 +387,6 @@
                 font-size: 13px;
             }
         }
-
-        /* Animation for progress bars */
-        @keyframes progressAnimation {
-            from { width: 0%; }
-            to { width: attr(data-progress); }
-        }
     </style>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -407,21 +401,21 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{% url 'course_catalog' %}" class="nav-link">
                         <i class="fas fa-home"></i>
                         <span>Bosh sahifa</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="{% url 'course_catalog' %}" class="nav-link active">
                         <i class="fas fa-book-open"></i>
-                        <span>Kurslar Katalogi</span>
+                        <span>Kurslar katalogi</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{% url 'user_profile' %}" class="nav-link">
                         <i class="fas fa-user"></i>
-                        <span>Mening Profilim</span>
+                        <span>Profilim</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -431,7 +425,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{% url 'user_sertificate' %}" class="nav-link">
                         <i class="fas fa-certificate"></i>
                         <span>Sertifikatlar</span>
                     </a>
@@ -445,17 +439,17 @@
             </ul>
         </aside>
 
-        <!-- Asosiy Kontent -->
+        <!-- Main Content -->
         <main class="main-content">
             <div class="page-header">
-                <h1>Kurslar Katalogi</h1>
+                <h1>Kurslar katalogi</h1>
                 <div class="search-bar">
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Kurslarni qidirish...">
                 </div>
             </div>
 
-            <!-- Filtrlar Bo'limi -->
+            <!-- Filters Section -->
             <div class="filters">
                 <div class="filter-group">
                     <div class="filter-title">
@@ -468,34 +462,35 @@
                         <button class="filter-btn">Dasturlash</button>
                         <button class="filter-btn">Biznes</button>
                         <button class="filter-btn">Marketing</button>
-                        <button class="filter-btn">Ma'lumotlar Ilmi</button>
+                        <button class="filter-btn">Ma'lumotlar tahlili</button>
                     </div>
                 </div>
                 <div class="filter-group">
                     <div class="filter-title">
                         <i class="fas fa-signal"></i>
-                        <span>Daraja</span>
+                        <span>Murakkablik</span>
                     </div>
                     <div class="filter-options">
                         <button class="filter-btn active">Barcha darajalar</button>
                         <button class="filter-btn">Boshlang'ich</button>
                         <button class="filter-btn">O'rta</button>
-                        <button class="filter-btn">Yuqori</button>
+                        <button class="filter-btn">Murakkab</button>
                     </div>
                 </div>
                 <div class="filter-group">
                     <div class="filter-title">
                         <i class="fas fa-check-circle"></i>
-                        <span>Holat</span>
+                        <span>Holati</span>
                     </div>
                     <div class="filter-options">
                         <button class="filter-btn active">Barcha kurslar</button>
-                        <button class="filter-btn">Ro'yxatdan o'tilgan</button>
-                        <button class="filter-btn">Ro'yxatdan o'tilmagan</button>
-                        <button class="filter-btn">Tugallangan</button>
+                        <button class="filter-btn">Ro'yxatdan o'tgan</button>
+                        <button class="filter-btn">Ro'yxatdan o'tmagan</button>
+                        <button class="filter-btn">Yakunlangan</button>
                     </div>
                 </div>
             </div>
+
             <!-- Course Grid -->
             <div class="course-grid">
                 <!-- Course 1 -->
@@ -504,13 +499,13 @@
                     <div class="course-content">
                         <div class="course-header">
                             <div>
-                                <h3 class="course-title">Advanced JavaScript</h3>
-                                <p class="course-instructor">By Alex Johnson</p>
+                                <h3 class="course-title">JavaScriptda mukammallashish</h3>
+                                <p class="course-instructor">Alex Johnson tomonidan</p>
                             </div>
-                            <span class="difficulty">Intermediate</span>
+                            <span class="difficulty">O'rta</span>
                         </div>
                         <p class="course-description">
-                            Master modern JavaScript concepts including ES6+, async/await, closures, and design patterns to build robust applications.
+                            Zamonaviy JavaScript kontseptsiyalarini o'rganing: ES6+, async/await, closure va loyihalarni yaratish.
                         </p>
                         <div class="progress-container">
                             <div class="progress-info">
@@ -523,9 +518,9 @@
                         </div>
                         <div class="course-footer">
                             <span class="course-duration">
-                                <i class="far fa-clock"></i> 12 hours
+                                <i class="far fa-clock"></i> 12 soat
                             </span>
-                            <button class="enroll-btn enrolled">Continue</button>
+                            <button class="enroll-btn enrolled">Davom etish</button>
                         </div>
                     </div>
                 </div>
@@ -536,13 +531,13 @@
                     <div class="course-content">
                         <div class="course-header">
                             <div>
-                                <h3 class="course-title">UI/UX Design Fundamentals</h3>
-                                <p class="course-instructor">By Sarah Miller</p>
+                                <h3 class="course-title">UI/UX Dizayn asoslari</h3>
+                                <p class="course-instructor">Sarah Miller tomonidan</p>
                             </div>
-                            <span class="difficulty">Beginner</span>
+                            <span class="difficulty">Boshlang'ich</span>
                         </div>
                         <p class="course-description">
-                            Learn the principles of user interface and experience design, from wireframing to prototyping and user testing.
+                            Foydalanuvchi interfeysi va tajribasi dizyni asoslarini o'rganing: wireframedan prototiplashgacha.
                         </p>
                         <div class="progress-container">
                             <div class="progress-info">
@@ -555,9 +550,9 @@
                         </div>
                         <div class="course-footer">
                             <span class="course-duration">
-                                <i class="far fa-clock"></i> 8 hours
+                                <i class="far fa-clock"></i> 8 soat
                             </span>
-                            <button class="enroll-btn">Enroll</button>
+                            <button class="enroll-btn">Ro'yxatdan o'tish</button>
                         </div>
                     </div>
                 </div>
@@ -568,13 +563,13 @@
                     <div class="course-content">
                         <div class="course-header">
                             <div>
-                                <h3 class="course-title">Python for Data Science</h3>
-                                <p class="course-instructor">By David Chen</p>
+                                <h3 class="course-title">Python va Ma'lumotlar Tahlili</h3>
+                                <p class="course-instructor">David Chen tomonidan</p>
                             </div>
-                            <span class="difficulty">Advanced</span>
+                            <span class="difficulty">Murakkab</span>
                         </div>
                         <p class="course-description">
-                            Harness the power of Python for data analysis, visualization, and machine learning with real-world projects.
+                            Python yordamida ma'lumotlarni tahlil qilish, vizualizatsiya va mashina o'rganishni o'rganing.
                         </p>
                         <div class="progress-container">
                             <div class="progress-info">
@@ -587,105 +582,9 @@
                         </div>
                         <div class="course-footer">
                             <span class="course-duration">
-                                <i class="far fa-clock"></i> 15 hours
+                                <i class="far fa-clock"></i> 15 soat
                             </span>
-                            <button class="enroll-btn enrolled">Continue</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 4 -->
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Digital Marketing" class="course-thumbnail">
-                    <div class="course-content">
-                        <div class="course-header">
-                            <div>
-                                <h3 class="course-title">Digital Marketing Masterclass</h3>
-                                <p class="course-instructor">By Emily Rodriguez</p>
-                            </div>
-                            <span class="difficulty">Intermediate</span>
-                        </div>
-                        <p class="course-description">
-                            Comprehensive guide to digital marketing strategies including SEO, social media, email marketing, and analytics.
-                        </p>
-                        <div class="progress-container">
-                            <div class="progress-info">
-                                <span>Progress</span>
-                                <span>0%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="course-footer">
-                            <span class="course-duration">
-                                <i class="far fa-clock"></i> 10 hours
-                            </span>
-                            <button class="enroll-btn">Enroll</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 5 -->
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mobile Development" class="course-thumbnail">
-                    <div class="course-content">
-                        <div class="course-header">
-                            <div>
-                                <h3 class="course-title">Flutter App Development</h3>
-                                <p class="course-instructor">By Michael Brown</p>
-                            </div>
-                            <span class="difficulty">Intermediate</span>
-                        </div>
-                        <p class="course-description">
-                            Build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase with Flutter.
-                        </p>
-                        <div class="progress-container">
-                            <div class="progress-info">
-                                <span>Progress</span>
-                                <span>88%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 88%;"></div>
-                            </div>
-                        </div>
-                        <div class="course-footer">
-                            <span class="course-duration">
-                                <i class="far fa-clock"></i> 14 hours
-                            </span>
-                            <button class="enroll-btn enrolled">Continue</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 6 -->
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Photography" class="course-thumbnail">
-                    <div class="course-content">
-                        <div class="course-header">
-                            <div>
-                                <h3 class="course-title">Professional Photography</h3>
-                                <p class="course-instructor">By Lisa Wong</p>
-                            </div>
-                            <span class="difficulty">Beginner</span>
-                        </div>
-                        <p class="course-description">
-                            Learn the art and science of photography including composition, lighting, and post-processing techniques.
-                        </p>
-                        <div class="progress-container">
-                            <div class="progress-info">
-                                <span>Progress</span>
-                                <span>0%</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="course-footer">
-                            <span class="course-duration">
-                                <i class="far fa-clock"></i> 6 hours
-                            </span>
-                            <button class="enroll-btn">Enroll</button>
+                            <button class="enroll-btn enrolled">Davom etish</button>
                         </div>
                     </div>
                 </div>
@@ -711,7 +610,7 @@
             btn.addEventListener('click', function() {
                 if (!this.classList.contains('enrolled')) {
                     this.classList.add('enrolled');
-                    this.textContent = 'Continue';
+                    this.textContent = 'Davom etish';
                     
                     // Find the progress bar in this card and set to 1%
                     const progressFill = this.closest('.course-card').querySelector('.progress-fill');
@@ -721,28 +620,6 @@
                     const progressText = this.closest('.course-card').querySelector('.progress-info span:last-child');
                     progressText.textContent = '1%';
                 }
-            });
-        });
-
-        // Animate progress bars when they come into view
-        document.addEventListener('DOMContentLoaded', function() {
-            const progressBars = document.querySelectorAll('.progress-fill');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const progress = entry.target.style.width;
-                        entry.target.style.width = '0%';
-                        setTimeout(() => {
-                            entry.target.style.width = progress;
-                        }, 100);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            progressBars.forEach(bar => {
-                observer.observe(bar);
             });
         });
     </script>

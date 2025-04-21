@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Test Natijasi | AppName{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Test Natijasi: {{ result.test.module.title }}</h1>
+     <a href="{% url 'learning_platform:module_detail' pk=result.test.module.pk %}" class="btn btn-secondary btn-sm">
+        <i class="fas fa-arrow-left"></i> Modulga qaytish
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-content" style="text-align: center;">
+        {% if result.passed %}
+            <i class="fas fa-check-circle fa-3x" style="color: green; margin-bottom: 15px;"></i>
+            <h2 style="color: green;">Tabriklaymiz, testdan muvaffaqiyatli o'tdingiz!</h2>
+            <p class="card-text">Siz <strong>{{ result.score }}%</strong> natija ko'rsatdingiz (o'tish bali {{ result.test.passing_score_percent }}%).</p>
+             {% if certificate %}
+                  <p class="card-text" style="margin-top: 20px;">Modulni muvaffaqiyatli yakunlaganingiz uchun sizga quyidagi sertifikat taqdim etildi:</p>
+                  <a href="{% url 'learning_platform:certificate_detail' certificate_id=certificate.certificate_id %}" class="btn btn-success" style="margin-top: 10px;">
+                       <i class="fas fa-certificate"></i> Sertifikatni Ko'rish
+                  </a>
+             {% endif %}
+        {% else %}
+             <i class="fas fa-times-circle fa-3x" style="color: red; margin-bottom: 15px;"></i>
+            <h2 style="color: red;">Afsuski, testdan o'ta olmadingiz.</h2>
+             <p class="card-text">Siz <strong>{{ result.score }}%</strong> natija ko'rsatdingiz (o'tish bali {{ result.test.passing_score_percent }}%).</p>
+            <p class="card-text" style="margin-top: 10px;">Yaxshiroq tayyorlanib, qayta urinib ko'ring.</p>
+             <a href="{% url 'learning_platform:take_test' module_pk=result.test.module.pk %}" class="btn btn-primary" style="margin-top: 20px;">
+                <i class="fas fa-redo"></i> Testni Qayta Topshirish
+            </a>
+        {% endif %}
+        <hr style="margin: 30px 0;">
+        <p class="card-text text-muted" style="color: var(--gray);">Test topshirilgan sana: {{ result.attempted_at|date:"d F Y, H:i" }}</p>
+    </div>
+</div>
+{% endblock %}
