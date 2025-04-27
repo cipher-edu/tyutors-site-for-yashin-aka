@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-a^h+&h%&76_vi^nz9+4^1(d@7r!i62&#nouf=deza(ole5kdz4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     
+=======
+>>>>>>> aeb74ee0da082676582a69441da7656c46579614
 ]
 
 MIDDLEWARE = [
@@ -133,9 +136,16 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS=[
     BASE_DIR/ "static"
 ]
+<<<<<<< HEAD
 # settings.py
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+=======
+MEDIA_URL = 'media/'
+#server
+# MEDIA_ROOT = '/home/ciphered/crm.cipher-edu.uz/crm/media/'
+MEDIA_ROOT = '/media/'
+>>>>>>> aeb74ee0da082676582a69441da7656c46579614
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
