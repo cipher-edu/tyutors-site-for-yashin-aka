@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Test: {{ test.title }} | AppName{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Test: {{ module.title }}</h1>
+    <a href="{% url 'learning_platform:module_detail' pk=module.pk %}" class="btn btn-secondary btn-sm">
+        <i class="fas fa-arrow-left"></i> Modulga qaytish
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="card-title">{{ test.title }}</h3>
+        {% if test.description %}
+            <p class="card-text">{{ test.description }}</p>
+            <hr>
+        {% endif %}
+
+        {% if test.questions.all %}
+        <form method="post" action="{% url 'learning_platform:take_test' module_pk=module.pk %}">
+            {% csrf_token %}
+            {{ form.test_pk }} {# Yashirin maydonni kiritish muhim #}
+
+            {% for field in form %}
+                 {# Yashirin maydonlarni ko'rsatmaslik #}
+                 {% if not field.is_hidden %}
+                 <div class="test-question">
+                      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                      <div class="test-options">
+                         {{ field }} {# Bu yerda ChoiceField (RadioSelect widget bilan) render bo'ladi #}
+                         {% if field.errors %}
+                         <div style="color: red; font-size: 0.85em; margin-top: 5px;">
+                              {% for error in field.errors %}{{ error }}{% endfor %}
+                         </div>
+                         {% endif %}
+                      </div>
+                 </div>
+                 {% endif %}
+            {% endfor %}
+
+
+           <button type="submit" class="btn btn-primary" style="margin-top: 20px;">
+                 <i class="fas fa-check"></i> Testni Yakunlash va Natijani Ko'rish
+            </button>
+        </form>
+        {% else %}
+             <p class="card-text">Bu testda hali savollar mavjud emas.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

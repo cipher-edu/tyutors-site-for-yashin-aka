@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Topshirish | AppName</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3f37c9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background-color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Sidebar */
+        .container {
+            display: flex;
+            min-height: calc(100vh - 66px);
+        }
+
+        .sidebar {
+            width: 260px;
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+            padding: 30px 0;
+            position: fixed;
+            height: calc(100vh - 66px);
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 5px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 25px;
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+            background-color: rgba(67, 97, 238, 0.05);
+            border-left: 3px solid var(--primary);
+        }
+
+        .nav-link i {
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        /* Test Content */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            padding: 30px;
+        }
+
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+        }
+
+        .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .test-title {
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .timer {
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Test Questions Styles */
+        .question-container {
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        .question-number {
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .options-list {
+            list-style: none;
+        }
+
+        .option {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .option:hover {
+            border-color: var(--primary-light);
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+
+        .option.selected {
+            border-color: var(--primary);
+            background-color: rgba(67, 97, 238, 0.1);
+        }
+
+        .option input[type="radio"] {
+            margin-right: 15px;
+            accent-color: var(--primary);
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(67, 97, 238, 0.1);
+        }
+
+        .btn-disabled {
+            background-color: var(--light-gray);
+            color: var(--gray);
+            cursor: not-allowed;
+        }
+
+        .review-container {
+            display: none;
+            margin-top: 30px;
+            border-top: 1px solid var(--light-gray);
+            padding-top: 20px;
+        }
+
+        .review-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .review-questions {
+            margin-bottom: 20px;
+        }
+
+        .review-question {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            background-color: var(--light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .review-question span {
+            font-weight: 500;
+        }
+
+        .review-question a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .progress-container {
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 220px;
+            }
+            .main-content {
+                margin-left: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 20px;
+            }
+            .nav-menu {
+                display: flex;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            .nav-item {
+                margin-bottom: 0;
+                margin-right: 10px;
+                flex-shrink: 0;
+            }
+            .nav-link {
+                border-left: none;
+                border-bottom: 3px solid transparent;
+                padding: 10px 15px;
+            }
+            .nav-link:hover, .nav-link.active {
+                border-left: none;
+                border-bottom: 3px solid var(--primary);
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+            .test-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 15px;
+            }
+            .test-container {
+                padding: 20px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">A</div>
+            <span>AppName</span>
+        </div>
+        <div class="user-menu">
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="user-avatar">
+                <span>Foydalanuvchi</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">A</div>
+                <span>AppName</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{% url 'course_catalog' %}" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Bosh sahifa</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'course_catalog' %}" class="nav-link active">
+                        <i class="fas fa-book-open"></i>
+                        <span>Kurslar katalogi</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'user_profile' %}" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Profilim</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'user_sertificate' %}" class="nav-link">
+                        <i class="fas fa-certificate"></i>
+                        <span>Sertifikatlar</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Sozlamalar</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="test-container">
+                <div class="test-header">
+                    <h1 class="test-title">JavaScript Testi</h1>
+                    <div class="timer">
+                        <i class="fas fa-clock"></i>
+                        <span id="time">30:00</span>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress" style="width: 20%;"></div>
+                    </div>
+                </div>
+
+                <!-- Savollar qismi -->
+                <div class="question-container active" id="question1">
+                    <div class="question-number">Savol 1/5</div>
+                    <h3 class="question-text">JavaScript qanday til turiga kiradi?</h3>
+                    <ul class="options-list">
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q1" id="q1a">
+                            <label for="q1a">Statik turlarga ega til</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q1" id="q1b">
+                            <label for="q1b">Dinamik turlarga ega til</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q1" id="q1c">
+                            <label for="q1c">Kompilyatsiya qilinadigan til</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q1" id="q1d">
+                            <label for="q1d">Quyi darajadagi til</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="question-container" id="question2">
+                    <div class="question-number">Savol 2/5</div>
+                    <h3 class="question-text">Quyidagilardan qaysi biri JavaScriptda to'g'ri o'zgaruvchi e'lon qilish usuli?</h3>
+                    <ul class="options-list">
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q2" id="q2a">
+                            <label for="q2a">var x = 10;</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q2" id="q2b">
+                            <label for="q2b">variable x = 10;</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q2" id="q2c">
+                            <label for="q2c">int x = 10;</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q2" id="q2d">
+                            <label for="q2d">x := 10;</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="question-container" id="question3">
+                    <div class="question-number">Savol 3/5</div>
+                    <h3 class="question-text">'use strict' direktivasi nima uchun ishlatiladi?</h3>
+                    <ul class="options-list">
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q3" id="q3a">
+                            <label for="q3a">Kodni tezroq ishlashi uchun</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q3" id="q3b">
+                            <label for="q3b">JavaScriptning qattiq rejimda ishlashi uchun</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q3" id="q3c">
+                            <label for="q3c">Brauzerlararo moslikni ta'minlash uchun</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q3" id="q3d">
+                            <label for="q3d">Barcha javoblar to'g'ri</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="question-container" id="question4">
+                    <div class="question-number">Savol 4/5</div>
+                    <h3 class="question-text">Quyidagilardan qaysi biri JavaScriptda primitive (oddiy) tur emas?</h3>
+                    <ul class="options-list">
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q4" id="q4a">
+                            <label for="q4a">number</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q4" id="q4b">
+                            <label for="q4b">string</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q4" id="q4c">
+                            <label for="q4c">boolean</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q4" id="q4d">
+                            <label for="q4d">array</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="question-container" id="question5">
+                    <div class="question-number">Savol 5/5</div>
+                    <h3 class="question-text">JavaScriptda === operatori nima qiladi?</h3>
+                    <ul class="options-list">
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q5" id="q5a">
+                            <label for="q5a">Qiymatlarni solishtiradi, turlarni solishtirmaydi</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q5" id="q5b">
+                            <label for="q5b">Qiymat va turini solishtiradi</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q5" id="q5c">
+                            <label for="q5c">O'zgaruvchilarga qiymat beradi</label>
+                        </li>
+                        <li class="option" onclick="selectOption(this)">
+                            <input type="radio" name="q5" id="q5d">
+                            <label for="q5d">Barcha javoblar noto'g'ri</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Navigatsiya tugmalari -->
+                <div class="navigation-buttons">
+                    <button class="btn btn-outline" id="prevBtn" onclick="prevQuestion()" disabled>
+                        <i class="fas fa-arrow-left"></i> Oldingi
+                    </button>
+                    <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">
+                        Keyingi <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-primary" id="reviewBtn" onclick="showReview()" style="display: none;">
+                        Javoblarni tekshirish
+                    </button>
+                    <button class="btn btn-primary" id="submitBtn" onclick="submitTest()" style="display: none;">
+                        Testni yakunlash
+                    </button>
+                </div>
+
+                <!-- Javoblarni tekshirish qismi -->
+                <div class="review-container" id="reviewContainer">
+                    <h3 class="review-title">Javoblaringizni tekshiring</h3>
+                    <div class="review-questions">
+                        <div class="review-question">
+                            <span>Savol 1: JavaScript qanday til turiga kiradi?</span>
+                            <a href="#" onclick="goToQuestion(1)">Tahrirlash</a>
+                        </div>
+                        <div class="review-question">
+                            <span>Savol 2: To'g'ri o'zgaruvchi e'lon qilish usuli?</span>
+                            <a href="#" onclick="goToQuestion(2)">Tahrirlash</a>
+                        </div>
+                        <div class="review-question">
+                            <span>Savol 3: 'use strict' direktivasi nima uchun?</span>
+                            <a href="#" onclick="goToQuestion(3)">Tahrirlash</a>
+                        </div>
+                        <div class="review-question">
+                            <span>Savol 4: Qaysi biri primitive tur emas?</span>
+                            <a href="#" onclick="goToQuestion(4)">Tahrirlash</a>
+                        </div>
+                        <div class="review-question">
+                            <span>Savol 5: === operatori nima qiladi?</span>
+                            <a href="#" onclick="goToQuestion(5)">Tahrirlash</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="submitTest()">
+                        <i class="fas fa-paper-plane"></i> Testni topshirish
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 5;
+        let timeLeft = 1800; // 30 daqiqa = 1800 soniya
+        let timer;
+
+        // Timerni boshlash
+        function startTimer() {
+            timer = setInterval(function() {
+                timeLeft--;
+                updateTimer();
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    submitTest();
+                }
+            }, 1000);
+        }
+
+        // Timerni yangilash
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('time').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Variantni tanlash
+        function selectOption(optionElement) {
+            const options = optionElement.parentElement.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            optionElement.classList.add('selected');
+            const radioInput = optionElement.querySelector('input[type="radio"]');
+            radioInput.checked = true;
+        }
+
+        // Keyingi savolga o'tish
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                document.getElementById(`question${currentQuestion}`).classList.remove('active');
+                currentQuestion++;
+                document.getElementById(`question${currentQuestion}`).classList.add('active');
+                updateNavigation();
+                updateProgress();
+            }
+            
+            if (currentQuestion === totalQuestions) {
+                document.getElementById('nextBtn').style.display = 'none';
+                document.getElementById('reviewBtn').style.display = 'block';
+            }
+        }
+
+        // Oldingi savolga qaytish
+        function prevQuestion() {
+            if (currentQuestion > 1) {
+                document.getElementById(`question${currentQuestion}`).classList.remove('active');
+                currentQuestion--;
+                document.getElementById(`question${currentQuestion}`).classList.add('active');
+                updateNavigation();
+                updateProgress();
+            }
+            
+            if (currentQuestion < totalQuestions) {
+                document.getElementById('nextBtn').style.display = 'block';
+                document.getElementById('reviewBtn').style.display = 'none';
+            }
+        }
+
+        // Navigatsiya tugmalarini yangilash
+        function updateNavigation() {
+            document.getElementById('prevBtn').disabled = currentQuestion === 1;
+        }
+
+        // Progress bari yangilash
+        function updateProgress() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+        }
+
+        // Javoblarni tekshirish sahifasini ko'rsatish
+        function showReview() {
+            document.querySelectorAll('.question-container').forEach(q => {
+                q.classList.remove('active');
+            });
+            document.getElementById('reviewContainer').style.display = 'block';
+            document.getElementById('reviewBtn').style.display = 'none';
+            document.getElementById('submitBtn').style.display = 'block';
+        }
+
+        // Belgilangan savolga o'tish
+        function goToQuestion(questionNum) {
+            document.getElementById('reviewContainer').style.display = 'none';
+            document.querySelectorAll('.question-container').forEach(q => {
+                q.classList.remove('active');
+            });
+            document.getElementById(`question${questionNum}`).classList.add('active');
+            currentQuestion = questionNum;
+            updateNavigation();
+            updateProgress();
+            
+            if (currentQuestion === totalQuestions) {
+                document.getElementById('nextBtn').style.display = 'none';
+                document.getElementById('reviewBtn').style.display = 'block';
+            } else {
+                document.getElementById('nextBtn').style.display = 'block';
+                document.getElementById('reviewBtn').style.display = 'none';
+            }
+        }
+
+        // Testni topshirish
+        function submitTest() {
+            clearInterval(timer);
+            alert('Test topshirildi! Natijalaringiz tez orada ko\'rsatiladi.');
+            // Bu yerda serverga javoblarni yuborish logikasi bo'lishi kerak
+        }
+
+        // Sahifa yuklanganda timer boshlanadi
+        window.onload = function() {
+            startTimer();
+            updateProgress();
+        };
+    </script>
+</body>
+</html>

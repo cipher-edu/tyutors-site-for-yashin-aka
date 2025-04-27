@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ module.title }} | AppName{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ module.title }}</h1>
+    <a href="{% url 'learning_platform:module_list' %}" class="btn btn-secondary btn-sm">
+        <i class="fas fa-arrow-left"></i> Barcha Modullar
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="card-title">Modul Haqida</h3>
+        {% if module.description %}
+            <p class="card-text">{{ module.description|linebreaks }}</p>
+        {% else %}
+            <p class="card-text">Modul tavsifi kiritilmagan.</p>
+        {% endif %}
+
+        <!-- Testga O'tish Tugmasi (shartlar bilan) -->
+        {% if test_available %}
+            {% if module_completed %}
+                <hr>
+                 {% if last_test_result %}
+                    <p class="card-text">
+                        <strong>Oxirgi Test Natijangiz:</strong>
+                        {{ last_test_result.score }}%
+                        {% if last_test_result.passed %}
+                            <span style="color: green;">(O'tdingiz <i class="fas fa-check-circle"></i>)</span>
+                        {% else %}
+                             <span style="color: red;">(Yiqildingiz <i class="fas fa-times-circle"></i>)</span>
+                        {% endif %}
+                         - <small>{{ last_test_result.attempted_at|date:"d.m.Y H:i" }}</small>
+                    </p>
+                 {% endif %}
+                <a href="{% url 'learning_platform:take_test' module_pk=module.pk %}" class="btn btn-success" style="margin-top: 10px;">
+                     <i class="fas fa-play-circle"></i>
+                     {% if last_test_result %} Testni Qayta Topshirish {% else %} Testni Boshlash {% endif %}
+                </a>
+            {% else %}
+                 <hr>
+                 <p class="card-text text-muted" style="color: var(--gray);">
+                     <i class="fas fa-info-circle"></i> Testni topshirish uchun avval ushbu modulning barcha kurslarini yakunlashingiz kerak.
+                 </p>
+                 <!-- Oxirgi natijani ko'rsatish (agar yiqilgan bo'lsa ham) -->
+                 {% if last_test_result %}
+                     <p class="card-text">
+                        <strong>Oxirgi Test Natijangiz:</strong>
+                        {{ last_test_result.score }}%
+                        {% if last_test_result.passed %}
+                            <span style="color: green;">(O'tdingiz <i class="fas fa-check-circle"></i>)</span>
+                        {% else %}
+                             <span style="color: red;">(Yiqildingiz <i class="fas fa-times-circle"></i>)</span>
+                        {% endif %}
+                         - <small>{{ last_test_result.attempted_at|date:"d.m.Y H:i" }}</small>
+                    </p>
+                 {% endif %}
+            {% endif %}
+        {% endif %}
+
+    </div>
+</div>
+
+<h3 style="margin-top: 30px; margin-bottom: 15px;">Modul Kurslari</h3>
+{% if module.courses.all %}
+<ul class="list-group">
+    {% for course in module.courses.all %}
+        <li class="list-group-item">
+            <a href="{% url 'learning_platform:course_detail' pk=course.pk %}">
+                <span>{{ forloop.counter }}. {{ course.title }}</span>
+            </a>
+            {% if course.pk in user_completed_courses_pks %}
+                <span class="badge" style="background-color: #28a745;">
+                    <i class="fas fa-check"></i> Tugatilgan
+                </span>
+            {% else %}
+                 <span class="badge" style="background-color: var(--gray);">
+                     <i class="far fa-circle"></i>
+                 </span>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<div class="card">
+    <div class="card-content">
+        <p class="text-center card-text" style="text-align: center;">Bu modulda hali kurslar mavjud emas.</p>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

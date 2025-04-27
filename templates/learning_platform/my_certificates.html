@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Mening Sertifikatlarim | AppName{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Mening Sertifikatlarim</h1>
+</div>
+
+{% if certificates %}
+<ul class="list-group">
+    {% for cert in certificates %}
+    <li class="list-group-item">
+         <a href="{% url 'learning_platform:certificate_detail' certificate_id=cert.certificate_id %}">
+             <div>
+                <strong>{{ cert.module.title }}</strong>
+                <br>
+                <small style="color: var(--gray);">Berilgan sana: {{ cert.issued_at|date:"d F Y" }}</small>
+                <br>
+                <small style="color: var(--gray); font-size: 0.8em;">ID: {{ cert.certificate_id|slice:":8" }}...</small>
+             </div>
+         </a>
+        <a href="{% url 'learning_platform:certificate_detail' certificate_id=cert.certificate_id %}" class="btn btn-primary btn-sm">
+             <i class="fas fa-eye"></i> Ko'rish
+         </a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<div class="card">
+    <div class="card-content">
+        <p class="text-center card-text" style="text-align: center;">Sizda hozircha hech qanday sertifikat mavjud emas.</p>
+         <p class="text-center card-text" style="text-align: center; margin-top: 10px;">
+             <a href="{% url 'learning_platform:module_list' %}" >Modullarni ko'rish va testlarni topshirish</a>
+         </p>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

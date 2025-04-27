@@ -1,0 +1,311 @@
+{% extends 'base.html' %} {# Asosiy shabloningiz nomi #}
+{% load static %} {# Static fayllar uchun #}
+{% load i18n %} {# Tarjima uchun #}
+
+{% block title %}{{ course.title }} - {{ course.module.title }}{% endblock %}
+
+{% block extra_head %}
+{# Sahifaga xos qo'shimcha CSS stillari #}
+<style>
+    /* Video uchun Aspect Ratio (Agar Bootstrap ishlatilmasa) */
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        background-color: #eee; /* Placeholder */
+        border-radius: var(--border-radius);
+        margin-bottom: 25px;
+    }
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Rasm galereyasi uchun oddiy grid */
+    .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Rasm o'lchamini moslang */
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    .image-gallery img {
+        width: 100%;
+        height: 150px; /* Balandlikni chegaralash */
+        object-fit: cover; /* Rasm sig'ishi uchun */
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+        transition: var(--transition);
+        cursor: pointer;
+    }
+    .image-gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .image-gallery figure { margin: 0; text-align: center; }
+    .image-gallery figcaption { font-size: 13px; color: var(--gray); margin-top: 5px; }
+
+    /* Tashqi mashg'ulotlar ro'yxati */
+    .activity-list .activity-item {
+        background-color: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        padding: 20px;
+        margin-bottom: 20px;
+        border-left: 4px solid var(--primary-light); /* Yon chiziq */
+    }
+     .activity-list .activity-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        flex-wrap: wrap; /* kichik ekranlar uchun */
+        gap: 10px;
+    }
+    .activity-list .activity-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+    }
+    .activity-list .activity-type-badge {
+        background-color: var(--light-gray);
+        color: var(--gray);
+        padding: 4px 10px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .activity-list .activity-content iframe {
+        width: 100%;
+        min-height: 450px; /* Minimal balandlik */
+        border: 1px solid var(--light-gray);
+        border-radius: var(--border-radius);
+    }
+    .activity-list .activity-link { margin-top: 15px; }
+
+    /* Syllabus ro'yxati */
+    .syllabus-list { list-style: none; padding: 0; margin: 0 0 25px 0; }
+    .syllabus-list li { margin-bottom: 10px; }
+    .syllabus-list a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+    }
+     .syllabus-list a:hover { color: var(--secondary); }
+     .syllabus-list i { margin-right: 8px; font-size: 20px; color: #e53935; /* PDF ikonka rangi */ }
+
+    /* Kontent bo'limi */
+    .course-content-section {
+        background-color: white;
+        padding: 25px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        margin-bottom: 25px;
+        line-height: 1.7; /* Matn o'qilishi uchun */
+    }
+    .course-content-section h3 { margin-top: 0; }
+
+    /* Tugatish tugmasi va xabar */
+    .completion-section { text-align: center; margin-top: 30px; }
+    .completion-section .btn { padding: 12px 30px; font-size: 16px; } /* Kattaroq tugma */
+    .completion-section p { color: #28a745; font-weight: bold; font-size: 18px; }
+
+    /* Xatolik/Ogohlantirish xabari */
+    .warning-message {
+        background-color: #fff3cd;
+        border: 1px solid #ffecb5;
+        color: #664d03;
+        padding: 15px;
+        border-radius: var(--border-radius);
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .warning-message i { font-size: 18px; }
+
+    /* Umumiy bo'limlar uchun margin */
+    .content-section { margin-bottom: 35px; }
+
+    /* LearningApps Embed Ratio (agar iframe ota-onasining ratio'si kerak bo'lsa) */
+    .learningapps-embed-wrapper {
+        position: relative;
+        padding-bottom: 75%; /* Odatda LA balandroq bo'ladi, 4:3 nisbatga yaqin */
+        height: 0;
+        overflow: hidden;
+        border: 1px solid var(--light-gray);
+        border-radius: var(--border-radius);
+    }
+    .learningapps-embed-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+{# Sahifa sarlavhasi va orqaga qaytish tugmasi #}
+<div class="page-header">
+    <h1>{{ course.title }}</h1>
+    <a href="{% url 'learning_platform:module_detail' pk=course.module.pk %}" class="btn btn-secondary btn-sm">
+        <i class="fas fa-arrow-left"></i> {% blocktrans with module_title=course.module.title %}{{ module_title }} moduliga qaytish{% endblocktrans %}
+    </a>
+</div>
+
+{# Asosiy Kontent #}
+
+{# --- Video Section --- #}
+{% with embed_url=course.get_youtube_embed_url %}
+    {% if embed_url %}
+        <div class="content-section video-wrapper">
+            <iframe
+                src="{{ embed_url }}"
+                title="YouTube video player: {{ course.title|escape }}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+             </iframe>
+        </div>
+    {% elif course.video_url %}
+        <div class="warning-message">
+             <i class="fas fa-exclamation-triangle"></i>
+             <span>{% trans "Video havolasi mavjud, lekin uni pleerga joylashtirib boʻlmadi. Havola formatini tekshiring." %}</span>
+        </div>
+    {% endif %}
+{% endwith %}
+{# --- End Video Section --- #}
+
+{# --- Course Content Section --- #}
+{% if course.content %}
+<div class="content-section course-content-section">
+    <h3 class="card-title">{% trans "Dars Mazmuni" %}</h3>
+    <div>
+        {{ course.content|linebreaksbr|safe }} {# HTML xavfsiz bo'lsa safe ishlating #}
+    </div>
+</div>
+{% endif %}
+{# --- End Course Content Section --- #}
+
+{# --- Syllabuses Section --- #}
+{% if syllabi %}
+<div class="content-section">
+    <h4 class="mb-3">{% trans "Syllabuslar va Qo'llanmalar" %}</h4>
+    <ul class="syllabus-list">
+        {% for syllabus in syllabi %}
+            <li>
+                <a href="{{ syllabus.file.url }}" target="_blank">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>{% firstof syllabus.title syllabus.filename %}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{# --- End Syllabuses Section --- #}
+
+{# --- Images Section --- #}
+{% if images %}
+<div class="content-section">
+    <h4 class="mb-3">{% trans "Qo'shimcha Rasmlar" %}</h4>
+    <div class="image-gallery">
+        {% for image in images %}
+            <figure>
+                <a href="{{ image.image.url }}" data-fancybox="gallery" data-caption="{{ image.caption|default:'' }}">
+                    <img src="{{ image.image.url }}" alt="{{ image.caption|default:_('Kurs rasmi') }}">
+                </a>
+                {% if image.caption %}
+                    <figcaption>{{ image.caption }}</figcaption>
+                {% endif %}
+            </figure>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{# --- End Images Section --- #}
+
+{# --- External Activities Section --- #}
+{% if external_activities %}
+<div class="content-section">
+    <h4 class="mb-3">{% trans "Interaktiv Mashg'ulotlar" %}</h4>
+    <div class="activity-list">
+        {% for activity in external_activities %}
+            <div class="activity-item">
+                <div class="activity-header">
+                    <h5 class="activity-title">{{ activity.title }}</h5>
+                    <span class="activity-type-badge">{{ activity.get_activity_type_display }}</span>
+                </div>
+                <div class="activity-content">
+                    {% with embed_url=activity.get_learningapps_embed_url %}
+                        {% if activity.activity_type == activity.LEARNINGAPPS and embed_url %}
+                            {# LearningApps: Embed iframe (using wrapper for aspect ratio) #}
+                            <div class="learningapps-embed-wrapper mb-3">
+                                <iframe
+                                    src="{{ embed_url }}"
+                                    title="{{ activity.title|escape }}"
+                                    allowfullscreen>
+                                 </iframe>
+                            </div>
+                             <a href="{{ activity.url }}" target="_blank" class="btn btn-secondary btn-sm activity-link" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt me-1"></i> {% trans "Asl manbada ochish" %} (LearningApps)
+                            </a>
+                        {% elif activity.url %}
+                            {# Kahoot, Other, yoki konvertatsiya qilinmagan LearningApps uchun link #}
+                            <a href="{{ activity.url }}" target="_blank" class="btn btn-primary activity-link" rel="noopener noreferrer">
+                                 {% if activity.activity_type == activity.KAHOOT %}
+                                    <i class="fas fa-rocket me-1"></i> {% trans "Kahootni boshlash!" %}
+                                 {% else %}
+                                    <i class="fas fa-external-link-alt me-1"></i> {% trans "Mashg'ulotni ochish" %}
+                                 {% endif %}
+                            </a>
+                            {% if activity.activity_type == activity.LEARNINGAPPS and not embed_url %}
+                            <p style="font-size: 13px; color: var(--gray); margin-top: 10px; margin-bottom: 0;">
+                                <i class="fas fa-info-circle"></i> {% trans "Bu LearningApps mashg'ulotini avtomatik joylashtirib bo'lmadi. Havolani tekshiring." %}
+                            </p>
+                            {% endif %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{# --- End External Activities Section --- #}
+
+{# --- Completion Button/Status Section --- #}
+{% if user.is_authenticated %}
+<div class="completion-section">
+    {% if not is_completed %}
+    <form method="post" action="{% url 'learning_platform:mark_course_complete' pk=course.pk %}" class="d-inline-block">
+         {% csrf_token %}
+        <button type="submit" class="btn btn-success">
+             <i class="fas fa-check-circle me-2"></i> {% trans "Kursni tugatdim" %}
+        </button>
+    </form>
+    {% else %}
+    <p>
+        <i class="fas fa-check-circle me-1"></i> {% trans "Siz bu kursni muvaffaqiyatli tugatgansiz." %}
+    </p>
+    {% endif %}
+ </div>
+{% endif %}
+{# --- End Completion Button/Status Section --- #}
+
+{% endblock %}
+
+{# Fancybox kabi kutubxonalar uchun qo'shimcha JS (base.html da bo'lsa kerak emas) #}
+{% block extra_js %}
+
+{% endblock %}

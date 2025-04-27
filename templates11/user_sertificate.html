@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertifikat | AppName</title>
+    <!-- html2pdf kutubxonasi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3f37c9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .certificate-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #certificate-content {
+            padding: 20px;
+        }
+
+        .certificate-border {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px dashed rgba(67, 97, 238, 0.3);
+            border-radius: var(--border-radius);
+            pointer-events: none;
+        }
+
+        .congrats-message {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .user-name {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .certificate-title {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            color: var(--dark);
+        }
+
+        .course-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .instructor-info {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .completion-date {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .certificate-id {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .download-btn i {
+            margin-right: 10px;
+        }
+
+        .signatures {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .signature {
+            text-align: center;
+        }
+
+        .signature-img {
+            height: 80px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .signature-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .signature-title {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .certificate-container {
+                padding: 30px 20px;
+            }
+            
+            .congrats-message {
+                font-size: 24px;
+            }
+            
+            .course-title {
+                font-size: 28px;
+            }
+            
+            .signatures {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        /* PDF uchun maxsus stil */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .certificate-container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+            .download-btn {
+                display: none;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="certificate-container">
+        <div class="certificate-border"></div>
+        
+        <div id="certificate-content">
+            <h1 class="congrats-message">Tabriklaymiz, <span class="user-name">Azizbek Ismoilov</span>!</h1>
+            <p class="certificate-title">Quyidagi kursni muvaffaqiyatli yakunlaganingiz uchun</p>
+            
+            <h2 class="course-title">JavaScriptda Mukammallashish</h2>
+            <p class="instructor-info">O'qituvchi: <strong>Alex Johnson</strong></p>
+            
+            <p class="completion-date">Yakunlangan sana: 2023-yil 15-oktyabr</p>
+            <p class="certificate-id">Sertifikat raqami: #JS2023-04567</p>
+            
+            <div class="signatures">
+                <div class="signature">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Director" class="signature-img">
+                    <div class="signature-name">Jamshid Qodirov</div>
+                    <div class="signature-title">Platforma Direktori</div>
+                </div>
+                <div class="signature">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Instructor" class="signature-img">
+                    <div class="signature-name">Alex Johnson</div>
+                    <div class="signature-title">O'qituvchi</div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="download-btn" onclick="generatePDF()">
+            <i class="fas fa-download"></i> PDF yuklab olish
+        </button>
+    </div>
+
+    <script>
+        // PDF generatsiya funktsiyasi
+        function generatePDF() {
+            const element = document.getElementById('certificate-content');
+            const opt = {
+                margin: 10,
+                filename: 'javascript-sertifikati.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // HTML2PDF kutubxonasi orqali PDF yaratish
+            html2pdf().set(opt).from(element).save();
+        }
+
+        // Agar foydalanuvchi chop etmoqchi bo'lsa
+        function printCertificate() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
