@@ -5,16 +5,18 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),  
+    path('', include('core.urls')),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-<<<<<<< HEAD
-    # Agar static fayllar bilan ham muammo bo'lsa, buni ham qo'shing:
-    # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+from django.views.static import serve
+from django.urls import re_path
 
-=======
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
->>>>>>> aeb74ee0da082676582a69441da7656c46579614
+# Passenger/shared hostingda va DEBUG=False bo'lsa ham media va static ochilishi kerak.
+urlpatterns += [
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+]
+
+
+
 handler404 = 'core.views.handler404'

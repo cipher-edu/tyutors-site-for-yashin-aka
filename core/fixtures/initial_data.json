@@ -1,0 +1,6113 @@
+[
+{
+  "model": "core.module",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.914Z",
+    "updated_at": "2026-09-12T05:11:06.914Z",
+    "title": "VUCA nima?",
+    "description": "Zamonaviy dunyoning 4 o‘lchami: o‘zgaruvchanlik, noaniqlik, murakkablik, ikkiyoqlamalilik.",
+    "order": 0
+  }
+},
+{
+  "model": "core.module",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.915Z",
+    "updated_at": "2026-09-12T05:11:06.915Z",
+    "title": "Axloq asoslari",
+    "description": "Yaxshi–yomon, burch va vijdon. 9–11-sinf o‘quvchisi uchun amaliy kirish.",
+    "order": 1
+  }
+},
+{
+  "model": "core.module",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.916Z",
+    "updated_at": "2026-09-12T05:11:06.916Z",
+    "title": "Huquqiy asoslar",
+    "description": "Konstitutsiya, ta’lim to‘g‘risidagi qonun va o‘quvchining huquqlari.",
+    "order": 2
+  }
+},
+{
+  "model": "core.module",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.917Z",
+    "updated_at": "2026-09-12T05:11:06.917Z",
+    "title": "O‘zgaruvchanlik (V)",
+    "description": "Tez o‘zgaradigan vaziyatlarda axloqiy barqarorlik.",
+    "order": 3
+  }
+},
+{
+  "model": "core.module",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.918Z",
+    "updated_at": "2026-09-12T05:11:06.918Z",
+    "title": "Noaniqlik (U)",
+    "description": "Ma’lumot yetarli bo‘lmaganda qanday halol qaror qabul qilinadi.",
+    "order": 4
+  }
+},
+{
+  "model": "core.module",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.918Z",
+    "updated_at": "2026-09-12T05:11:06.918Z",
+    "title": "Murakkablik (C)",
+    "description": "Ko‘p tomonlama muammolarda mas’uliyatni bo‘lish.",
+    "order": 5
+  }
+},
+{
+  "model": "core.module",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.919Z",
+    "updated_at": "2026-09-12T05:11:06.919Z",
+    "title": "Ikkiyoqlamalilik (A)",
+    "description": "Bir voqea turli ma’noda o‘qilganda haqiqatni izlash.",
+    "order": 6
+  }
+},
+{
+  "model": "core.module",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.920Z",
+    "updated_at": "2026-09-12T05:11:06.920Z",
+    "title": "Halollik",
+    "description": "Yolg‘on, intizom va o‘z so‘zida turish.",
+    "order": 7
+  }
+},
+{
+  "model": "core.module",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.920Z",
+    "updated_at": "2026-09-12T05:11:06.920Z",
+    "title": "Adolat",
+    "description": "Teng munosabat, kamsitmaslik, sinfdagi adolat.",
+    "order": 8
+  }
+},
+{
+  "model": "core.module",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.921Z",
+    "updated_at": "2026-09-12T05:11:06.921Z",
+    "title": "Hurmat",
+    "description": "O‘qituvchi, ota-ona, tengdosh va o‘ziga hurmat.",
+    "order": 9
+  }
+},
+{
+  "model": "core.module",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.921Z",
+    "updated_at": "2026-09-12T05:11:06.921Z",
+    "title": "Mas’uliyat",
+    "description": "Qilmishning oqibati. Shaxsiy va jamoaviy javobgarlik.",
+    "order": 10
+  }
+},
+{
+  "model": "core.module",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.922Z",
+    "updated_at": "2026-09-12T05:11:06.922Z",
+    "title": "Empatiya",
+    "description": "Boshqaning his-tuyg‘usini tushunish va yordam.",
+    "order": 11
+  }
+},
+{
+  "model": "core.module",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.923Z",
+    "updated_at": "2026-09-12T05:11:06.923Z",
+    "title": "Raqamli axloq",
+    "description": "Internet, AI, deepfake va raqamli iz.",
+    "order": 12
+  }
+},
+{
+  "model": "core.module",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.924Z",
+    "updated_at": "2026-09-12T05:11:06.924Z",
+    "title": "Ijtimoiy tarmoqlar",
+    "description": "Kiberbulling, like ovlash, maxfiylik.",
+    "order": 13
+  }
+},
+{
+  "model": "core.module",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.924Z",
+    "updated_at": "2026-09-12T05:11:06.924Z",
+    "title": "Jamoada ishlash",
+    "description": "Hamkorlik, nizo va konstruktiv tanqid.",
+    "order": 14
+  }
+},
+{
+  "model": "core.module",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.925Z",
+    "updated_at": "2026-09-12T05:11:06.925Z",
+    "title": "Liderlik va axloq",
+    "description": "Ta’sir o‘tkazishda halollik. Lider = namuna.",
+    "order": 15
+  }
+},
+{
+  "model": "core.module",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.925Z",
+    "updated_at": "2026-09-12T05:11:06.925Z",
+    "title": "Ekologik axloq",
+    "description": "Tabiatga munosabat, iste’mol va kelajak avlod.",
+    "order": 16
+  }
+},
+{
+  "model": "core.module",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.926Z",
+    "updated_at": "2026-09-12T05:11:06.926Z",
+    "title": "Fuqarolik pozitsiyasi",
+    "description": "Maktab, mahalla, vatan. Faol fuqaro.",
+    "order": 17
+  }
+},
+{
+  "model": "core.module",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.927Z",
+    "updated_at": "2026-09-12T05:11:06.927Z",
+    "title": "Stress va tanlov",
+    "description": "Bosim ostida axloqiy qaror. VUCA stressi.",
+    "order": 18
+  }
+},
+{
+  "model": "core.module",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.927Z",
+    "updated_at": "2026-09-12T05:11:06.927Z",
+    "title": "Yakuniy integratsiya",
+    "description": "20 modulni hayotga tatbiq: mini-loyiha va qadriyatlar xaritasi.",
+    "order": 19
+  }
+},
+{
+  "model": "core.course",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.915Z",
+    "updated_at": "2026-09-12T05:11:06.915Z",
+    "module": 1,
+    "title": "VUCA nima?: 1-dars",
+    "content": "Zamonaviy dunyoning 4 o‘lchami: o‘zgaruvchanlik, noaniqlik, murakkablik, ikkiyoqlamalilik.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=l5-2pa66fIU",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.915Z",
+    "updated_at": "2026-09-12T05:11:06.915Z",
+    "module": 1,
+    "title": "VUCA nima?: 2-dars",
+    "content": "Zamonaviy dunyoning 4 o‘lchami: o‘zgaruvchanlik, noaniqlik, murakkablik, ikkiyoqlamalilik.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=iG9CE55wbtY",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.916Z",
+    "updated_at": "2026-09-12T05:11:06.916Z",
+    "module": 2,
+    "title": "Axloq asoslari: 1-dars",
+    "content": "Yaxshi–yomon, burch va vijdon. 9–11-sinf o‘quvchisi uchun amaliy kirish.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=G7sQ8C5VZOs",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.916Z",
+    "updated_at": "2026-09-12T05:11:06.916Z",
+    "module": 2,
+    "title": "Axloq asoslari: 2-dars",
+    "content": "Yaxshi–yomon, burch va vijdon. 9–11-sinf o‘quvchisi uchun amaliy kirish.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=unfzfe8f9MI",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.916Z",
+    "updated_at": "2026-09-12T05:11:06.916Z",
+    "module": 3,
+    "title": "Huquqiy asoslar: 1-dars",
+    "content": "Konstitutsiya, ta’lim to‘g‘risidagi qonun va o‘quvchining huquqlari.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=5MgBikgcWnY",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.916Z",
+    "updated_at": "2026-09-12T05:11:06.916Z",
+    "module": 3,
+    "title": "Huquqiy asoslar: 2-dars",
+    "content": "Konstitutsiya, ta’lim to‘g‘risidagi qonun va o‘quvchining huquqlari.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=8jPQjjsBbIc",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.917Z",
+    "updated_at": "2026-09-12T05:11:06.917Z",
+    "module": 4,
+    "title": "O‘zgaruvchanlik (V): 1-dars",
+    "content": "Tez o‘zgaradigan vaziyatlarda axloqiy barqarorlik.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=R9OCA6UFE-0",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.917Z",
+    "updated_at": "2026-09-12T05:11:06.917Z",
+    "module": 4,
+    "title": "O‘zgaruvchanlik (V): 2-dars",
+    "content": "Tez o‘zgaradigan vaziyatlarda axloqiy barqarorlik.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=3qbk-R1SWys",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.918Z",
+    "updated_at": "2026-09-12T05:11:06.918Z",
+    "module": 5,
+    "title": "Noaniqlik (U): 1-dars",
+    "content": "Ma’lumot yetarli bo‘lmaganda qanday halol qaror qabul qilinadi.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=u7NfiK5oH-E",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.918Z",
+    "updated_at": "2026-09-12T05:11:06.918Z",
+    "module": 5,
+    "title": "Noaniqlik (U): 2-dars",
+    "content": "Ma’lumot yetarli bo‘lmaganda qanday halol qaror qabul qilinadi.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=q-YdQwfSUlE",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.919Z",
+    "updated_at": "2026-09-12T05:11:06.919Z",
+    "module": 6,
+    "title": "Murakkablik (C): 1-dars",
+    "content": "Ko‘p tomonlama muammolarda mas’uliyatni bo‘lish.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=l5-2pa66fIU",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.919Z",
+    "updated_at": "2026-09-12T05:11:06.919Z",
+    "module": 6,
+    "title": "Murakkablik (C): 2-dars",
+    "content": "Ko‘p tomonlama muammolarda mas’uliyatni bo‘lish.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=iG9CE55wbtY",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.919Z",
+    "updated_at": "2026-09-12T05:11:06.919Z",
+    "module": 7,
+    "title": "Ikkiyoqlamalilik (A): 1-dars",
+    "content": "Bir voqea turli ma’noda o‘qilganda haqiqatni izlash.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=G7sQ8C5VZOs",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.919Z",
+    "updated_at": "2026-09-12T05:11:06.919Z",
+    "module": 7,
+    "title": "Ikkiyoqlamalilik (A): 2-dars",
+    "content": "Bir voqea turli ma’noda o‘qilganda haqiqatni izlash.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=unfzfe8f9MI",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.920Z",
+    "updated_at": "2026-09-12T05:11:06.920Z",
+    "module": 8,
+    "title": "Halollik: 1-dars",
+    "content": "Yolg‘on, intizom va o‘z so‘zida turish.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=5MgBikgcWnY",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.920Z",
+    "updated_at": "2026-09-12T05:11:06.920Z",
+    "module": 8,
+    "title": "Halollik: 2-dars",
+    "content": "Yolg‘on, intizom va o‘z so‘zida turish.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=8jPQjjsBbIc",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.920Z",
+    "updated_at": "2026-09-12T05:11:06.920Z",
+    "module": 9,
+    "title": "Adolat: 1-dars",
+    "content": "Teng munosabat, kamsitmaslik, sinfdagi adolat.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=R9OCA6UFE-0",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.921Z",
+    "updated_at": "2026-09-12T05:11:06.921Z",
+    "module": 9,
+    "title": "Adolat: 2-dars",
+    "content": "Teng munosabat, kamsitmaslik, sinfdagi adolat.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=3qbk-R1SWys",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.921Z",
+    "updated_at": "2026-09-12T05:11:06.921Z",
+    "module": 10,
+    "title": "Hurmat: 1-dars",
+    "content": "O‘qituvchi, ota-ona, tengdosh va o‘ziga hurmat.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=u7NfiK5oH-E",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.921Z",
+    "updated_at": "2026-09-12T05:11:06.921Z",
+    "module": 10,
+    "title": "Hurmat: 2-dars",
+    "content": "O‘qituvchi, ota-ona, tengdosh va o‘ziga hurmat.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=q-YdQwfSUlE",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 21,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.922Z",
+    "updated_at": "2026-09-12T05:11:06.922Z",
+    "module": 11,
+    "title": "Mas’uliyat: 1-dars",
+    "content": "Qilmishning oqibati. Shaxsiy va jamoaviy javobgarlik.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=l5-2pa66fIU",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 22,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.922Z",
+    "updated_at": "2026-09-12T05:11:06.922Z",
+    "module": 11,
+    "title": "Mas’uliyat: 2-dars",
+    "content": "Qilmishning oqibati. Shaxsiy va jamoaviy javobgarlik.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=iG9CE55wbtY",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 23,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.922Z",
+    "updated_at": "2026-09-12T05:11:06.922Z",
+    "module": 12,
+    "title": "Empatiya: 1-dars",
+    "content": "Boshqaning his-tuyg‘usini tushunish va yordam.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=G7sQ8C5VZOs",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 24,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.923Z",
+    "updated_at": "2026-09-12T05:11:06.923Z",
+    "module": 12,
+    "title": "Empatiya: 2-dars",
+    "content": "Boshqaning his-tuyg‘usini tushunish va yordam.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=unfzfe8f9MI",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 25,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.923Z",
+    "updated_at": "2026-09-12T05:11:06.923Z",
+    "module": 13,
+    "title": "Raqamli axloq: 1-dars",
+    "content": "Internet, AI, deepfake va raqamli iz.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=5MgBikgcWnY",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 26,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.923Z",
+    "updated_at": "2026-09-12T05:11:06.923Z",
+    "module": 13,
+    "title": "Raqamli axloq: 2-dars",
+    "content": "Internet, AI, deepfake va raqamli iz.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=8jPQjjsBbIc",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 27,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.924Z",
+    "updated_at": "2026-09-12T05:11:06.924Z",
+    "module": 14,
+    "title": "Ijtimoiy tarmoqlar: 1-dars",
+    "content": "Kiberbulling, like ovlash, maxfiylik.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=R9OCA6UFE-0",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 28,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.924Z",
+    "updated_at": "2026-09-12T05:11:06.924Z",
+    "module": 14,
+    "title": "Ijtimoiy tarmoqlar: 2-dars",
+    "content": "Kiberbulling, like ovlash, maxfiylik.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=3qbk-R1SWys",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 29,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.924Z",
+    "updated_at": "2026-09-12T05:11:06.924Z",
+    "module": 15,
+    "title": "Jamoada ishlash: 1-dars",
+    "content": "Hamkorlik, nizo va konstruktiv tanqid.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=u7NfiK5oH-E",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 30,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.925Z",
+    "updated_at": "2026-09-12T05:11:06.925Z",
+    "module": 15,
+    "title": "Jamoada ishlash: 2-dars",
+    "content": "Hamkorlik, nizo va konstruktiv tanqid.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=q-YdQwfSUlE",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 31,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.925Z",
+    "updated_at": "2026-09-12T05:11:06.925Z",
+    "module": 16,
+    "title": "Liderlik va axloq: 1-dars",
+    "content": "Ta’sir o‘tkazishda halollik. Lider = namuna.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=l5-2pa66fIU",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 32,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.925Z",
+    "updated_at": "2026-09-12T05:11:06.925Z",
+    "module": 16,
+    "title": "Liderlik va axloq: 2-dars",
+    "content": "Ta’sir o‘tkazishda halollik. Lider = namuna.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=iG9CE55wbtY",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 33,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.926Z",
+    "updated_at": "2026-09-12T05:11:06.926Z",
+    "module": 17,
+    "title": "Ekologik axloq: 1-dars",
+    "content": "Tabiatga munosabat, iste’mol va kelajak avlod.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=G7sQ8C5VZOs",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 34,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.926Z",
+    "updated_at": "2026-09-12T05:11:06.926Z",
+    "module": 17,
+    "title": "Ekologik axloq: 2-dars",
+    "content": "Tabiatga munosabat, iste’mol va kelajak avlod.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=unfzfe8f9MI",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 35,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.926Z",
+    "updated_at": "2026-09-12T05:11:06.926Z",
+    "module": 18,
+    "title": "Fuqarolik pozitsiyasi: 1-dars",
+    "content": "Maktab, mahalla, vatan. Faol fuqaro.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=5MgBikgcWnY",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 36,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.926Z",
+    "updated_at": "2026-09-12T05:11:06.926Z",
+    "module": 18,
+    "title": "Fuqarolik pozitsiyasi: 2-dars",
+    "content": "Maktab, mahalla, vatan. Faol fuqaro.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=8jPQjjsBbIc",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 37,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.927Z",
+    "updated_at": "2026-09-12T05:11:06.927Z",
+    "module": 19,
+    "title": "Stress va tanlov: 1-dars",
+    "content": "Bosim ostida axloqiy qaror. VUCA stressi.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=R9OCA6UFE-0",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 38,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.927Z",
+    "updated_at": "2026-09-12T05:11:06.927Z",
+    "module": 19,
+    "title": "Stress va tanlov: 2-dars",
+    "content": "Bosim ostida axloqiy qaror. VUCA stressi.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=3qbk-R1SWys",
+    "order": 1
+  }
+},
+{
+  "model": "core.course",
+  "pk": 39,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.928Z",
+    "updated_at": "2026-09-12T05:11:06.928Z",
+    "module": 20,
+    "title": "Yakuniy integratsiya: 1-dars",
+    "content": "20 modulni hayotga tatbiq: mini-loyiha va qadriyatlar xaritasi.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=u7NfiK5oH-E",
+    "order": 0
+  }
+},
+{
+  "model": "core.course",
+  "pk": 40,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.928Z",
+    "updated_at": "2026-09-12T05:11:06.928Z",
+    "module": 20,
+    "title": "Yakuniy integratsiya: 2-dars",
+    "content": "20 modulni hayotga tatbiq: mini-loyiha va qadriyatlar xaritasi.\n\nBu darsda o‘quvchi hayotiy misollar orqali mavzuni mustahkamlaydi. Video, Word ma’ruza, LearningApps/Kahoot amaliyoti va yakuniy refleksiyani bajaring.",
+    "video_url": "https://www.youtube.com/watch?v=q-YdQwfSUlE",
+    "order": 1
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.930Z",
+    "updated_at": "2026-09-12T05:11:06.930Z",
+    "course": 1,
+    "title": "Ma’ruza 1",
+    "file": "course_syllabi/2026/09/lecture_01.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.948Z",
+    "updated_at": "2026-09-12T05:11:06.948Z",
+    "course": 2,
+    "title": "Ma’ruza 2",
+    "file": "course_syllabi/2026/09/lecture_02.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.968Z",
+    "updated_at": "2026-09-12T05:11:06.969Z",
+    "course": 3,
+    "title": "Ma’ruza 3",
+    "file": "course_syllabi/2026/09/lecture_03.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.988Z",
+    "updated_at": "2026-09-12T05:11:06.988Z",
+    "course": 4,
+    "title": "Ma’ruza 4",
+    "file": "course_syllabi/2026/09/lecture_04.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.007Z",
+    "updated_at": "2026-09-12T05:11:07.007Z",
+    "course": 5,
+    "title": "Ma’ruza 5",
+    "file": "course_syllabi/2026/09/lecture_05.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.026Z",
+    "updated_at": "2026-09-12T05:11:07.026Z",
+    "course": 6,
+    "title": "Ma’ruza 6",
+    "file": "course_syllabi/2026/09/lecture_06.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.044Z",
+    "updated_at": "2026-09-12T05:11:07.044Z",
+    "course": 7,
+    "title": "Ma’ruza 7",
+    "file": "course_syllabi/2026/09/lecture_07.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.064Z",
+    "updated_at": "2026-09-12T05:11:07.064Z",
+    "course": 8,
+    "title": "Ma’ruza 8",
+    "file": "course_syllabi/2026/09/lecture_08.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.081Z",
+    "updated_at": "2026-09-12T05:11:07.081Z",
+    "course": 9,
+    "title": "Ma’ruza 9",
+    "file": "course_syllabi/2026/09/lecture_09.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.098Z",
+    "updated_at": "2026-09-12T05:11:07.098Z",
+    "course": 10,
+    "title": "Ma’ruza 10",
+    "file": "course_syllabi/2026/09/lecture_10.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.117Z",
+    "updated_at": "2026-09-12T05:11:07.117Z",
+    "course": 11,
+    "title": "Ma’ruza 11",
+    "file": "course_syllabi/2026/09/lecture_11.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.134Z",
+    "updated_at": "2026-09-12T05:11:07.134Z",
+    "course": 12,
+    "title": "Ma’ruza 12",
+    "file": "course_syllabi/2026/09/lecture_12.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.152Z",
+    "updated_at": "2026-09-12T05:11:07.152Z",
+    "course": 13,
+    "title": "Ma’ruza 13",
+    "file": "course_syllabi/2026/09/lecture_13.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.170Z",
+    "updated_at": "2026-09-12T05:11:07.170Z",
+    "course": 14,
+    "title": "Ma’ruza 14",
+    "file": "course_syllabi/2026/09/lecture_14.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.187Z",
+    "updated_at": "2026-09-12T05:11:07.187Z",
+    "course": 15,
+    "title": "Ma’ruza 15",
+    "file": "course_syllabi/2026/09/lecture_15.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.203Z",
+    "updated_at": "2026-09-12T05:11:07.203Z",
+    "course": 16,
+    "title": "Ma’ruza 16",
+    "file": "course_syllabi/2026/09/lecture_16.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.221Z",
+    "updated_at": "2026-09-12T05:11:07.221Z",
+    "course": 17,
+    "title": "Ma’ruza 17",
+    "file": "course_syllabi/2026/09/lecture_17.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.238Z",
+    "updated_at": "2026-09-12T05:11:07.238Z",
+    "course": 18,
+    "title": "Ma’ruza 18",
+    "file": "course_syllabi/2026/09/lecture_18.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.255Z",
+    "updated_at": "2026-09-12T05:11:07.255Z",
+    "course": 19,
+    "title": "Ma’ruza 19",
+    "file": "course_syllabi/2026/09/lecture_19.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.271Z",
+    "updated_at": "2026-09-12T05:11:07.271Z",
+    "course": 20,
+    "title": "Ma’ruza 20",
+    "file": "course_syllabi/2026/09/lecture_20.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 21,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.288Z",
+    "updated_at": "2026-09-12T05:11:07.288Z",
+    "course": 21,
+    "title": "Ma’ruza 21",
+    "file": "course_syllabi/2026/09/lecture_21.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 22,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.305Z",
+    "updated_at": "2026-09-12T05:11:07.305Z",
+    "course": 22,
+    "title": "Ma’ruza 22",
+    "file": "course_syllabi/2026/09/lecture_22.pdf"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 23,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.323Z",
+    "updated_at": "2026-09-12T05:11:07.323Z",
+    "course": 23,
+    "title": "Ma’ruza 23",
+    "file": "course_syllabi/2026/09/lecture_23.docx"
+  }
+},
+{
+  "model": "core.coursesyllabus",
+  "pk": 24,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.339Z",
+    "updated_at": "2026-09-12T05:11:07.339Z",
+    "course": 24,
+    "title": "Ma’ruza 24",
+    "file": "course_syllabi/2026/09/lecture_24.pdf"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.945Z",
+    "updated_at": "2026-09-12T05:11:06.946Z",
+    "course": 1,
+    "image": "course_images/2026/09/course_01.png",
+    "caption": "VUCA nima?: 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.966Z",
+    "updated_at": "2026-09-12T05:11:06.966Z",
+    "course": 2,
+    "image": "course_images/2026/09/course_02.png",
+    "caption": "VUCA nima?: 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.986Z",
+    "updated_at": "2026-09-12T05:11:06.986Z",
+    "course": 3,
+    "image": "course_images/2026/09/course_03.png",
+    "caption": "Axloq asoslari: 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.005Z",
+    "updated_at": "2026-09-12T05:11:07.005Z",
+    "course": 4,
+    "image": "course_images/2026/09/course_04.png",
+    "caption": "Axloq asoslari: 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.024Z",
+    "updated_at": "2026-09-12T05:11:07.024Z",
+    "course": 5,
+    "image": "course_images/2026/09/course_05.png",
+    "caption": "Huquqiy asoslar: 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.042Z",
+    "updated_at": "2026-09-12T05:11:07.042Z",
+    "course": 6,
+    "image": "course_images/2026/09/course_06.png",
+    "caption": "Huquqiy asoslar: 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.062Z",
+    "updated_at": "2026-09-12T05:11:07.062Z",
+    "course": 7,
+    "image": "course_images/2026/09/course_07.png",
+    "caption": "O‘zgaruvchanlik (V): 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.079Z",
+    "updated_at": "2026-09-12T05:11:07.079Z",
+    "course": 8,
+    "image": "course_images/2026/09/course_08.png",
+    "caption": "O‘zgaruvchanlik (V): 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.097Z",
+    "updated_at": "2026-09-12T05:11:07.097Z",
+    "course": 9,
+    "image": "course_images/2026/09/course_09.png",
+    "caption": "Noaniqlik (U): 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.115Z",
+    "updated_at": "2026-09-12T05:11:07.115Z",
+    "course": 10,
+    "image": "course_images/2026/09/course_10.png",
+    "caption": "Noaniqlik (U): 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.132Z",
+    "updated_at": "2026-09-12T05:11:07.132Z",
+    "course": 11,
+    "image": "course_images/2026/09/course_11.png",
+    "caption": "Murakkablik (C): 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.150Z",
+    "updated_at": "2026-09-12T05:11:07.150Z",
+    "course": 12,
+    "image": "course_images/2026/09/course_12.png",
+    "caption": "Murakkablik (C): 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.168Z",
+    "updated_at": "2026-09-12T05:11:07.168Z",
+    "course": 13,
+    "image": "course_images/2026/09/course_13.png",
+    "caption": "Ikkiyoqlamalilik (A): 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.185Z",
+    "updated_at": "2026-09-12T05:11:07.185Z",
+    "course": 14,
+    "image": "course_images/2026/09/course_14.png",
+    "caption": "Ikkiyoqlamalilik (A): 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.202Z",
+    "updated_at": "2026-09-12T05:11:07.202Z",
+    "course": 15,
+    "image": "course_images/2026/09/course_15.png",
+    "caption": "Halollik: 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.219Z",
+    "updated_at": "2026-09-12T05:11:07.219Z",
+    "course": 16,
+    "image": "course_images/2026/09/course_16.png",
+    "caption": "Halollik: 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.236Z",
+    "updated_at": "2026-09-12T05:11:07.236Z",
+    "course": 17,
+    "image": "course_images/2026/09/course_17.png",
+    "caption": "Adolat: 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.253Z",
+    "updated_at": "2026-09-12T05:11:07.253Z",
+    "course": 18,
+    "image": "course_images/2026/09/course_18.png",
+    "caption": "Adolat: 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.270Z",
+    "updated_at": "2026-09-12T05:11:07.270Z",
+    "course": 19,
+    "image": "course_images/2026/09/course_19.png",
+    "caption": "Hurmat: 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.286Z",
+    "updated_at": "2026-09-12T05:11:07.286Z",
+    "course": 20,
+    "image": "course_images/2026/09/course_20.png",
+    "caption": "Hurmat: 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 21,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.304Z",
+    "updated_at": "2026-09-12T05:11:07.304Z",
+    "course": 21,
+    "image": "course_images/2026/09/course_21.png",
+    "caption": "Mas’uliyat: 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 22,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.321Z",
+    "updated_at": "2026-09-12T05:11:07.321Z",
+    "course": 22,
+    "image": "course_images/2026/09/course_22.png",
+    "caption": "Mas’uliyat: 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 23,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.338Z",
+    "updated_at": "2026-09-12T05:11:07.338Z",
+    "course": 23,
+    "image": "course_images/2026/09/course_23.png",
+    "caption": "Empatiya: 1-dars infografikasi"
+  }
+},
+{
+  "model": "core.courseimage",
+  "pk": 24,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.355Z",
+    "updated_at": "2026-09-12T05:11:07.355Z",
+    "course": 24,
+    "image": "course_images/2026/09/course_24.png",
+    "caption": "Empatiya: 2-dars infografikasi"
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.946Z",
+    "updated_at": "2026-09-12T05:11:06.946Z",
+    "course": 1,
+    "title": "LearningApps: VUCA nima?",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/watch?v=p8n3k4d5c",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.966Z",
+    "updated_at": "2026-09-12T05:11:06.966Z",
+    "course": 2,
+    "title": "Kahoot: VUCA nima?",
+    "activity_type": "KH",
+    "url": "https://create.kahoot.it/share/ethics/1",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.986Z",
+    "updated_at": "2026-09-12T05:11:06.986Z",
+    "course": 3,
+    "title": "LearningApps: Axloq asoslari",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/watch?v=p1234567a",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.005Z",
+    "updated_at": "2026-09-12T05:11:07.005Z",
+    "course": 4,
+    "title": "Kahoot: Axloq asoslari",
+    "activity_type": "KH",
+    "url": "https://kahoot.it/",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.025Z",
+    "updated_at": "2026-09-12T05:11:07.025Z",
+    "course": 5,
+    "title": "LearningApps: Huquqiy asoslar",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/watch?v=axloq9sinf",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.042Z",
+    "updated_at": "2026-09-12T05:11:07.042Z",
+    "course": 6,
+    "title": "Kahoot: Huquqiy asoslar",
+    "activity_type": "KH",
+    "url": "https://kahoot.com/schools/",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.062Z",
+    "updated_at": "2026-09-12T05:11:07.062Z",
+    "course": 7,
+    "title": "LearningApps: O‘zgaruvchanlik (V)",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/watch?v=eqp6gkzka20",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.080Z",
+    "updated_at": "2026-09-12T05:11:07.080Z",
+    "course": 8,
+    "title": "Kahoot: O‘zgaruvchanlik (V)",
+    "activity_type": "KH",
+    "url": "https://create.kahoot.it/share/ethics/1",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.097Z",
+    "updated_at": "2026-09-12T05:11:07.097Z",
+    "course": 9,
+    "title": "LearningApps: Noaniqlik (U)",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/display?id=1234567",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.115Z",
+    "updated_at": "2026-09-12T05:11:07.115Z",
+    "course": 10,
+    "title": "Kahoot: Noaniqlik (U)",
+    "activity_type": "KH",
+    "url": "https://kahoot.it/",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.132Z",
+    "updated_at": "2026-09-12T05:11:07.132Z",
+    "course": 11,
+    "title": "LearningApps: Murakkablik (C)",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/watch?v=p8n3k4d5c",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.150Z",
+    "updated_at": "2026-09-12T05:11:07.150Z",
+    "course": 12,
+    "title": "Kahoot: Murakkablik (C)",
+    "activity_type": "KH",
+    "url": "https://kahoot.com/schools/",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.168Z",
+    "updated_at": "2026-09-12T05:11:07.168Z",
+    "course": 13,
+    "title": "LearningApps: Ikkiyoqlamalilik (A)",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/watch?v=p1234567a",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.186Z",
+    "updated_at": "2026-09-12T05:11:07.186Z",
+    "course": 14,
+    "title": "Kahoot: Ikkiyoqlamalilik (A)",
+    "activity_type": "KH",
+    "url": "https://create.kahoot.it/share/ethics/1",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.202Z",
+    "updated_at": "2026-09-12T05:11:07.202Z",
+    "course": 15,
+    "title": "LearningApps: Halollik",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/watch?v=axloq9sinf",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.219Z",
+    "updated_at": "2026-09-12T05:11:07.219Z",
+    "course": 16,
+    "title": "Kahoot: Halollik",
+    "activity_type": "KH",
+    "url": "https://kahoot.it/",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.236Z",
+    "updated_at": "2026-09-12T05:11:07.236Z",
+    "course": 17,
+    "title": "LearningApps: Adolat",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/watch?v=eqp6gkzka20",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.253Z",
+    "updated_at": "2026-09-12T05:11:07.253Z",
+    "course": 18,
+    "title": "Kahoot: Adolat",
+    "activity_type": "KH",
+    "url": "https://kahoot.com/schools/",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.270Z",
+    "updated_at": "2026-09-12T05:11:07.270Z",
+    "course": 19,
+    "title": "LearningApps: Hurmat",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/display?id=1234567",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.287Z",
+    "updated_at": "2026-09-12T05:11:07.287Z",
+    "course": 20,
+    "title": "Kahoot: Hurmat",
+    "activity_type": "KH",
+    "url": "https://create.kahoot.it/share/ethics/1",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 21,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.304Z",
+    "updated_at": "2026-09-12T05:11:07.304Z",
+    "course": 21,
+    "title": "LearningApps: Mas’uliyat",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/watch?v=p8n3k4d5c",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 22,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.321Z",
+    "updated_at": "2026-09-12T05:11:07.321Z",
+    "course": 22,
+    "title": "Kahoot: Mas’uliyat",
+    "activity_type": "KH",
+    "url": "https://kahoot.it/",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 23,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.338Z",
+    "updated_at": "2026-09-12T05:11:07.338Z",
+    "course": 23,
+    "title": "LearningApps: Empatiya",
+    "activity_type": "LA",
+    "url": "https://learningapps.org/watch?v=p1234567a",
+    "order": 0
+  }
+},
+{
+  "model": "core.externalactivity",
+  "pk": 24,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.355Z",
+    "updated_at": "2026-09-12T05:11:07.355Z",
+    "course": 24,
+    "title": "Kahoot: Empatiya",
+    "activity_type": "KH",
+    "url": "https://kahoot.com/schools/",
+    "order": 0
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.457Z",
+    "updated_at": "2026-09-12T05:11:06.457Z",
+    "title": "VUCA 10 soniyada",
+    "image": "infographics/2026/09/info_01.png",
+    "caption": "4 harf — 4 hayotiy vaziyat.",
+    "link": "",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.479Z",
+    "updated_at": "2026-09-12T05:11:06.479Z",
+    "title": "Halollik kompassi",
+    "image": "infographics/2026/09/info_02.png",
+    "caption": "Qaror oldida 3 savol bering.",
+    "link": "",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.501Z",
+    "updated_at": "2026-09-12T05:11:06.501Z",
+    "title": "Raqamli iz",
+    "image": "infographics/2026/09/info_03.png",
+    "caption": "Internetda yozganingiz qoladi.",
+    "link": "",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.522Z",
+    "updated_at": "2026-09-12T05:11:06.522Z",
+    "title": "Kiberhurmat",
+    "image": "infographics/2026/09/info_04.png",
+    "caption": "Ekran orqasida ham odam bor.",
+    "link": "",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.544Z",
+    "updated_at": "2026-09-12T05:11:06.544Z",
+    "title": "Empatiya mushagi",
+    "image": "infographics/2026/09/info_05.png",
+    "caption": "Avval tingla, keyin gapir.",
+    "link": "",
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.565Z",
+    "updated_at": "2026-09-12T05:11:06.565Z",
+    "title": "Adolat tarozisi",
+    "image": "infographics/2026/09/info_06.png",
+    "caption": "O‘zingizga yoqmaganini boshqaga qilmang.",
+    "link": "",
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.586Z",
+    "updated_at": "2026-09-12T05:11:06.586Z",
+    "title": "Jamoa qoidalari",
+    "image": "infographics/2026/09/info_07.png",
+    "caption": "5 ta oddiy sinf qoidasi.",
+    "link": "",
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.608Z",
+    "updated_at": "2026-09-12T05:11:06.608Z",
+    "title": "Stress pauzasi",
+    "image": "infographics/2026/09/info_08.png",
+    "caption": "10 nafas — keyin qaror.",
+    "link": "",
+    "order": 7,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.631Z",
+    "updated_at": "2026-09-12T05:11:06.631Z",
+    "title": "Lider namuna",
+    "image": "infographics/2026/09/info_09.png",
+    "caption": "So‘z emas, ish o‘rgatadi.",
+    "link": "",
+    "order": 8,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.658Z",
+    "updated_at": "2026-09-12T05:11:06.658Z",
+    "title": "Yashil qadam",
+    "image": "infographics/2026/09/info_10.png",
+    "caption": "Bugun 1 ta ekologik ish.",
+    "link": "",
+    "order": 9,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.681Z",
+    "updated_at": "2026-09-12T05:11:06.681Z",
+    "title": "Huquq va burch",
+    "image": "infographics/2026/09/info_11.png",
+    "caption": "Huquq borsh bilan juft.",
+    "link": "",
+    "order": 10,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.703Z",
+    "updated_at": "2026-09-12T05:11:06.703Z",
+    "title": "Noaniqlikda tinchlik",
+    "image": "infographics/2026/09/info_12.png",
+    "caption": "Bilmaslik — ham ma’lumot.",
+    "link": "",
+    "order": 11,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.727Z",
+    "updated_at": "2026-09-12T05:11:06.727Z",
+    "title": "Murakkab muammo",
+    "image": "infographics/2026/09/info_13.png",
+    "caption": "Katta savolni kichik qismlarga bo‘ling.",
+    "link": "",
+    "order": 12,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.749Z",
+    "updated_at": "2026-09-12T05:11:06.750Z",
+    "title": "Ikki tomon",
+    "image": "infographics/2026/09/info_14.png",
+    "caption": "Bir voqeani 2 nuqtai nazardan yozing.",
+    "link": "",
+    "order": 13,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.773Z",
+    "updated_at": "2026-09-12T05:11:06.773Z",
+    "title": "Like tuzog‘i",
+    "image": "infographics/2026/09/info_15.png",
+    "caption": "Obro‘ ≠ qadriyat.",
+    "link": "",
+    "order": 14,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.797Z",
+    "updated_at": "2026-09-12T05:11:06.797Z",
+    "title": "Do‘stlik shartnomasi",
+    "image": "infographics/2026/09/info_16.png",
+    "caption": "Sinfdoshga 3 va’da.",
+    "link": "",
+    "order": 15,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.819Z",
+    "updated_at": "2026-09-12T05:11:06.819Z",
+    "title": "Vaqt va axloq",
+    "image": "infographics/2026/09/info_17.png",
+    "caption": "Shoshilinchlik yolg‘onga olib keladi.",
+    "link": "",
+    "order": 16,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.841Z",
+    "updated_at": "2026-09-12T05:11:06.841Z",
+    "title": "Oila va maktab",
+    "image": "infographics/2026/09/info_18.png",
+    "caption": "Ikki makonda bir xil qadriyat.",
+    "link": "",
+    "order": 17,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.862Z",
+    "updated_at": "2026-09-12T05:11:06.862Z",
+    "title": "Kelajak meni",
+    "image": "infographics/2026/09/info_19.png",
+    "caption": "10 yildan keyin o‘zingizga xat.",
+    "link": "",
+    "order": 18,
+    "is_active": true
+  }
+},
+{
+  "model": "core.infographic",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.884Z",
+    "updated_at": "2026-09-12T05:11:06.884Z",
+    "title": "VUCA qahramoni",
+    "image": "infographics/2026/09/info_20.png",
+    "caption": "O‘zgarishda ham odam bo‘lib qol.",
+    "link": "",
+    "order": 19,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.886Z",
+    "updated_at": "2026-09-12T05:11:06.886Z",
+    "title": "Kurs dasturi 2026",
+    "document_type": "program",
+    "file": "site_documents/2026/09/doc_01.docx",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.888Z",
+    "updated_at": "2026-09-12T05:11:06.888Z",
+    "title": "9-sinf dasturi",
+    "document_type": "program",
+    "file": "site_documents/2026/09/doc_02.pdf",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.890Z",
+    "updated_at": "2026-09-12T05:11:06.890Z",
+    "title": "10-sinf dasturi",
+    "document_type": "program",
+    "file": "site_documents/2026/09/doc_03.docx",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.891Z",
+    "updated_at": "2026-09-12T05:11:06.891Z",
+    "title": "11-sinf dasturi",
+    "document_type": "program",
+    "file": "site_documents/2026/09/doc_04.pdf",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.893Z",
+    "updated_at": "2026-09-12T05:11:06.893Z",
+    "title": "Kalendar-tematik reja",
+    "document_type": "program",
+    "file": "site_documents/2026/09/doc_05.docx",
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.894Z",
+    "updated_at": "2026-09-12T05:11:06.894Z",
+    "title": "Yillik ish reja",
+    "document_type": "plan",
+    "file": "site_documents/2026/09/doc_06.pdf",
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.896Z",
+    "updated_at": "2026-09-12T05:11:06.896Z",
+    "title": "I chorak ish reja",
+    "document_type": "plan",
+    "file": "site_documents/2026/09/doc_07.docx",
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.897Z",
+    "updated_at": "2026-09-12T05:11:06.897Z",
+    "title": "II chorak ish reja",
+    "document_type": "plan",
+    "file": "site_documents/2026/09/doc_08.pdf",
+    "order": 7,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.899Z",
+    "updated_at": "2026-09-12T05:11:06.899Z",
+    "title": "III chorak ish reja",
+    "document_type": "plan",
+    "file": "site_documents/2026/09/doc_09.docx",
+    "order": 8,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.900Z",
+    "updated_at": "2026-09-12T05:11:06.900Z",
+    "title": "IV chorak ish reja",
+    "document_type": "plan",
+    "file": "site_documents/2026/09/doc_10.pdf",
+    "order": 9,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.902Z",
+    "updated_at": "2026-09-12T05:11:06.902Z",
+    "title": "Amaliy mashg‘ulotlar rejasi",
+    "document_type": "plan",
+    "file": "site_documents/2026/09/doc_11.docx",
+    "order": 10,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.903Z",
+    "updated_at": "2026-09-12T05:11:06.903Z",
+    "title": "Tarbiyaviy soatlar rejasi",
+    "document_type": "plan",
+    "file": "site_documents/2026/09/doc_12.pdf",
+    "order": 11,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.904Z",
+    "updated_at": "2026-09-12T05:11:06.904Z",
+    "title": "Konstitutsiyadan ko‘chirma",
+    "document_type": "legal",
+    "file": "site_documents/2026/09/doc_13.docx",
+    "order": 12,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.906Z",
+    "updated_at": "2026-09-12T05:11:06.906Z",
+    "title": "Ta’lim to‘g‘risidagi qonun",
+    "document_type": "legal",
+    "file": "site_documents/2026/09/doc_14.pdf",
+    "order": 13,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.907Z",
+    "updated_at": "2026-09-12T05:11:06.907Z",
+    "title": "Bola huquqlari konvensiyasi",
+    "document_type": "legal",
+    "file": "site_documents/2026/09/doc_15.docx",
+    "order": 14,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.908Z",
+    "updated_at": "2026-09-12T05:11:06.908Z",
+    "title": "O‘quvchi odob-axloq qoidalari",
+    "document_type": "legal",
+    "file": "site_documents/2026/09/doc_16.pdf",
+    "order": 15,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.910Z",
+    "updated_at": "2026-09-12T05:11:06.910Z",
+    "title": "Kiberxavfsizlik bo‘yicha yo‘riqnoma",
+    "document_type": "legal",
+    "file": "site_documents/2026/09/doc_17.docx",
+    "order": 16,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.911Z",
+    "updated_at": "2026-09-12T05:11:06.911Z",
+    "title": "Ota-onalar uchun memo",
+    "document_type": "other",
+    "file": "site_documents/2026/09/doc_18.pdf",
+    "order": 17,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.912Z",
+    "updated_at": "2026-09-12T05:11:06.913Z",
+    "title": "O‘qituvchi metodik tavsiya",
+    "document_type": "other",
+    "file": "site_documents/2026/09/doc_19.docx",
+    "order": 18,
+    "is_active": true
+  }
+},
+{
+  "model": "core.sitedocument",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:06.914Z",
+    "updated_at": "2026-09-12T05:11:06.914Z",
+    "title": "Baholash mezonlari",
+    "document_type": "other",
+    "file": "site_documents/2026/09/doc_20.pdf",
+    "order": 19,
+    "is_active": true
+  }
+},
+{
+  "model": "core.test",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.356Z",
+    "updated_at": "2026-09-12T05:11:07.356Z",
+    "module": 1,
+    "title": "VUCA nima? — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.359Z",
+    "updated_at": "2026-09-12T05:11:07.359Z",
+    "module": 2,
+    "title": "Axloq asoslari — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.361Z",
+    "updated_at": "2026-09-12T05:11:07.361Z",
+    "module": 3,
+    "title": "Huquqiy asoslar — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.363Z",
+    "updated_at": "2026-09-12T05:11:07.363Z",
+    "module": 4,
+    "title": "O‘zgaruvchanlik (V) — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.365Z",
+    "updated_at": "2026-09-12T05:11:07.365Z",
+    "module": 5,
+    "title": "Noaniqlik (U) — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.367Z",
+    "updated_at": "2026-09-12T05:11:07.367Z",
+    "module": 6,
+    "title": "Murakkablik (C) — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.370Z",
+    "updated_at": "2026-09-12T05:11:07.370Z",
+    "module": 7,
+    "title": "Ikkiyoqlamalilik (A) — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.372Z",
+    "updated_at": "2026-09-12T05:11:07.372Z",
+    "module": 8,
+    "title": "Halollik — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.374Z",
+    "updated_at": "2026-09-12T05:11:07.374Z",
+    "module": 9,
+    "title": "Adolat — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.376Z",
+    "updated_at": "2026-09-12T05:11:07.376Z",
+    "module": 10,
+    "title": "Hurmat — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.378Z",
+    "updated_at": "2026-09-12T05:11:07.378Z",
+    "module": 11,
+    "title": "Mas’uliyat — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.380Z",
+    "updated_at": "2026-09-12T05:11:07.380Z",
+    "module": 12,
+    "title": "Empatiya — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.382Z",
+    "updated_at": "2026-09-12T05:11:07.382Z",
+    "module": 13,
+    "title": "Raqamli axloq — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.384Z",
+    "updated_at": "2026-09-12T05:11:07.384Z",
+    "module": 14,
+    "title": "Ijtimoiy tarmoqlar — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.388Z",
+    "updated_at": "2026-09-12T05:11:07.388Z",
+    "module": 15,
+    "title": "Jamoada ishlash — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.391Z",
+    "updated_at": "2026-09-12T05:11:07.391Z",
+    "module": 16,
+    "title": "Liderlik va axloq — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.394Z",
+    "updated_at": "2026-09-12T05:11:07.394Z",
+    "module": 17,
+    "title": "Ekologik axloq — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.397Z",
+    "updated_at": "2026-09-12T05:11:07.397Z",
+    "module": 18,
+    "title": "Fuqarolik pozitsiyasi — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.400Z",
+    "updated_at": "2026-09-12T05:11:07.400Z",
+    "module": 19,
+    "title": "Stress va tanlov — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.test",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.402Z",
+    "updated_at": "2026-09-12T05:11:07.402Z",
+    "module": 20,
+    "title": "Yakuniy integratsiya — yakuniy test",
+    "description": "4 ta savol. 70% dan o‘ting — sertifikat!",
+    "passing_score_percent": 70
+  }
+},
+{
+  "model": "core.question",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.356Z",
+    "updated_at": "2026-09-12T05:11:07.356Z",
+    "test": 1,
+    "text": "VUCA nima?: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.358Z",
+    "updated_at": "2026-09-12T05:11:07.358Z",
+    "test": 1,
+    "text": "VUCA nima?: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.359Z",
+    "updated_at": "2026-09-12T05:11:07.359Z",
+    "test": 2,
+    "text": "Axloq asoslari: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.360Z",
+    "updated_at": "2026-09-12T05:11:07.360Z",
+    "test": 2,
+    "text": "Axloq asoslari: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.361Z",
+    "updated_at": "2026-09-12T05:11:07.361Z",
+    "test": 3,
+    "text": "Huquqiy asoslar: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.362Z",
+    "updated_at": "2026-09-12T05:11:07.362Z",
+    "test": 3,
+    "text": "Huquqiy asoslar: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.363Z",
+    "updated_at": "2026-09-12T05:11:07.363Z",
+    "test": 4,
+    "text": "O‘zgaruvchanlik (V): 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.364Z",
+    "updated_at": "2026-09-12T05:11:07.364Z",
+    "test": 4,
+    "text": "O‘zgaruvchanlik (V): 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.366Z",
+    "updated_at": "2026-09-12T05:11:07.366Z",
+    "test": 5,
+    "text": "Noaniqlik (U): 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.367Z",
+    "updated_at": "2026-09-12T05:11:07.367Z",
+    "test": 5,
+    "text": "Noaniqlik (U): 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.368Z",
+    "updated_at": "2026-09-12T05:11:07.368Z",
+    "test": 6,
+    "text": "Murakkablik (C): 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.369Z",
+    "updated_at": "2026-09-12T05:11:07.369Z",
+    "test": 6,
+    "text": "Murakkablik (C): 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.370Z",
+    "updated_at": "2026-09-12T05:11:07.370Z",
+    "test": 7,
+    "text": "Ikkiyoqlamalilik (A): 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.371Z",
+    "updated_at": "2026-09-12T05:11:07.371Z",
+    "test": 7,
+    "text": "Ikkiyoqlamalilik (A): 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.372Z",
+    "updated_at": "2026-09-12T05:11:07.372Z",
+    "test": 8,
+    "text": "Halollik: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.373Z",
+    "updated_at": "2026-09-12T05:11:07.373Z",
+    "test": 8,
+    "text": "Halollik: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.374Z",
+    "updated_at": "2026-09-12T05:11:07.374Z",
+    "test": 9,
+    "text": "Adolat: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.375Z",
+    "updated_at": "2026-09-12T05:11:07.375Z",
+    "test": 9,
+    "text": "Adolat: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.376Z",
+    "updated_at": "2026-09-12T05:11:07.376Z",
+    "test": 10,
+    "text": "Hurmat: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.377Z",
+    "updated_at": "2026-09-12T05:11:07.377Z",
+    "test": 10,
+    "text": "Hurmat: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 21,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.378Z",
+    "updated_at": "2026-09-12T05:11:07.378Z",
+    "test": 11,
+    "text": "Mas’uliyat: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 22,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.379Z",
+    "updated_at": "2026-09-12T05:11:07.379Z",
+    "test": 11,
+    "text": "Mas’uliyat: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 23,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.380Z",
+    "updated_at": "2026-09-12T05:11:07.380Z",
+    "test": 12,
+    "text": "Empatiya: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 24,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.381Z",
+    "updated_at": "2026-09-12T05:11:07.381Z",
+    "test": 12,
+    "text": "Empatiya: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 25,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.382Z",
+    "updated_at": "2026-09-12T05:11:07.382Z",
+    "test": 13,
+    "text": "Raqamli axloq: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 26,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.383Z",
+    "updated_at": "2026-09-12T05:11:07.383Z",
+    "test": 13,
+    "text": "Raqamli axloq: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 27,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.385Z",
+    "updated_at": "2026-09-12T05:11:07.385Z",
+    "test": 14,
+    "text": "Ijtimoiy tarmoqlar: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 28,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.386Z",
+    "updated_at": "2026-09-12T05:11:07.386Z",
+    "test": 14,
+    "text": "Ijtimoiy tarmoqlar: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 29,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.388Z",
+    "updated_at": "2026-09-12T05:11:07.388Z",
+    "test": 15,
+    "text": "Jamoada ishlash: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 30,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.390Z",
+    "updated_at": "2026-09-12T05:11:07.390Z",
+    "test": 15,
+    "text": "Jamoada ishlash: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 31,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.391Z",
+    "updated_at": "2026-09-12T05:11:07.391Z",
+    "test": 16,
+    "text": "Liderlik va axloq: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 32,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.392Z",
+    "updated_at": "2026-09-12T05:11:07.392Z",
+    "test": 16,
+    "text": "Liderlik va axloq: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 33,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.394Z",
+    "updated_at": "2026-09-12T05:11:07.394Z",
+    "test": 17,
+    "text": "Ekologik axloq: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 34,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.395Z",
+    "updated_at": "2026-09-12T05:11:07.395Z",
+    "test": 17,
+    "text": "Ekologik axloq: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 35,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.397Z",
+    "updated_at": "2026-09-12T05:11:07.397Z",
+    "test": 18,
+    "text": "Fuqarolik pozitsiyasi: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 36,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.398Z",
+    "updated_at": "2026-09-12T05:11:07.398Z",
+    "test": 18,
+    "text": "Fuqarolik pozitsiyasi: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 37,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.400Z",
+    "updated_at": "2026-09-12T05:11:07.400Z",
+    "test": 19,
+    "text": "Stress va tanlov: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 38,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.401Z",
+    "updated_at": "2026-09-12T05:11:07.401Z",
+    "test": 19,
+    "text": "Stress va tanlov: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.question",
+  "pk": 39,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.403Z",
+    "updated_at": "2026-09-12T05:11:07.403Z",
+    "test": 20,
+    "text": "Yakuniy integratsiya: 1-savol. Axloqiy qaror qaysi?",
+    "order": 0
+  }
+},
+{
+  "model": "core.question",
+  "pk": 40,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.404Z",
+    "updated_at": "2026-09-12T05:11:07.404Z",
+    "test": 20,
+    "text": "Yakuniy integratsiya: 2-savol. Axloqiy qaror qaysi?",
+    "order": 1
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.357Z",
+    "updated_at": "2026-09-12T05:11:07.357Z",
+    "question": 1,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.357Z",
+    "updated_at": "2026-09-12T05:11:07.357Z",
+    "question": 1,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.357Z",
+    "updated_at": "2026-09-12T05:11:07.357Z",
+    "question": 1,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.357Z",
+    "updated_at": "2026-09-12T05:11:07.357Z",
+    "question": 1,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.358Z",
+    "updated_at": "2026-09-12T05:11:07.358Z",
+    "question": 2,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.358Z",
+    "updated_at": "2026-09-12T05:11:07.358Z",
+    "question": 2,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.358Z",
+    "updated_at": "2026-09-12T05:11:07.358Z",
+    "question": 2,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.358Z",
+    "updated_at": "2026-09-12T05:11:07.358Z",
+    "question": 2,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.359Z",
+    "updated_at": "2026-09-12T05:11:07.359Z",
+    "question": 3,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.359Z",
+    "updated_at": "2026-09-12T05:11:07.359Z",
+    "question": 3,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.360Z",
+    "updated_at": "2026-09-12T05:11:07.360Z",
+    "question": 3,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.360Z",
+    "updated_at": "2026-09-12T05:11:07.360Z",
+    "question": 3,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.360Z",
+    "updated_at": "2026-09-12T05:11:07.360Z",
+    "question": 4,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.360Z",
+    "updated_at": "2026-09-12T05:11:07.360Z",
+    "question": 4,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.361Z",
+    "updated_at": "2026-09-12T05:11:07.361Z",
+    "question": 4,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.361Z",
+    "updated_at": "2026-09-12T05:11:07.361Z",
+    "question": 4,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.361Z",
+    "updated_at": "2026-09-12T05:11:07.361Z",
+    "question": 5,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.362Z",
+    "updated_at": "2026-09-12T05:11:07.362Z",
+    "question": 5,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.362Z",
+    "updated_at": "2026-09-12T05:11:07.362Z",
+    "question": 5,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.362Z",
+    "updated_at": "2026-09-12T05:11:07.362Z",
+    "question": 5,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 21,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.362Z",
+    "updated_at": "2026-09-12T05:11:07.362Z",
+    "question": 6,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 22,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.363Z",
+    "updated_at": "2026-09-12T05:11:07.363Z",
+    "question": 6,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 23,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.363Z",
+    "updated_at": "2026-09-12T05:11:07.363Z",
+    "question": 6,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 24,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.363Z",
+    "updated_at": "2026-09-12T05:11:07.363Z",
+    "question": 6,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 25,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.364Z",
+    "updated_at": "2026-09-12T05:11:07.364Z",
+    "question": 7,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 26,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.364Z",
+    "updated_at": "2026-09-12T05:11:07.364Z",
+    "question": 7,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 27,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.364Z",
+    "updated_at": "2026-09-12T05:11:07.364Z",
+    "question": 7,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 28,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.364Z",
+    "updated_at": "2026-09-12T05:11:07.364Z",
+    "question": 7,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 29,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.365Z",
+    "updated_at": "2026-09-12T05:11:07.365Z",
+    "question": 8,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 30,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.365Z",
+    "updated_at": "2026-09-12T05:11:07.365Z",
+    "question": 8,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 31,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.365Z",
+    "updated_at": "2026-09-12T05:11:07.365Z",
+    "question": 8,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 32,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.365Z",
+    "updated_at": "2026-09-12T05:11:07.365Z",
+    "question": 8,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 33,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.366Z",
+    "updated_at": "2026-09-12T05:11:07.366Z",
+    "question": 9,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 34,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.366Z",
+    "updated_at": "2026-09-12T05:11:07.366Z",
+    "question": 9,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 35,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.366Z",
+    "updated_at": "2026-09-12T05:11:07.366Z",
+    "question": 9,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 36,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.366Z",
+    "updated_at": "2026-09-12T05:11:07.366Z",
+    "question": 9,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 37,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.367Z",
+    "updated_at": "2026-09-12T05:11:07.367Z",
+    "question": 10,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 38,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.367Z",
+    "updated_at": "2026-09-12T05:11:07.367Z",
+    "question": 10,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 39,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.367Z",
+    "updated_at": "2026-09-12T05:11:07.367Z",
+    "question": 10,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 40,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.367Z",
+    "updated_at": "2026-09-12T05:11:07.367Z",
+    "question": 10,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 41,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.368Z",
+    "updated_at": "2026-09-12T05:11:07.368Z",
+    "question": 11,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 42,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.368Z",
+    "updated_at": "2026-09-12T05:11:07.368Z",
+    "question": 11,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 43,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.368Z",
+    "updated_at": "2026-09-12T05:11:07.368Z",
+    "question": 11,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 44,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.369Z",
+    "updated_at": "2026-09-12T05:11:07.369Z",
+    "question": 11,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 45,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.369Z",
+    "updated_at": "2026-09-12T05:11:07.369Z",
+    "question": 12,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 46,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.369Z",
+    "updated_at": "2026-09-12T05:11:07.369Z",
+    "question": 12,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 47,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.369Z",
+    "updated_at": "2026-09-12T05:11:07.369Z",
+    "question": 12,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 48,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.369Z",
+    "updated_at": "2026-09-12T05:11:07.370Z",
+    "question": 12,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 49,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.370Z",
+    "updated_at": "2026-09-12T05:11:07.370Z",
+    "question": 13,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 50,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.370Z",
+    "updated_at": "2026-09-12T05:11:07.370Z",
+    "question": 13,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 51,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.370Z",
+    "updated_at": "2026-09-12T05:11:07.370Z",
+    "question": 13,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 52,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.371Z",
+    "updated_at": "2026-09-12T05:11:07.371Z",
+    "question": 13,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 53,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.371Z",
+    "updated_at": "2026-09-12T05:11:07.371Z",
+    "question": 14,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 54,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.371Z",
+    "updated_at": "2026-09-12T05:11:07.371Z",
+    "question": 14,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 55,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.371Z",
+    "updated_at": "2026-09-12T05:11:07.371Z",
+    "question": 14,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 56,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.372Z",
+    "updated_at": "2026-09-12T05:11:07.372Z",
+    "question": 14,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 57,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.372Z",
+    "updated_at": "2026-09-12T05:11:07.372Z",
+    "question": 15,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 58,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.372Z",
+    "updated_at": "2026-09-12T05:11:07.372Z",
+    "question": 15,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 59,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.373Z",
+    "updated_at": "2026-09-12T05:11:07.373Z",
+    "question": 15,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 60,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.373Z",
+    "updated_at": "2026-09-12T05:11:07.373Z",
+    "question": 15,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 61,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.373Z",
+    "updated_at": "2026-09-12T05:11:07.373Z",
+    "question": 16,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 62,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.373Z",
+    "updated_at": "2026-09-12T05:11:07.373Z",
+    "question": 16,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 63,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.373Z",
+    "updated_at": "2026-09-12T05:11:07.373Z",
+    "question": 16,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 64,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.374Z",
+    "updated_at": "2026-09-12T05:11:07.374Z",
+    "question": 16,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 65,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.374Z",
+    "updated_at": "2026-09-12T05:11:07.374Z",
+    "question": 17,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 66,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.374Z",
+    "updated_at": "2026-09-12T05:11:07.374Z",
+    "question": 17,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 67,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.375Z",
+    "updated_at": "2026-09-12T05:11:07.375Z",
+    "question": 17,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 68,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.375Z",
+    "updated_at": "2026-09-12T05:11:07.375Z",
+    "question": 17,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 69,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.375Z",
+    "updated_at": "2026-09-12T05:11:07.375Z",
+    "question": 18,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 70,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.375Z",
+    "updated_at": "2026-09-12T05:11:07.375Z",
+    "question": 18,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 71,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.376Z",
+    "updated_at": "2026-09-12T05:11:07.376Z",
+    "question": 18,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 72,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.376Z",
+    "updated_at": "2026-09-12T05:11:07.376Z",
+    "question": 18,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 73,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.376Z",
+    "updated_at": "2026-09-12T05:11:07.376Z",
+    "question": 19,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 74,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.376Z",
+    "updated_at": "2026-09-12T05:11:07.377Z",
+    "question": 19,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 75,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.377Z",
+    "updated_at": "2026-09-12T05:11:07.377Z",
+    "question": 19,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 76,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.377Z",
+    "updated_at": "2026-09-12T05:11:07.377Z",
+    "question": 19,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 77,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.377Z",
+    "updated_at": "2026-09-12T05:11:07.377Z",
+    "question": 20,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 78,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.378Z",
+    "updated_at": "2026-09-12T05:11:07.378Z",
+    "question": 20,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 79,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.378Z",
+    "updated_at": "2026-09-12T05:11:07.378Z",
+    "question": 20,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 80,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.378Z",
+    "updated_at": "2026-09-12T05:11:07.378Z",
+    "question": 20,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 81,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.378Z",
+    "updated_at": "2026-09-12T05:11:07.378Z",
+    "question": 21,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 82,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.379Z",
+    "updated_at": "2026-09-12T05:11:07.379Z",
+    "question": 21,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 83,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.379Z",
+    "updated_at": "2026-09-12T05:11:07.379Z",
+    "question": 21,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 84,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.379Z",
+    "updated_at": "2026-09-12T05:11:07.379Z",
+    "question": 21,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 85,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.379Z",
+    "updated_at": "2026-09-12T05:11:07.379Z",
+    "question": 22,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 86,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.380Z",
+    "updated_at": "2026-09-12T05:11:07.380Z",
+    "question": 22,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 87,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.380Z",
+    "updated_at": "2026-09-12T05:11:07.380Z",
+    "question": 22,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 88,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.380Z",
+    "updated_at": "2026-09-12T05:11:07.380Z",
+    "question": 22,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 89,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.380Z",
+    "updated_at": "2026-09-12T05:11:07.380Z",
+    "question": 23,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 90,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.381Z",
+    "updated_at": "2026-09-12T05:11:07.381Z",
+    "question": 23,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 91,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.381Z",
+    "updated_at": "2026-09-12T05:11:07.381Z",
+    "question": 23,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 92,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.381Z",
+    "updated_at": "2026-09-12T05:11:07.381Z",
+    "question": 23,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 93,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.381Z",
+    "updated_at": "2026-09-12T05:11:07.381Z",
+    "question": 24,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 94,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.382Z",
+    "updated_at": "2026-09-12T05:11:07.382Z",
+    "question": 24,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 95,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.382Z",
+    "updated_at": "2026-09-12T05:11:07.382Z",
+    "question": 24,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 96,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.382Z",
+    "updated_at": "2026-09-12T05:11:07.382Z",
+    "question": 24,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 97,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.382Z",
+    "updated_at": "2026-09-12T05:11:07.383Z",
+    "question": 25,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 98,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.383Z",
+    "updated_at": "2026-09-12T05:11:07.383Z",
+    "question": 25,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 99,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.383Z",
+    "updated_at": "2026-09-12T05:11:07.383Z",
+    "question": 25,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 100,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.383Z",
+    "updated_at": "2026-09-12T05:11:07.383Z",
+    "question": 25,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 101,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.383Z",
+    "updated_at": "2026-09-12T05:11:07.383Z",
+    "question": 26,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 102,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.384Z",
+    "updated_at": "2026-09-12T05:11:07.384Z",
+    "question": 26,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 103,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.384Z",
+    "updated_at": "2026-09-12T05:11:07.384Z",
+    "question": 26,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 104,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.384Z",
+    "updated_at": "2026-09-12T05:11:07.384Z",
+    "question": 26,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 105,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.385Z",
+    "updated_at": "2026-09-12T05:11:07.385Z",
+    "question": 27,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 106,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.385Z",
+    "updated_at": "2026-09-12T05:11:07.385Z",
+    "question": 27,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 107,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.385Z",
+    "updated_at": "2026-09-12T05:11:07.385Z",
+    "question": 27,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 108,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.386Z",
+    "updated_at": "2026-09-12T05:11:07.386Z",
+    "question": 27,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 109,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.386Z",
+    "updated_at": "2026-09-12T05:11:07.386Z",
+    "question": 28,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 110,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.387Z",
+    "updated_at": "2026-09-12T05:11:07.387Z",
+    "question": 28,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 111,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.387Z",
+    "updated_at": "2026-09-12T05:11:07.387Z",
+    "question": 28,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 112,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.387Z",
+    "updated_at": "2026-09-12T05:11:07.387Z",
+    "question": 28,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 113,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.389Z",
+    "updated_at": "2026-09-12T05:11:07.389Z",
+    "question": 29,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 114,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.389Z",
+    "updated_at": "2026-09-12T05:11:07.389Z",
+    "question": 29,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 115,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.389Z",
+    "updated_at": "2026-09-12T05:11:07.389Z",
+    "question": 29,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 116,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.390Z",
+    "updated_at": "2026-09-12T05:11:07.390Z",
+    "question": 29,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 117,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.390Z",
+    "updated_at": "2026-09-12T05:11:07.390Z",
+    "question": 30,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 118,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.390Z",
+    "updated_at": "2026-09-12T05:11:07.390Z",
+    "question": 30,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 119,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.390Z",
+    "updated_at": "2026-09-12T05:11:07.390Z",
+    "question": 30,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 120,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.390Z",
+    "updated_at": "2026-09-12T05:11:07.390Z",
+    "question": 30,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 121,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.391Z",
+    "updated_at": "2026-09-12T05:11:07.391Z",
+    "question": 31,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 122,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.392Z",
+    "updated_at": "2026-09-12T05:11:07.392Z",
+    "question": 31,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 123,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.392Z",
+    "updated_at": "2026-09-12T05:11:07.392Z",
+    "question": 31,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 124,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.392Z",
+    "updated_at": "2026-09-12T05:11:07.392Z",
+    "question": 31,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 125,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.393Z",
+    "updated_at": "2026-09-12T05:11:07.393Z",
+    "question": 32,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 126,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.393Z",
+    "updated_at": "2026-09-12T05:11:07.393Z",
+    "question": 32,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 127,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.393Z",
+    "updated_at": "2026-09-12T05:11:07.393Z",
+    "question": 32,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 128,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.393Z",
+    "updated_at": "2026-09-12T05:11:07.393Z",
+    "question": 32,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 129,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.394Z",
+    "updated_at": "2026-09-12T05:11:07.394Z",
+    "question": 33,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 130,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.394Z",
+    "updated_at": "2026-09-12T05:11:07.394Z",
+    "question": 33,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 131,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.395Z",
+    "updated_at": "2026-09-12T05:11:07.395Z",
+    "question": 33,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 132,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.395Z",
+    "updated_at": "2026-09-12T05:11:07.395Z",
+    "question": 33,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 133,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.395Z",
+    "updated_at": "2026-09-12T05:11:07.395Z",
+    "question": 34,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 134,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.396Z",
+    "updated_at": "2026-09-12T05:11:07.396Z",
+    "question": 34,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 135,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.396Z",
+    "updated_at": "2026-09-12T05:11:07.396Z",
+    "question": 34,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 136,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.396Z",
+    "updated_at": "2026-09-12T05:11:07.396Z",
+    "question": 34,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 137,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.397Z",
+    "updated_at": "2026-09-12T05:11:07.397Z",
+    "question": 35,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 138,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.398Z",
+    "updated_at": "2026-09-12T05:11:07.398Z",
+    "question": 35,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 139,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.398Z",
+    "updated_at": "2026-09-12T05:11:07.398Z",
+    "question": 35,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 140,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.398Z",
+    "updated_at": "2026-09-12T05:11:07.398Z",
+    "question": 35,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 141,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.399Z",
+    "updated_at": "2026-09-12T05:11:07.399Z",
+    "question": 36,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 142,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.399Z",
+    "updated_at": "2026-09-12T05:11:07.399Z",
+    "question": 36,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 143,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.399Z",
+    "updated_at": "2026-09-12T05:11:07.399Z",
+    "question": 36,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 144,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.399Z",
+    "updated_at": "2026-09-12T05:11:07.399Z",
+    "question": 36,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 145,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.400Z",
+    "updated_at": "2026-09-12T05:11:07.400Z",
+    "question": 37,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 146,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.400Z",
+    "updated_at": "2026-09-12T05:11:07.400Z",
+    "question": 37,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 147,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.401Z",
+    "updated_at": "2026-09-12T05:11:07.401Z",
+    "question": 37,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 148,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.401Z",
+    "updated_at": "2026-09-12T05:11:07.401Z",
+    "question": 37,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 149,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.401Z",
+    "updated_at": "2026-09-12T05:11:07.401Z",
+    "question": 38,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 150,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.402Z",
+    "updated_at": "2026-09-12T05:11:07.402Z",
+    "question": 38,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 151,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.402Z",
+    "updated_at": "2026-09-12T05:11:07.402Z",
+    "question": 38,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 152,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.402Z",
+    "updated_at": "2026-09-12T05:11:07.402Z",
+    "question": 38,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 153,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.403Z",
+    "updated_at": "2026-09-12T05:11:07.403Z",
+    "question": 39,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 154,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.403Z",
+    "updated_at": "2026-09-12T05:11:07.403Z",
+    "question": 39,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 155,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.403Z",
+    "updated_at": "2026-09-12T05:11:07.403Z",
+    "question": 39,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 156,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.403Z",
+    "updated_at": "2026-09-12T05:11:07.403Z",
+    "question": 39,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 157,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.404Z",
+    "updated_at": "2026-09-12T05:11:07.404Z",
+    "question": 40,
+    "text": "O‘zini o‘ylash, oqibatni unutish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 158,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.404Z",
+    "updated_at": "2026-09-12T05:11:07.404Z",
+    "question": 40,
+    "text": "Haqiqat, hurmat va mas’uliyat asosida tanlash",
+    "is_correct": true
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 159,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.404Z",
+    "updated_at": "2026-09-12T05:11:07.404Z",
+    "question": 40,
+    "text": "Faqat ovoz ko‘p bo‘lgan tomon",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.answer",
+  "pk": 160,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.404Z",
+    "updated_at": "2026-09-12T05:11:07.404Z",
+    "question": 40,
+    "text": "Muammoni e’tiborsiz qoldirish",
+    "is_correct": false
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.406Z",
+    "updated_at": "2026-09-12T05:11:07.406Z",
+    "user": 3,
+    "course": 1,
+    "completed_at": "2026-09-12T05:11:07.406Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.407Z",
+    "updated_at": "2026-09-12T05:11:07.407Z",
+    "user": 3,
+    "course": 2,
+    "completed_at": "2026-09-12T05:11:07.407Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.408Z",
+    "updated_at": "2026-09-12T05:11:07.408Z",
+    "user": 3,
+    "course": 3,
+    "completed_at": "2026-09-12T05:11:07.408Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.408Z",
+    "updated_at": "2026-09-12T05:11:07.408Z",
+    "user": 3,
+    "course": 4,
+    "completed_at": "2026-09-12T05:11:07.408Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.409Z",
+    "updated_at": "2026-09-12T05:11:07.409Z",
+    "user": 3,
+    "course": 5,
+    "completed_at": "2026-09-12T05:11:07.409Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.410Z",
+    "updated_at": "2026-09-12T05:11:07.410Z",
+    "user": 3,
+    "course": 6,
+    "completed_at": "2026-09-12T05:11:07.410Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.410Z",
+    "updated_at": "2026-09-12T05:11:07.410Z",
+    "user": 3,
+    "course": 7,
+    "completed_at": "2026-09-12T05:11:07.410Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.411Z",
+    "updated_at": "2026-09-12T05:11:07.411Z",
+    "user": 3,
+    "course": 8,
+    "completed_at": "2026-09-12T05:11:07.411Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.412Z",
+    "updated_at": "2026-09-12T05:11:07.412Z",
+    "user": 3,
+    "course": 9,
+    "completed_at": "2026-09-12T05:11:07.412Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.413Z",
+    "updated_at": "2026-09-12T05:11:07.413Z",
+    "user": 3,
+    "course": 10,
+    "completed_at": "2026-09-12T05:11:07.413Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.413Z",
+    "updated_at": "2026-09-12T05:11:07.413Z",
+    "user": 3,
+    "course": 11,
+    "completed_at": "2026-09-12T05:11:07.413Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.414Z",
+    "updated_at": "2026-09-12T05:11:07.414Z",
+    "user": 3,
+    "course": 12,
+    "completed_at": "2026-09-12T05:11:07.414Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.415Z",
+    "updated_at": "2026-09-12T05:11:07.415Z",
+    "user": 3,
+    "course": 13,
+    "completed_at": "2026-09-12T05:11:07.415Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.416Z",
+    "updated_at": "2026-09-12T05:11:07.416Z",
+    "user": 3,
+    "course": 14,
+    "completed_at": "2026-09-12T05:11:07.416Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.416Z",
+    "updated_at": "2026-09-12T05:11:07.416Z",
+    "user": 3,
+    "course": 15,
+    "completed_at": "2026-09-12T05:11:07.416Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.417Z",
+    "updated_at": "2026-09-12T05:11:07.417Z",
+    "user": 3,
+    "course": 16,
+    "completed_at": "2026-09-12T05:11:07.417Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.418Z",
+    "updated_at": "2026-09-12T05:11:07.418Z",
+    "user": 3,
+    "course": 17,
+    "completed_at": "2026-09-12T05:11:07.418Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.418Z",
+    "updated_at": "2026-09-12T05:11:07.418Z",
+    "user": 3,
+    "course": 18,
+    "completed_at": "2026-09-12T05:11:07.418Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.419Z",
+    "updated_at": "2026-09-12T05:11:07.419Z",
+    "user": 3,
+    "course": 19,
+    "completed_at": "2026-09-12T05:11:07.419Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.420Z",
+    "updated_at": "2026-09-12T05:11:07.420Z",
+    "user": 3,
+    "course": 20,
+    "completed_at": "2026-09-12T05:11:07.420Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 21,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.421Z",
+    "updated_at": "2026-09-12T05:11:07.421Z",
+    "user": 3,
+    "course": 21,
+    "completed_at": "2026-09-12T05:11:07.421Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 22,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.421Z",
+    "updated_at": "2026-09-12T05:11:07.421Z",
+    "user": 3,
+    "course": 22,
+    "completed_at": "2026-09-12T05:11:07.421Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 23,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.422Z",
+    "updated_at": "2026-09-12T05:11:07.422Z",
+    "user": 3,
+    "course": 23,
+    "completed_at": "2026-09-12T05:11:07.422Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 24,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.423Z",
+    "updated_at": "2026-09-12T05:11:07.423Z",
+    "user": 3,
+    "course": 24,
+    "completed_at": "2026-09-12T05:11:07.423Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 25,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.423Z",
+    "updated_at": "2026-09-12T05:11:07.423Z",
+    "user": 3,
+    "course": 25,
+    "completed_at": "2026-09-12T05:11:07.423Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 26,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.424Z",
+    "updated_at": "2026-09-12T05:11:07.424Z",
+    "user": 3,
+    "course": 26,
+    "completed_at": "2026-09-12T05:11:07.424Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 27,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.425Z",
+    "updated_at": "2026-09-12T05:11:07.425Z",
+    "user": 3,
+    "course": 27,
+    "completed_at": "2026-09-12T05:11:07.425Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 28,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.425Z",
+    "updated_at": "2026-09-12T05:11:07.425Z",
+    "user": 3,
+    "course": 28,
+    "completed_at": "2026-09-12T05:11:07.426Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 29,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.426Z",
+    "updated_at": "2026-09-12T05:11:07.426Z",
+    "user": 3,
+    "course": 29,
+    "completed_at": "2026-09-12T05:11:07.426Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 30,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.427Z",
+    "updated_at": "2026-09-12T05:11:07.427Z",
+    "user": 3,
+    "course": 30,
+    "completed_at": "2026-09-12T05:11:07.427Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 31,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.428Z",
+    "updated_at": "2026-09-12T05:11:07.428Z",
+    "user": 3,
+    "course": 31,
+    "completed_at": "2026-09-12T05:11:07.428Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 32,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.429Z",
+    "updated_at": "2026-09-12T05:11:07.429Z",
+    "user": 3,
+    "course": 32,
+    "completed_at": "2026-09-12T05:11:07.429Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 33,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.431Z",
+    "updated_at": "2026-09-12T05:11:07.431Z",
+    "user": 3,
+    "course": 33,
+    "completed_at": "2026-09-12T05:11:07.431Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 34,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.432Z",
+    "updated_at": "2026-09-12T05:11:07.432Z",
+    "user": 3,
+    "course": 34,
+    "completed_at": "2026-09-12T05:11:07.432Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 35,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.433Z",
+    "updated_at": "2026-09-12T05:11:07.433Z",
+    "user": 3,
+    "course": 35,
+    "completed_at": "2026-09-12T05:11:07.433Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 36,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.434Z",
+    "updated_at": "2026-09-12T05:11:07.434Z",
+    "user": 3,
+    "course": 36,
+    "completed_at": "2026-09-12T05:11:07.434Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 37,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.435Z",
+    "updated_at": "2026-09-12T05:11:07.435Z",
+    "user": 3,
+    "course": 37,
+    "completed_at": "2026-09-12T05:11:07.435Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 38,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.436Z",
+    "updated_at": "2026-09-12T05:11:07.436Z",
+    "user": 3,
+    "course": 38,
+    "completed_at": "2026-09-12T05:11:07.436Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 39,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.436Z",
+    "updated_at": "2026-09-12T05:11:07.436Z",
+    "user": 3,
+    "course": 39,
+    "completed_at": "2026-09-12T05:11:07.436Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 40,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.437Z",
+    "updated_at": "2026-09-12T05:11:07.437Z",
+    "user": 3,
+    "course": 40,
+    "completed_at": "2026-09-12T05:11:07.437Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 41,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.438Z",
+    "updated_at": "2026-09-12T05:11:07.438Z",
+    "user": 4,
+    "course": 1,
+    "completed_at": "2026-09-12T05:11:07.438Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 42,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.439Z",
+    "updated_at": "2026-09-12T05:11:07.439Z",
+    "user": 4,
+    "course": 2,
+    "completed_at": "2026-09-12T05:11:07.439Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 43,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.441Z",
+    "updated_at": "2026-09-12T05:11:07.441Z",
+    "user": 4,
+    "course": 3,
+    "completed_at": "2026-09-12T05:11:07.441Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 44,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.442Z",
+    "updated_at": "2026-09-12T05:11:07.442Z",
+    "user": 4,
+    "course": 4,
+    "completed_at": "2026-09-12T05:11:07.442Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 45,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.443Z",
+    "updated_at": "2026-09-12T05:11:07.443Z",
+    "user": 4,
+    "course": 5,
+    "completed_at": "2026-09-12T05:11:07.443Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 46,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.444Z",
+    "updated_at": "2026-09-12T05:11:07.444Z",
+    "user": 4,
+    "course": 6,
+    "completed_at": "2026-09-12T05:11:07.444Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 47,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.445Z",
+    "updated_at": "2026-09-12T05:11:07.445Z",
+    "user": 4,
+    "course": 7,
+    "completed_at": "2026-09-12T05:11:07.445Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 48,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.446Z",
+    "updated_at": "2026-09-12T05:11:07.446Z",
+    "user": 4,
+    "course": 8,
+    "completed_at": "2026-09-12T05:11:07.446Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 49,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.447Z",
+    "updated_at": "2026-09-12T05:11:07.447Z",
+    "user": 5,
+    "course": 1,
+    "completed_at": "2026-09-12T05:11:07.447Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 50,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.448Z",
+    "updated_at": "2026-09-12T05:11:07.448Z",
+    "user": 5,
+    "course": 2,
+    "completed_at": "2026-09-12T05:11:07.448Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 51,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.449Z",
+    "updated_at": "2026-09-12T05:11:07.449Z",
+    "user": 5,
+    "course": 3,
+    "completed_at": "2026-09-12T05:11:07.449Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 52,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.449Z",
+    "updated_at": "2026-09-12T05:11:07.449Z",
+    "user": 5,
+    "course": 4,
+    "completed_at": "2026-09-12T05:11:07.449Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 53,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.450Z",
+    "updated_at": "2026-09-12T05:11:07.450Z",
+    "user": 5,
+    "course": 5,
+    "completed_at": "2026-09-12T05:11:07.450Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 54,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.451Z",
+    "updated_at": "2026-09-12T05:11:07.451Z",
+    "user": 5,
+    "course": 6,
+    "completed_at": "2026-09-12T05:11:07.451Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 55,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.452Z",
+    "updated_at": "2026-09-12T05:11:07.452Z",
+    "user": 5,
+    "course": 7,
+    "completed_at": "2026-09-12T05:11:07.452Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 56,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.452Z",
+    "updated_at": "2026-09-12T05:11:07.452Z",
+    "user": 5,
+    "course": 8,
+    "completed_at": "2026-09-12T05:11:07.452Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 57,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.453Z",
+    "updated_at": "2026-09-12T05:11:07.453Z",
+    "user": 6,
+    "course": 1,
+    "completed_at": "2026-09-12T05:11:07.453Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 58,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.454Z",
+    "updated_at": "2026-09-12T05:11:07.454Z",
+    "user": 6,
+    "course": 2,
+    "completed_at": "2026-09-12T05:11:07.454Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 59,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.455Z",
+    "updated_at": "2026-09-12T05:11:07.455Z",
+    "user": 6,
+    "course": 3,
+    "completed_at": "2026-09-12T05:11:07.455Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 60,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.456Z",
+    "updated_at": "2026-09-12T05:11:07.456Z",
+    "user": 6,
+    "course": 4,
+    "completed_at": "2026-09-12T05:11:07.456Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 61,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.457Z",
+    "updated_at": "2026-09-12T05:11:07.457Z",
+    "user": 6,
+    "course": 5,
+    "completed_at": "2026-09-12T05:11:07.457Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 62,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.458Z",
+    "updated_at": "2026-09-12T05:11:07.458Z",
+    "user": 6,
+    "course": 6,
+    "completed_at": "2026-09-12T05:11:07.458Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 63,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.459Z",
+    "updated_at": "2026-09-12T05:11:07.459Z",
+    "user": 6,
+    "course": 7,
+    "completed_at": "2026-09-12T05:11:07.459Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 64,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.460Z",
+    "updated_at": "2026-09-12T05:11:07.460Z",
+    "user": 6,
+    "course": 8,
+    "completed_at": "2026-09-12T05:11:07.460Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 65,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.461Z",
+    "updated_at": "2026-09-12T05:11:07.461Z",
+    "user": 7,
+    "course": 1,
+    "completed_at": "2026-09-12T05:11:07.461Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 66,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.461Z",
+    "updated_at": "2026-09-12T05:11:07.461Z",
+    "user": 7,
+    "course": 2,
+    "completed_at": "2026-09-12T05:11:07.461Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 67,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.462Z",
+    "updated_at": "2026-09-12T05:11:07.462Z",
+    "user": 7,
+    "course": 3,
+    "completed_at": "2026-09-12T05:11:07.462Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 68,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.463Z",
+    "updated_at": "2026-09-12T05:11:07.463Z",
+    "user": 7,
+    "course": 4,
+    "completed_at": "2026-09-12T05:11:07.463Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 69,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.464Z",
+    "updated_at": "2026-09-12T05:11:07.464Z",
+    "user": 7,
+    "course": 5,
+    "completed_at": "2026-09-12T05:11:07.464Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 70,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.464Z",
+    "updated_at": "2026-09-12T05:11:07.464Z",
+    "user": 7,
+    "course": 6,
+    "completed_at": "2026-09-12T05:11:07.464Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 71,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.465Z",
+    "updated_at": "2026-09-12T05:11:07.465Z",
+    "user": 7,
+    "course": 7,
+    "completed_at": "2026-09-12T05:11:07.465Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 72,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.466Z",
+    "updated_at": "2026-09-12T05:11:07.466Z",
+    "user": 7,
+    "course": 8,
+    "completed_at": "2026-09-12T05:11:07.466Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 73,
+  "fields": {
+    "created_at": "2026-09-12T05:12:17.924Z",
+    "updated_at": "2026-09-12T05:12:17.924Z",
+    "user": 1,
+    "course": 1,
+    "completed_at": "2026-09-12T05:12:17.924Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 74,
+  "fields": {
+    "created_at": "2026-09-12T05:16:36.503Z",
+    "updated_at": "2026-09-12T05:16:36.503Z",
+    "user": 1,
+    "course": 2,
+    "completed_at": "2026-09-12T05:16:36.503Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 75,
+  "fields": {
+    "created_at": "2026-09-12T05:16:43.761Z",
+    "updated_at": "2026-09-12T05:16:43.761Z",
+    "user": 1,
+    "course": 3,
+    "completed_at": "2026-09-12T05:16:43.761Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 76,
+  "fields": {
+    "created_at": "2026-09-12T05:16:45.859Z",
+    "updated_at": "2026-09-12T05:16:45.859Z",
+    "user": 1,
+    "course": 4,
+    "completed_at": "2026-09-12T05:16:45.859Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 77,
+  "fields": {
+    "created_at": "2026-09-12T05:17:07.116Z",
+    "updated_at": "2026-09-12T05:17:07.116Z",
+    "user": 1,
+    "course": 5,
+    "completed_at": "2026-09-12T05:17:07.116Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 78,
+  "fields": {
+    "created_at": "2026-09-12T05:17:10.528Z",
+    "updated_at": "2026-09-12T05:17:10.528Z",
+    "user": 1,
+    "course": 6,
+    "completed_at": "2026-09-12T05:17:10.528Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 79,
+  "fields": {
+    "created_at": "2026-09-12T05:17:17.041Z",
+    "updated_at": "2026-09-12T05:17:17.041Z",
+    "user": 1,
+    "course": 7,
+    "completed_at": "2026-09-12T05:17:17.041Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 80,
+  "fields": {
+    "created_at": "2026-09-12T05:17:19.241Z",
+    "updated_at": "2026-09-12T05:17:19.241Z",
+    "user": 1,
+    "course": 8,
+    "completed_at": "2026-09-12T05:17:19.241Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 81,
+  "fields": {
+    "created_at": "2026-09-12T05:17:25.297Z",
+    "updated_at": "2026-09-12T05:17:25.297Z",
+    "user": 1,
+    "course": 9,
+    "completed_at": "2026-09-12T05:17:25.297Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 82,
+  "fields": {
+    "created_at": "2026-09-12T05:17:27.285Z",
+    "updated_at": "2026-09-12T05:17:27.285Z",
+    "user": 1,
+    "course": 10,
+    "completed_at": "2026-09-12T05:17:27.285Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 83,
+  "fields": {
+    "created_at": "2026-09-12T05:19:08.731Z",
+    "updated_at": "2026-09-12T05:19:08.731Z",
+    "user": 1,
+    "course": 11,
+    "completed_at": "2026-09-12T05:19:08.731Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 84,
+  "fields": {
+    "created_at": "2026-09-12T05:28:09.553Z",
+    "updated_at": "2026-09-12T05:28:09.553Z",
+    "user": 1,
+    "course": 40,
+    "completed_at": "2026-09-12T05:28:09.553Z"
+  }
+},
+{
+  "model": "core.usercourseprogress",
+  "pk": 85,
+  "fields": {
+    "created_at": "2026-09-12T05:28:11.564Z",
+    "updated_at": "2026-09-12T05:28:11.564Z",
+    "user": 1,
+    "course": 39,
+    "completed_at": "2026-09-12T05:28:11.564Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.466Z",
+    "updated_at": "2026-09-12T05:11:07.466Z",
+    "user": 3,
+    "test": 1,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.466Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.468Z",
+    "updated_at": "2026-09-12T05:11:07.468Z",
+    "user": 3,
+    "test": 2,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.468Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.470Z",
+    "updated_at": "2026-09-12T05:11:07.470Z",
+    "user": 3,
+    "test": 3,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.470Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.471Z",
+    "updated_at": "2026-09-12T05:11:07.471Z",
+    "user": 3,
+    "test": 4,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.471Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.472Z",
+    "updated_at": "2026-09-12T05:11:07.472Z",
+    "user": 3,
+    "test": 5,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.472Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.473Z",
+    "updated_at": "2026-09-12T05:11:07.473Z",
+    "user": 3,
+    "test": 6,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.473Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.474Z",
+    "updated_at": "2026-09-12T05:11:07.474Z",
+    "user": 3,
+    "test": 7,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.474Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.476Z",
+    "updated_at": "2026-09-12T05:11:07.476Z",
+    "user": 3,
+    "test": 8,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.476Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.477Z",
+    "updated_at": "2026-09-12T05:11:07.477Z",
+    "user": 3,
+    "test": 9,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.477Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.478Z",
+    "updated_at": "2026-09-12T05:11:07.478Z",
+    "user": 3,
+    "test": 10,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.478Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.479Z",
+    "updated_at": "2026-09-12T05:11:07.479Z",
+    "user": 3,
+    "test": 11,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.479Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.480Z",
+    "updated_at": "2026-09-12T05:11:07.480Z",
+    "user": 3,
+    "test": 12,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.480Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.481Z",
+    "updated_at": "2026-09-12T05:11:07.481Z",
+    "user": 3,
+    "test": 13,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.481Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.483Z",
+    "updated_at": "2026-09-12T05:11:07.483Z",
+    "user": 3,
+    "test": 14,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.483Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.484Z",
+    "updated_at": "2026-09-12T05:11:07.484Z",
+    "user": 3,
+    "test": 15,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.484Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.485Z",
+    "updated_at": "2026-09-12T05:11:07.485Z",
+    "user": 3,
+    "test": 16,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.485Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.486Z",
+    "updated_at": "2026-09-12T05:11:07.486Z",
+    "user": 3,
+    "test": 17,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.486Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.488Z",
+    "updated_at": "2026-09-12T05:11:07.488Z",
+    "user": 3,
+    "test": 18,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.488Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.489Z",
+    "updated_at": "2026-09-12T05:11:07.489Z",
+    "user": 3,
+    "test": 19,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.489Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.490Z",
+    "updated_at": "2026-09-12T05:11:07.490Z",
+    "user": 3,
+    "test": 20,
+    "score": 85,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:11:07.490Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 21,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.491Z",
+    "updated_at": "2026-09-12T05:11:07.491Z",
+    "user": 4,
+    "test": 1,
+    "score": 60,
+    "passed": false,
+    "attempted_at": "2026-09-12T05:11:07.492Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 22,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.492Z",
+    "updated_at": "2026-09-12T05:11:07.492Z",
+    "user": 5,
+    "test": 1,
+    "score": 60,
+    "passed": false,
+    "attempted_at": "2026-09-12T05:11:07.492Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 23,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.492Z",
+    "updated_at": "2026-09-12T05:11:07.492Z",
+    "user": 6,
+    "test": 1,
+    "score": 60,
+    "passed": false,
+    "attempted_at": "2026-09-12T05:11:07.492Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 24,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.492Z",
+    "updated_at": "2026-09-12T05:11:07.492Z",
+    "user": 7,
+    "test": 1,
+    "score": 60,
+    "passed": false,
+    "attempted_at": "2026-09-12T05:11:07.492Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 25,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.493Z",
+    "updated_at": "2026-09-12T05:11:07.493Z",
+    "user": 8,
+    "test": 1,
+    "score": 60,
+    "passed": false,
+    "attempted_at": "2026-09-12T05:11:07.493Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 26,
+  "fields": {
+    "created_at": "2026-09-12T05:28:20.149Z",
+    "updated_at": "2026-09-12T05:28:20.149Z",
+    "user": 1,
+    "test": 20,
+    "score": 0,
+    "passed": false,
+    "attempted_at": "2026-09-12T05:28:20.149Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 27,
+  "fields": {
+    "created_at": "2026-09-12T05:28:28.923Z",
+    "updated_at": "2026-09-12T05:28:28.923Z",
+    "user": 1,
+    "test": 20,
+    "score": 50,
+    "passed": false,
+    "attempted_at": "2026-09-12T05:28:28.923Z"
+  }
+},
+{
+  "model": "core.usertestresult",
+  "pk": 28,
+  "fields": {
+    "created_at": "2026-09-12T05:28:35.622Z",
+    "updated_at": "2026-09-12T05:28:35.622Z",
+    "user": 1,
+    "test": 20,
+    "score": 100,
+    "passed": true,
+    "attempted_at": "2026-09-12T05:28:35.623Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.468Z",
+    "updated_at": "2026-09-12T05:11:07.468Z",
+    "user": 3,
+    "module": 1,
+    "certificate_id": "701fd616-e8db-4770-ab7c-d4dc15958216",
+    "issued_at": "2026-09-12T05:11:07.468Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.469Z",
+    "updated_at": "2026-09-12T05:11:07.469Z",
+    "user": 3,
+    "module": 2,
+    "certificate_id": "4fbcc67e-18fe-4675-b3b8-2d547a828774",
+    "issued_at": "2026-09-12T05:11:07.469Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.471Z",
+    "updated_at": "2026-09-12T05:11:07.471Z",
+    "user": 3,
+    "module": 3,
+    "certificate_id": "1cf84e62-fc2f-478c-afb7-56b90e7b1152",
+    "issued_at": "2026-09-12T05:11:07.471Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.472Z",
+    "updated_at": "2026-09-12T05:11:07.472Z",
+    "user": 3,
+    "module": 4,
+    "certificate_id": "441e9887-d7f3-4d80-9952-6c9867d38ee5",
+    "issued_at": "2026-09-12T05:11:07.472Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.473Z",
+    "updated_at": "2026-09-12T05:11:07.473Z",
+    "user": 3,
+    "module": 5,
+    "certificate_id": "fa81f20a-f52a-40b1-b837-a792feff61a2",
+    "issued_at": "2026-09-12T05:11:07.473Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.474Z",
+    "updated_at": "2026-09-12T05:11:07.474Z",
+    "user": 3,
+    "module": 6,
+    "certificate_id": "dd2d2415-4d0c-4851-8c33-2f7260d45b88",
+    "issued_at": "2026-09-12T05:11:07.474Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.475Z",
+    "updated_at": "2026-09-12T05:11:07.475Z",
+    "user": 3,
+    "module": 7,
+    "certificate_id": "b22ba926-191d-4d03-9bfd-b98b4b0bff1c",
+    "issued_at": "2026-09-12T05:11:07.475Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.476Z",
+    "updated_at": "2026-09-12T05:11:07.476Z",
+    "user": 3,
+    "module": 8,
+    "certificate_id": "ac0ccf81-1e82-4831-b708-a86ca5fdb86c",
+    "issued_at": "2026-09-12T05:11:07.476Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.477Z",
+    "updated_at": "2026-09-12T05:11:07.477Z",
+    "user": 3,
+    "module": 9,
+    "certificate_id": "1697acd7-defe-41e1-8cc4-ce36f0edb838",
+    "issued_at": "2026-09-12T05:11:07.477Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.478Z",
+    "updated_at": "2026-09-12T05:11:07.478Z",
+    "user": 3,
+    "module": 10,
+    "certificate_id": "535a55aa-0822-4805-823c-97571cddd2eb",
+    "issued_at": "2026-09-12T05:11:07.479Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.480Z",
+    "updated_at": "2026-09-12T05:11:07.480Z",
+    "user": 3,
+    "module": 11,
+    "certificate_id": "db854fcb-0a06-4b92-af46-d6758556ed3c",
+    "issued_at": "2026-09-12T05:11:07.480Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 12,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.481Z",
+    "updated_at": "2026-09-12T05:11:07.481Z",
+    "user": 3,
+    "module": 12,
+    "certificate_id": "06214d57-67ce-4f0b-ad22-255ee8ea1f57",
+    "issued_at": "2026-09-12T05:11:07.481Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 13,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.482Z",
+    "updated_at": "2026-09-12T05:11:07.482Z",
+    "user": 3,
+    "module": 13,
+    "certificate_id": "46c4f754-b789-49d6-af00-93dc1a7ce4af",
+    "issued_at": "2026-09-12T05:11:07.482Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 14,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.483Z",
+    "updated_at": "2026-09-12T05:11:07.483Z",
+    "user": 3,
+    "module": 14,
+    "certificate_id": "060dabcf-1c54-4df8-a09a-4a8e123e3276",
+    "issued_at": "2026-09-12T05:11:07.483Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 15,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.485Z",
+    "updated_at": "2026-09-12T05:11:07.485Z",
+    "user": 3,
+    "module": 15,
+    "certificate_id": "26fdd695-5734-4701-9eb0-071e840c7e7d",
+    "issued_at": "2026-09-12T05:11:07.485Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 16,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.486Z",
+    "updated_at": "2026-09-12T05:11:07.486Z",
+    "user": 3,
+    "module": 16,
+    "certificate_id": "f53a37d2-9bf9-4c12-9363-ca7e9cb81a78",
+    "issued_at": "2026-09-12T05:11:07.486Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 17,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.487Z",
+    "updated_at": "2026-09-12T05:11:07.487Z",
+    "user": 3,
+    "module": 17,
+    "certificate_id": "e61e0e33-408d-4ffc-afd1-7207e1c37df3",
+    "issued_at": "2026-09-12T05:11:07.487Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 18,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.488Z",
+    "updated_at": "2026-09-12T05:11:07.488Z",
+    "user": 3,
+    "module": 18,
+    "certificate_id": "ebf2533d-c690-4923-ab43-d077c536ac75",
+    "issued_at": "2026-09-12T05:11:07.488Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 19,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.490Z",
+    "updated_at": "2026-09-12T05:11:07.490Z",
+    "user": 3,
+    "module": 19,
+    "certificate_id": "186d9b78-aaa7-40a9-8777-3f405470eaa7",
+    "issued_at": "2026-09-12T05:11:07.490Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 20,
+  "fields": {
+    "created_at": "2026-09-12T05:11:07.491Z",
+    "updated_at": "2026-09-12T05:11:07.491Z",
+    "user": 3,
+    "module": 20,
+    "certificate_id": "929fdb52-51d7-441f-bd43-be532c448da8",
+    "issued_at": "2026-09-12T05:11:07.491Z"
+  }
+},
+{
+  "model": "core.certificate",
+  "pk": 21,
+  "fields": {
+    "created_at": "2026-09-12T05:28:35.722Z",
+    "updated_at": "2026-09-12T05:28:35.722Z",
+    "user": 1,
+    "module": 20,
+    "certificate_id": "18c42fde-1893-4a5e-bd53-7f2ff48bc761",
+    "issued_at": "2026-09-12T05:28:35.722Z"
+  }
+}
+]

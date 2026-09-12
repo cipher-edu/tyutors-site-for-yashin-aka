@@ -1,54 +1,72 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block title %}Test: {{ test.title }} | AppName{% endblock %}
+{% block title %}Kahoot Test: {{ test.title }} | {{ SITE_NAME }}{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1>Test: {{ module.title }}</h1>
-    <a href="{% url 'learning_platform:module_detail' pk=module.pk %}" class="btn btn-secondary btn-sm">
-        <i class="fas fa-arrow-left"></i> Modulga qaytish
-    </a>
-</div>
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="card-title">{{ test.title }}</h3>
-        {% if test.description %}
-            <p class="card-text">{{ test.description }}</p>
-            <hr>
-        {% endif %}
-
-        {% if test.questions.all %}
-        <form method="post" action="{% url 'learning_platform:take_test' module_pk=module.pk %}">
-            {% csrf_token %}
-            {{ form.test_pk }} {# Yashirin maydonni kiritish muhim #}
-
-            {% for field in form %}
-                 {# Yashirin maydonlarni ko'rsatmaslik #}
-                 {% if not field.is_hidden %}
-                 <div class="test-question">
-                      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                      <div class="test-options">
-                         {{ field }} {# Bu yerda ChoiceField (RadioSelect widget bilan) render bo'ladi #}
-                         {% if field.errors %}
-                         <div style="color: red; font-size: 0.85em; margin-top: 5px;">
-                              {% for error in field.errors %}{{ error }}{% endfor %}
-                         </div>
-                         {% endif %}
-                      </div>
-                 </div>
-                 {% endif %}
-            {% endfor %}
-
-
-           <button type="submit" class="btn btn-primary" style="margin-top: 20px;">
-                 <i class="fas fa-check"></i> Testni Yakunlash va Natijani Ko'rish
-            </button>
-        </form>
-        {% else %}
-             <p class="card-text">Bu testda hali savollar mavjud emas.</p>
-        {% endif %}
+<div class="section-title">
+    <div>
+        <a class="meta" href="{% url 'learning_platform:module_detail' pk=module.pk %}">
+            <i class="fas fa-arrow-left"></i> Modulga qaytish
+        </a>
+        <h1 style="margin: 6px 0 0; font-size: 1.85rem;">{{ test.title }}</h1>
     </div>
+    <span class="badge purple" style="font-size: 0.9rem; padding: 6px 14px;">
+        <i class="fas fa-bullseye"></i> O‘tish bali: {{ test.passing_score_percent }}%
+    </span>
 </div>
+
+<!-- Kahoot Info Banner -->
+<div class="kahoot-card-head">
+    <h2><i class="fas fa-gamepad"></i> Kahoot uslubidagi modul testi</h2>
+    <p>Har bir savolga to‘g‘ri javobni tanlang. Sinovdan muvaffaqiyatli o‘tsangiz, +50 XP va rasmiy sertifikat taqdim etiladi!</p>
+    {% if test.description %}<p style="margin-top: 8px; opacity: 0.85;">{{ test.description }}</p>{% endif %}
+</div>
+
+{% if test.questions.all %}
+<form method="post" action="{% url 'learning_platform:take_test' module_pk=module.pk %}">
+    {% csrf_token %}
+
+    {% for field in form %}
+        {% if not field.is_hidden %}
+        <div class="test-step-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span class="badge xp">
+                    <i class="fas fa-question-circle"></i> Savol {{ forloop.counter }}
+                </span>
+            </div>
+
+            <div class="test-step-q">
+                {{ field.label }}
+            </div>
+
+            <div class="kahoot-answers-grid">
+                {% for radio in field %}
+                {% cycle 'kahoot-c0' 'kahoot-c1' 'kahoot-c2' 'kahoot-c3' as c_class silent %}
+                {% cycle '▲' '◆' '●' '■' as c_icon silent %}
+                <label class="kahoot-choice {{ c_class }}" for="{{ radio.id_for_label }}">
+                    {{ radio.tag }}
+                    <span class="kh-shape">{{ c_icon }}</span>
+                    <span style="flex: 1;">{{ radio.choice_label }}</span>
+                </label>
+                {% endfor %}
+            </div>
+
+            {% if field.errors %}
+            <div class="invalid-feedback" style="margin-top: 10px;">
+                <i class="fas fa-circle-exclamation"></i> {% for error in field.errors %}{{ error }}{% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    {% endfor %}
+
+    <div style="margin: 28px 0 40px; text-align: center;">
+        <button type="submit" class="btn btn-purple btn-lg btn-block" style="box-shadow: 0 6px 0 #2b0c5e;">
+            <i class="fas fa-flag-checkered"></i> Testni yakunlash va natijani hisoblash
+        </button>
+    </div>
+</form>
+{% else %}
+<div class="card"><div class="card-body empty">Bu modul testida hali savollar joylashtirilmagan.</div></div>
+{% endif %}
 {% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ module.title }} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="section-title">
+    <h1>{{ module.title }}</h1>
+    <a class="btn btn-ghost btn-sm" href="{% url 'learning_platform:module_list' %}">← Orqaga</a>
+</div>
+
+<div class="card" style="margin-bottom: 22px;">
+    <div class="card-body">
+        {% if module.description %}
+        <p>{{ module.description|linebreaks }}</p>
+        {% else %}
+        <p class="meta">Modul tavsifi kiritilmagan.</p>
+        {% endif %}
+
+        {% if test_available %}
+        <hr style="border: 0; border-top: 2px dashed var(--line); margin: 18px 0;">
+        {% if last_test_result %}
+        <p class="meta">
+            Oxirgi natija: <strong>{{ last_test_result.score }}%</strong>
+            {% if last_test_result.passed %} · o‘tdingiz ✅{% else %} · qayta urinib ko‘ring{% endif %}
+        </p>
+        {% endif %}
+        {% if module_completed %}
+        <a class="btn btn-purple" href="{% url 'learning_platform:take_test' module_pk=module.pk %}">
+            <i class="fas fa-bolt"></i>
+            {% if last_test_result %}Testni qayta topshirish{% else %}Kahoot-uslubdagi test{% endif %}
+        </a>
+        {% else %}
+        <p class="meta">Test ochilishi uchun barcha darslarni tugating — XP yig‘ing!</p>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+<h2>Darslar yo‘li</h2>
+{% if module.courses.all %}
+<div class="lesson-path">
+    {% for course in module.courses.all %}
+    <a class="lesson-item {% if course.pk in user_completed_courses_pks %}done{% endif %}" href="{% url 'learning_platform:course_detail' pk=course.pk %}">
+        <span class="lesson-num">{% if course.pk in user_completed_courses_pks %}✓{% else %}{{ forloop.counter }}{% endif %}</span>
+        <span>
+            <strong>{{ course.title }}</strong>
+            {% if course.video_url %}<div class="meta">YouTube dars bor</div>{% endif %}
+        </span>
+        {% if course.pk in user_completed_courses_pks %}
+        <span class="badge ok">+20 XP</span>
+        {% else %}
+        <span class="badge">Boshlash</span>
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="card"><div class="card-body empty">Bu modulda hali darslar yo‘q.</div></div>
+{% endif %}
+{% endblock %}

@@ -1,11 +1,17 @@
 import uuid
 import re
-import os # Fayl nomini olish uchun
+import os
 from django.db import models
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
-from django.db.models import Count
 from django.core.exceptions import ValidationError
+from django.core.validators import FileExtensionValidator, MaxValueValidator, MinValueValidator
+
+DOCUMENT_EXTENSIONS = ('pdf', 'doc', 'docx')
+document_file_validator = FileExtensionValidator(
+    allowed_extensions=DOCUMENT_EXTENSIONS,
+    message=_("Faqat PDF, DOC yoki DOCX fayllarni yuklash mumkin."),
+)
 
 # --------------------------------------------------------------------------
 # Abstrakt Modellar
@@ -89,32 +95,40 @@ class CourseSyllabus(TimestampedModel):
     title = models.CharField(_("Fayl sarlavhasi"), max_length=150, blank=True, help_text=_("Masalan, '1-dars syllabusi'. Bo'sh qolsa fayl nomi ishlatiladi."))
     # upload_to yo'li to'g'ri ekanligiga ishonch hosil qiling
     file = models.FileField(
-        _("Syllabus Fayli (PDF)"),
-        upload_to='course_syllabi/%Y/%m/', # Yil va oy bo'yicha papkalarga ajratish
-        help_text=_("Faqat PDF formatidagi fayllarni yuklang.")
+        _("Ma'ruza / material fayli"),
+        upload_to='course_syllabi/%Y/%m/',
+        help_text=_("PDF yoki Word (.doc, .docx) fayllarni yuklang."),
+        validators=[document_file_validator],
     )
 
     @property
     def filename(self):
-        """Faylning to'liq yo'lidan faqat nomini qaytaradi."""
-        return os.path.basename(self.file.name)
+        return os.path.basename(self.file.name) if self.file else ''
+
+    @property
+    def file_extension(self):
+        return os.path.splitext(self.filename)[1].lower()
+
+    @property
+    def is_word_file(self):
+        return self.file_extension in {'.doc', '.docx'}
 
     class Meta:
-        verbose_name = _("Kurs Syllabusi")
-        verbose_name_plural = _("Kurs Syllabuslari")
+        verbose_name = _("Ma'ruza materiali")
+        verbose_name_plural = _("Ma'ruza materiallari")
         ordering = ['course', 'created_at']
 
     def __str__(self):
-        # filename xususiyatidan foydalanish
         return self.title or self.filename
 
     def clean(self):
-        """Faqat PDF fayllarni qabul qilishni tekshiradi."""
         super().clean()
         if self.file:
-            ext = os.path.splitext(self.file.name)[1].lower()
-            if ext != '.pdf':
-                raise ValidationError(_("Yuklangan fayl formati noto'g'ri. Faqat PDF fayllarni yuklash mumkin."))
+            ext = self.file_extension.lstrip('.')
+            if ext not in DOCUMENT_EXTENSIONS:
+                raise ValidationError(
+                    _("Yuklangan fayl formati noto'g'ri. PDF, DOC yoki DOCX yuklang.")
+                )
 
 class CourseImage(TimestampedModel):
     course = models.ForeignKey(
@@ -208,8 +222,103 @@ class ExternalActivity(TimestampedModel):
             app_id = id_match.group(1)
             return f"https://learningapps.org/watch?v={app_id}"
 
-        # Agar hech qaysi format mos kelmasa
         return None
+
+
+class Infographic(TimestampedModel):
+    """Bosh sahifada aylanadigan microlearning infografikasi."""
+    title = models.CharField(_("Sarlavha"), max_length=200)
+    image = models.ImageField(_("Infografika rasmi"), upload_to='infographics/%Y/%m/')
+    caption = models.CharField(
+        _("Qisqa axborot"),
+        max_length=300,
+        blank=True,
+        help_text=_("Karusel ostida ko'rinadigan qisqa matn."),
+    )
+    link = models.URLField(
+        _("Havola"),
+        blank=True,
+        help_text=_("Bosilganda ochiladigan ixtiyoriy havola."),
+    )
+    order = models.PositiveIntegerField(_("Tartib raqami"), default=0)
+    is_active = models.BooleanField(
+        _("Faol"),
+        default=True,
+        help_text=_("Bosh sahifada ko'rsatilsinmi?"),
+    )
+
+    class Meta:
+        verbose_name = _("Infografika")
+        verbose_name_plural = _("Infografikalar")
+        ordering = ['order', 'id']
+
+    def __str__(self):
+        return self.title
+
+
+class SiteDocument(TimestampedModel):
+    """Kurs dasturi, ish reja va huquqiy asoslar uchun sayt darajasidagi hujjat."""
+    PROGRAM = 'program'
+    PLAN = 'plan'
+    LEGAL = 'legal'
+    OTHER = 'other'
+    DOCUMENT_TYPE_CHOICES = [
+        (PROGRAM, _("Kurs dasturi")),
+        (PLAN, _("Ish reja")),
+        (LEGAL, _("Huquqiy asoslar")),
+        (OTHER, _("Boshqa")),
+    ]
+
+    title = models.CharField(_("Hujjat sarlavhasi"), max_length=200)
+    document_type = models.CharField(
+        _("Hujjat turi"),
+        max_length=20,
+        choices=DOCUMENT_TYPE_CHOICES,
+        default=OTHER,
+    )
+    file = models.FileField(
+        _("Fayl (PDF/Word)"),
+        upload_to='site_documents/%Y/%m/',
+        help_text=_("PDF yoki Word (.doc, .docx) fayllarni yuklang."),
+        validators=[document_file_validator],
+    )
+    order = models.PositiveIntegerField(_("Tartib raqami"), default=0)
+    is_active = models.BooleanField(
+        _("Faol"),
+        default=True,
+        help_text=_("Bosh sahifada ko'rsatilsinmi?"),
+    )
+
+    class Meta:
+        verbose_name = _("Sayt hujjati")
+        verbose_name_plural = _("Sayt hujjatlari (dastur, ish reja)")
+        ordering = ['order', 'id']
+
+    def __str__(self):
+        return f"{self.get_document_type_display()} — {self.title}"
+
+    @property
+    def filename(self):
+        return os.path.basename(self.file.name) if self.file else ''
+
+    @property
+    def file_extension(self):
+        return os.path.splitext(self.filename)[1].lower()
+
+    @property
+    def is_word_file(self):
+        return self.file_extension in {'.doc', '.docx'}
+
+    def clean(self):
+        super().clean()
+        if self.file:
+            ext = self.file_extension.lstrip('.')
+            if ext not in DOCUMENT_EXTENSIONS:
+                raise ValidationError(
+                    _("Yuklangan fayl formati noto'g'ri. PDF, DOC yoki DOCX yuklang.")
+                )
+
+
 # --------------------------------------------------------------------------
 # Test va Savollar Modeli
 # --------------------------------------------------------------------------
@@ -227,7 +336,8 @@ class Test(TimestampedModel):
     passing_score_percent = models.PositiveIntegerField(
         _("O'tish bali (foizda)"),
         default=70,
-        help_text=_("Testdan muvaffaqiyatli o'tish uchun talab qilinadigan minimal foiz (0-100).")
+        validators=[MinValueValidator(0), MaxValueValidator(100)],
+        help_text=_("Testdan muvaffaqiyatli o'tish uchun talab qilinadigan minimal foiz (0-100)."),
     )
 
     class Meta:

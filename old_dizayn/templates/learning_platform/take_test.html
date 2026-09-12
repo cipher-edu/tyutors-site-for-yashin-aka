@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Test: {{ test.title }} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="section-title">
+    <h1>{{ test.title }}</h1>
+    <a class="btn btn-ghost btn-sm" href="{% url 'learning_platform:module_detail' pk=module.pk %}">← Modul</a>
+</div>
+
+<div class="card" style="margin-bottom: 18px; background: var(--kahoot); color: #fff;">
+    <div class="card-body">
+        <strong>Kahoot uslubi:</strong> har savolga javob tanlang, oxirida XP va sertifikat!
+        {% if test.description %}<p style="margin: 8px 0 0;">{{ test.description }}</p>{% endif %}
+    </div>
+</div>
+
+{% if test.questions.all %}
+<form method="post" action="{% url 'learning_platform:take_test' module_pk=module.pk %}">
+    {% csrf_token %}
+    {% for field in form %}
+        {% if not field.is_hidden %}
+        <div class="test-question">
+            <label>{{ field.label }}</label>
+            <div class="test-options">{{ field }}</div>
+            {% if field.errors %}
+            <div class="invalid-feedback">{% for error in field.errors %}{{ error }}{% endfor %}</div>
+            {% endif %}
+        </div>
+        {% endif %}
+    {% endfor %}
+    <button type="submit" class="btn btn-purple btn-block"><i class="fas fa-flag-checkered"></i> Yakunlash va natijani ko‘rish</button>
+</form>
+{% else %}
+<div class="card"><div class="card-body empty">Bu testda savollar yo‘q.</div></div>
+{% endif %}
+{% endblock %}

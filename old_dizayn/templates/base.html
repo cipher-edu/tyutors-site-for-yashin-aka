@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="{% static 'img/panda-logo.jpg' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a class="brand" href="{% url 'learning_platform:module_list' %}">
+                <img class="brand-panda" src="{% static 'img/panda-logo.jpg' %}" alt="VUCA panda">
+                <span class="brand-text">{{ SITE_NAME }}</span>
+            </a>
+            <nav class="nav-desktop">
+                <a class="nav-link {% if request.resolver_match.url_name == 'module_list' %}is-active{% endif %}" href="{% url 'learning_platform:module_list' %}">
+                    <i class="fas fa-house"></i> Bosh sahifa
+                </a>
+                {% if user.is_authenticated %}
+                <a class="nav-link {% if request.resolver_match.url_name == 'my_certificates' or request.resolver_match.url_name == 'certificate_detail' %}is-active{% endif %}" href="{% url 'learning_platform:my_certificates' %}">
+                    <i class="fas fa-medal"></i> Sertifikatlar
+                </a>
+                <span class="xp-chip" title="Tajriba ballari">⚡ {{ user_xp }} XP</span>
+                <span class="stat-pill streak" title="Seriya">🔥 {{ user_streak }}</span>
+                <span class="stat-pill gem" title="Olmos">💎 {{ user_gems }}</span>
+                <a class="nav-link" href="{% url 'learning_platform:logout' %}">
+                    <i class="fas fa-right-from-bracket"></i> {{ user.username }}
+                </a>
+                {% else %}
+                <a class="nav-link" href="{% url 'learning_platform:login' %}">Kirish</a>
+                <a class="btn btn-green btn-sm" href="{% url 'learning_platform:register' %}">Boshlash</a>
+                {% endif %}
+            </nav>
+            <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Menyu">☰</button>
+        </div>
+        <nav class="nav-mobile" data-mobile-nav>
+            <a class="nav-link" href="{% url 'learning_platform:module_list' %}">Bosh sahifa</a>
+            {% if user.is_authenticated %}
+            <a class="nav-link" href="{% url 'learning_platform:my_certificates' %}">Sertifikatlar · ⚡ {{ user_xp }} XP</a>
+            <a class="nav-link" href="{% url 'learning_platform:logout' %}">Chiqish ({{ user.username }})</a>
+            {% else %}
+            <a class="nav-link" href="{% url 'learning_platform:login' %}">Kirish</a>
+            <a class="nav-link" href="{% url 'learning_platform:register' %}">Ro'yxatdan o'tish</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="wrap">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <p class="footer">{{ SITE_NAME }} · 9–11-sinf</p>
+    <script src="{% static 'js/app.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

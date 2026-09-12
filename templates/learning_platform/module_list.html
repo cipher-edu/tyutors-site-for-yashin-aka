@@ -1,61 +1,684 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Modullar | AppName{% endblock %}
+{% block title %}{{ SITE_NAME }}{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1>Mavjud Modullar</h1>
-    <!-- Qidiruv panelini keyinchalik funksional qilish mumkin -->
-    <div class="search-bar">
-        <i class="fas fa-search"></i>
-        <input type="text" placeholder="Modullarni qidirish..." disabled> <!-- Hozircha disabled -->
-    </div>
-</div>
-
-<!-- Filtrlar (agar kerak bo'lsa, hozircha yashirilgan) -->
-<!--
-<div class="filters card"> ... </div>
--->
-
-{% if modules %}
-<div class="course-grid"> <!-- Mavjud .course-grid stilini ishlatamiz -->
-    {% for module in modules %}
-    <div class="card course-card"> <!-- .card va .course-card stillari -->
-        <!-- Modul rasmi (agar modelda bo'lsa) -->
-        <!-- <img src="..." alt="{{ module.title }}" class="course-thumbnail"> -->
-        <div class="course-content">
-            <div class="course-header">
-                <div>
-                    <h3 class="course-title">{{ module.title }}</h3>
-                    <!-- <p class="course-instructor">Kurslar soni: {{ module.courses.count }}</p> -->
+<section class="hero reveal">
+    <div class="hero-copy">
+        <span class="hero-kicker"><i class="fas fa-gamepad"></i> 9–11-sinf · Gamifikatsiyalashgan ta’lim</span>
+        <h1>{{ SITE_NAME }}</h1>
+        <p>{{ SITE_TAGLINE }} Qisqa infografikalar, video-ma’ruzalar, interaktiv LearningApps va Kahoot testlari orqali o‘yin kabi o‘rganasiz.</p>
+        <div class="hero-actions">
+            {% if user.is_authenticated %}
+                <a class="btn btn-green" href="#yol"><i class="fas fa-play"></i> Yo‘lni davom ettirish</a>
+                <div class="stat-row" style="margin: 0;">
+                    <span class="stat-pill xp">⚡ {{ user_xp }} XP</span>
+                    <span class="stat-pill streak">🔥 {{ user_streak }} seriya</span>
+                    <span class="stat-pill gem">💎 {{ user_gems }}</span>
                 </div>
-                 <!-- Qiyinlik darajasi (agar modelda bo'lsa) -->
-                <!-- <span class="difficulty">Boshlang'ich</span> -->
-            </div>
-            {% if module.description %}
-            <p class="course-description">{{ module.description|truncatewords:20 }}</p>
+            {% else %}
+                <a class="btn btn-green btn-lg" href="{% url 'learning_platform:register' %}"><i class="fas fa-bolt"></i> O‘yinni boshlash</a>
+                <a class="btn btn-ghost" href="{% url 'learning_platform:login' %}">Akkaunt bormi? Kirish</a>
             {% endif %}
+        </div>
+    </div>
+    <div class="mascot-wrap">
+        <!-- Speech Bubble (Panda Maslahati) on Top -->
+        <div class="mascot-bubble" data-mascot-bubble title="Yangi motivatsion fikr olish uchun bosing!">
+            <div class="bubble-header">
+                <span class="bubble-tag" data-bubble-tag><i class="fas fa-sparkles"></i> Panda maslahati</span>
+                <button class="bubble-next-btn" type="button" data-next-quote title="Boshqa maslahat">
+                    <i class="fas fa-rotate"></i> Yangisi
+                </button>
+            </div>
+            <p class="bubble-text" data-mascot-quote>Salom do‘stim! Bugun yangi bilimlar sari olg‘a! 🚀</p>
+            <div class="bubble-footer">
+                <div class="bubble-dots" data-bubble-dots>
+                    <span class="is-active"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
 
-            <!-- Progress (murakkabroq, alohida hisoblash kerak) -->
-            <!-- <div class="progress-container"> ... </div> -->
-
-            <div class="course-footer">
-                 <span class="course-duration">
-                     <i class="fas fa-layer-group"></i> Kurslar: {{ module.courses.count }} ta
-                 </span>
-                <a href="{% url 'learning_platform:module_detail' pk=module.pk %}" class="btn btn-primary btn-sm">Batafsil</a>
+        <!-- Mascot Panda below speech bubble -->
+        <div class="mascot-box" data-mascot-box title="Panda bilan gaplashish uchun bosing!">
+            <img class="mascot-panda" src="{% static 'img/panda-hero.jpg' %}" alt="VUCA panda — o‘rganish do‘stingiz">
+            <div class="panda-wave-badge">
+                <span class="wave-icon">👋</span>
+                <span>Salom!</span>
             </div>
         </div>
     </div>
-    {% endfor %}
+</section>
+
+<!-- VUCA Interactive Concept Tiles -->
+<div class="section-title">
+    <h2><i class="fas fa-cube" style="color: var(--blue);"></i> VUCA Konseptsiyasi</h2>
+    <span class="meta">Zamonaviy dunyoda axloqiy ko‘nikmalar</span>
 </div>
-{% else %}
-<div class="card">
-    <div class="card-content">
-        <p class="text-center card-text" style="text-align: center;">Hozircha hech qanday modul mavjud emas.</p>
+
+<section class="vuca-grid" aria-label="VUCA tushunchalari">
+    <div class="vuca-tile vuca-v">
+        <b>V</b>
+        <div>
+            <span>Volatility · O‘zgaruvchanlik</span>
+            <small>Tez o‘zgaruvchan dunyoda mustahkam qadriyatlar</small>
+        </div>
+    </div>
+    <div class="vuca-tile vuca-u">
+        <b>U</b>
+        <div>
+            <span>Uncertainty · Noaniqlik</span>
+            <small>Murakkab axborotlar oqimida to‘g‘ri yo‘lni tanlash</small>
+        </div>
+    </div>
+    <div class="vuca-tile vuca-c">
+        <b>C</b>
+        <div>
+            <span>Complexity · Murakkablik</span>
+            <small>Har xil vaziyatlarda mas’uliyatli va adolatli qarorlar</small>
+        </div>
+    </div>
+    <div class="vuca-tile vuca-a">
+        <b>A</b>
+        <div>
+            <span>Ambiguity · Ikkiyoqlamalilik</span>
+            <small>Axloqiy mezonlar va insoniylik prinsiplariga tayanish</small>
+        </div>
+    </div>
+</section>
+
+<!-- Microlearning Infographics Carousel (Modernized) -->
+{% if infographics %}
+<section class="slider" data-slider id="infografika" aria-label="Microlearning infografikalar">
+    <div class="slider-head">
+        <div>
+            <h2><i class="fas fa-images" style="color: var(--purple);"></i> Microlearning infografikalar</h2>
+            <p class="meta">Vizual shaklda qisqa, tushunarli va qiziqarli bilimlar.</p>
+        </div>
+        <div class="slider-toolbar">
+            <button class="slider-ctrl-btn" type="button" data-toggle-play title="Avtomatik aylanishni to‘xtatish / yoqish">
+                <i class="fas fa-pause"></i> <span data-play-text>Pauza</span>
+            </button>
+            <button class="slider-ctrl-btn" type="button" data-open-modal title="Kattalashtirib to‘liq ekranda o‘qish">
+                <i class="fas fa-expand"></i> Kattalashtirish
+            </button>
+            <span class="slider-count"><i class="fas fa-layer-group"></i> <b data-current>1</b> / {{ infographics|length }}</span>
+        </div>
+    </div>
+
+    <div class="slider-viewport">
+        <div class="slider-track">
+            {% for item in infographics %}
+            <article class="slider-card {% if forloop.first %}is-active{% endif %}"
+                     data-card-index="{{ forloop.counter0 }}"
+                     data-title="{{ item.title }}"
+                     data-caption="{{ item.caption }}"
+                     data-img="{{ item.image.url }}"
+                     data-link="{{ item.link|default:'' }}">
+                <div class="slider-card-img-wrap">
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}" {% if forloop.first %}loading="eager"{% else %}loading="lazy"{% endif %}>
+                    <div class="slider-card-overlay">
+                        <span class="card-zoom-badge"><i class="fas fa-magnifying-glass-plus"></i> O‘qish</span>
+                    </div>
+                </div>
+                <div class="slider-caption">
+                    <span class="slider-badge"><i class="fas fa-bolt"></i> 1 daqiqalik bilim · {{ forloop.counter }}</span>
+                    <h3>{{ item.title }}</h3>
+                    {% if item.caption %}<p>{{ item.caption }}</p>{% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% if infographics|length > 1 %}
+        <button class="slider-btn prev" type="button" data-prev aria-label="Oldingi infografika">‹</button>
+        <button class="slider-btn next" type="button" data-next aria-label="Keyingi infografika">›</button>
+        {% endif %}
+    </div>
+
+    <div class="slider-timer" aria-hidden="true"><span data-timer></span></div>
+
+    <div class="slider-thumbs" data-thumbs>
+        {% for item in infographics %}
+        <button type="button" class="thumb {% if forloop.first %}is-active{% endif %}" data-goto="{{ forloop.counter0 }}" aria-label="{{ item.title }}" title="{{ item.title }}">
+            <img src="{{ item.image.url }}" alt="" loading="lazy">
+        </button>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Infographic Fullscreen Lightbox Modal -->
+<div class="infographic-modal" id="infographicModal" aria-hidden="true">
+    <div class="modal-content-box">
+        <div class="modal-head">
+            <h3 id="modalTitle">Infografika</h3>
+            <button class="modal-close-btn" type="button" data-close-modal aria-label="Yopish">✕</button>
+        </div>
+        <div class="modal-body">
+            <img id="modalImg" src="" alt="Infografika">
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
+        <div class="modal-foot">
+            <span class="badge xp" id="modalCount">Infografika 1</span>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <button class="btn btn-ghost btn-sm" type="button" data-modal-prev><i class="fas fa-arrow-left"></i> Oldingi</button>
+                <button class="btn btn-purple btn-sm" type="button" data-modal-next>Keyingi <i class="fas fa-arrow-right"></i></button>
+                <a class="btn btn-blue btn-sm" id="modalDownload" href="" target="_blank" download><i class="fas fa-download"></i> Rasm</a>
+            </div>
+        </div>
     </div>
 </div>
 {% endif %}
 
+<!-- Site Documents & Work Plans (Word & PDF) -->
+{% if site_documents %}
+<section class="doc-section" id="hujjatlar" aria-label="Dastur va me’yoriy hujjatlar">
+    <div class="section-title">
+        <div>
+            <h2><i class="fas fa-folder-open" style="color: var(--gold-dark);"></i> Dastur, ish reja va huquqiy asoslar</h2>
+            <span class="meta">O‘quv jarayonining rasmiy me’yoriy hujjatlari (Word va PDF formatlarida)</span>
+        </div>
+        <span class="badge xp"><i class="fas fa-file-contract"></i> {{ site_documents|length }} ta hujjat</span>
+    </div>
+
+    <!-- Filter Tabs for Word & PDF Documents -->
+    <div class="doc-filters" data-doc-filters>
+        <button type="button" class="doc-filter-btn is-active" data-filter="all">
+            <i class="fas fa-layer-group"></i> Barchasi ({{ site_documents|length }})
+        </button>
+        <button type="button" class="doc-filter-btn" data-filter="word">
+            <i class="fas fa-file-word" style="color: #2563eb;"></i> Word fayllar (.docx)
+        </button>
+        <button type="button" class="doc-filter-btn" data-filter="pdf">
+            <i class="fas fa-file-pdf" style="color: #ef4444;"></i> PDF hujjatlar (.pdf)
+        </button>
+        <button type="button" class="doc-filter-btn" data-filter="program">
+            <i class="fas fa-graduation-cap" style="color: var(--green);"></i> Kurs dasturlari
+        </button>
+        <button type="button" class="doc-filter-btn" data-filter="plan">
+            <i class="fas fa-calendar-check" style="color: var(--gold-dark);"></i> Ish rejalari
+        </button>
+        <button type="button" class="doc-filter-btn" data-filter="legal">
+            <i class="fas fa-scale-balanced" style="color: var(--purple);"></i> Huquqiy asoslar
+        </button>
+    </div>
+
+    <div class="doc-grid" data-doc-grid>
+        {% for doc in site_documents %}
+        <a class="doc-card {% if doc.is_word_file %}is-word{% else %}is-pdf{% endif %}"
+           href="{{ doc.file.url }}"
+           target="_blank"
+           rel="noopener"
+           data-doc-type="{{ doc.document_type }}"
+           data-doc-format="{% if doc.is_word_file %}word{% else %}pdf{% endif %}">
+            <div class="doc-card-top">
+                <span class="doc-card-badge type-badge">{{ doc.get_document_type_display }}</span>
+                <span class="doc-card-badge ext-badge {% if doc.is_word_file %}word{% else %}pdf{% endif %}">
+                    {% if doc.is_word_file %}<i class="fas fa-file-word"></i> .DOCX{% else %}<i class="fas fa-file-pdf"></i> .PDF{% endif %}
+                </span>
+            </div>
+            <div class="doc-card-title">
+                <i class="fas {% if doc.is_word_file %}fa-file-word{% else %}fa-file-pdf{% endif %}"></i>
+                <span>{{ doc.title }}</span>
+            </div>
+            <div class="doc-card-foot">
+                <span><i class="fas fa-check-circle" style="color: var(--green);"></i> Rasmiy hujjat</span>
+                <span class="doc-action-btn">
+                    Yuklab olish <i class="fas fa-download"></i>
+                </span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Learning Journey Road (Duolingo Style Path) -->
+<div class="world-head section-title" id="yol">
+    <div>
+        <h2><i class="fas fa-route" style="color: var(--green);"></i> O‘rganish yo‘li (Modullar)</h2>
+        {% if user.is_authenticated %}
+        <p class="meta">{{ user_completed }} dars yakunlangan · {{ user_certs }} ta sertifikat qo‘lga kiritilgan</p>
+        {% else %}
+        <p class="meta">4 qismdan iborat bosqichma-bosqich o‘rganish yo‘li.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% if module_units %}
+<div class="learning-path-wrapper">
+    {% for unit in module_units %}
+    <section class="unit unit-{{ unit.index }}">
+        <div class="unit-banner">
+            <div>
+                <strong>{{ unit.title }}</strong>
+                <p>{{ unit.subtitle }}</p>
+            </div>
+            <span class="unit-score"><i class="fas fa-flag-checkered"></i> {{ unit.done }}/{{ unit.total }} modul</span>
+        </div>
+
+        <div class="path-grid">
+            {% for module in unit.modules %}
+            {% cycle 'var(--green)' 'var(--blue)' 'var(--kahoot)' 'var(--orange)' 'var(--purple)' as color silent %}
+            <a class="path-card {% if module.progress_percent == 100 %}is-done{% endif %}"
+               href="{% url 'learning_platform:module_detail' pk=module.pk %}">
+                <div class="path-rail">
+                    <span class="path-num" style="background: {{ color }};">
+                        {% if module.progress_percent == 100 %}
+                        <i class="fas fa-star"></i>
+                        {% else %}
+                        {{ module.number }}
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="path-body">
+                    {% if module.progress_percent == 100 %}
+                    <span class="badge ok"><i class="fas fa-check"></i> Tugatildi</span>
+                    {% else %}
+                    <span class="badge">{{ module.progress_percent }}%</span>
+                    {% endif %}
+                    <h3>{{ module.title }}</h3>
+                    {% if module.description %}
+                    <p class="meta">{{ module.description|truncatewords:14 }}</p>
+                    {% endif %}
+                    <div class="progress" aria-hidden="true">
+                        <span style="width: {{ module.progress_percent }}%;"></span>
+                    </div>
+                    <div class="path-foot">
+                        <span class="meta"><i class="fas fa-book-open"></i> {{ module.progress_done }}/{{ module.progress_total }} dars</span>
+                        <span class="btn btn-green btn-sm">
+                            {% if module.progress_percent == 100 %}Qayta ko‘rish{% else %}Boshlash{% endif %}
+                        </span>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        {% if not forloop.last %}
+        <div class="unit-chest {% if unit.complete %}is-open{% endif %}" title="Qism mukofoti">
+            <span>{% if unit.complete %}🏆{% else %}🎁{% endif %}</span>
+            <small>{% if unit.complete %}Qism muvaffaqiyatli ochildi!{% else %}Qismni yakunlang va sandiqni oching!{% endif %}</small>
+        </div>
+        {% endif %}
+    </section>
+    {% endfor %}
+</div>
+{% else %}
+<div class="card"><div class="card-body empty">Hali modullar qo‘shilmagan. Admin panel orqali qo‘shing.</div></div>
+{% endif %}
+
+<!-- ==========================================================================
+     DUOLINGO 1:1 INTERACTIVE ANIMATED SHOWCASE
+     VUCA ta'lim loyihasi imidjiga moslashtirilgan interaktiv animatsiyalar
+     ========================================================================== -->
+<section class="duo-marketing-showcase reveal" id="duo-showcase" aria-label="Platformaning afzalliklari va interaktiv imkoniyatlari" data-scroll-container="true">
+    <!-- Showcase Header -->
+    <div class="duo-showcase-header">
+        <span class="duo-chip green"><i class="fas fa-sparkles"></i> Zamonaviy Pedagogik Yondashuv</span>
+        <h2 class="duo-showcase-title">Nega aynan bizning platforma?</h2>
+        <p class="duo-showcase-subtitle">VUCA olamida axloqiy dunyoqarash, tanqidiy fikrlash va to‘g‘ri qaror qabul qilish ko‘nikmalarini shakllantiruvchi qulay ta’lim tizimi</p>
+    </div>
+
+    <!-- 1. Mutlaqo bepul. Qiziqarli. Samarali. -->
+    <div class="duo-feature-row duo-row-standard" data-duo-feature="effective" data-scroll-parallax="true">
+        <div class="duo-feature-text" data-parallax-target="text">
+            <h2 class="duo-feature-h2 duo-color-green">Mutlaqo bepul. Qiziqarli. Samarali.</h2>
+            <p class="duo-feature-desc">
+                Biz bilan ta’lim olish maroqli va qiziqarli, zamonaviy tadqiqotlar esa buning chinakam natijadorligini tasdiqlaydi! Qisqa va mazmunli interaktiv modullar orqali o‘quvchilar tajriba to‘playdi, yangi bosqichlarni zabt etadi hamda hayotiy vaziyatlarda axloqiy va mas’uliyatli qaror qabul qilish ko‘nikmalarini mustahkamlaydi.
+            </p>
+            <div class="duo-feature-badge">
+                <span class="duo-pill green"><i class="fas fa-bolt"></i> 100% Bepul va ochiq</span>
+                <span class="duo-pill blue"><i class="fas fa-chart-line"></i> Gamifikatsiyalashgan</span>
+                <span class="duo-pill yellow"><i class="fas fa-award"></i> Amaliy malaka</span>
+            </div>
+        </div>
+        <div class="duo-feature-anim-wrap" data-parallax-target="visual" data-parallax-depth="0.2">
+            <div class="duo-anim-canvas" id="lottie-effective">
+                <img src="{% static 'duo_splash/effective_placeholder.svg' %}" alt="Mutlaqo bepul, qiziqarli va samarali ta’lim" class="duo-anim-placeholder" id="placeholder-effective">
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Ilmiy-pedagogik yondashuv (Flipped) -->
+    <div class="duo-feature-row duo-row-flipped" data-duo-feature="science" data-scroll-parallax="true">
+        <div class="duo-feature-text" data-parallax-target="text">
+            <h2 class="duo-feature-h2 duo-color-blue">Ilmiy-pedagogik yondashuv</h2>
+            <p class="duo-feature-desc">
+                Loyiha pedagogika va psixologiyaning eng so‘nggi ilmiy-metodologik asoslariga tayanadi. O‘quvchilarda tanqidiy tafakkur, axloqiy ong, mustaqil mulohaza yuritish va mustahkam qadriyatlar tizimini shakllantirish bo‘yicha maxsus ilmiy tavsiyalar asosida ishlab chiqilgan!
+            </p>
+            <div class="duo-feature-badge">
+                <span class="duo-pill purple"><i class="fas fa-flask"></i> Nazariy poydevor</span>
+                <span class="duo-pill blue"><i class="fas fa-brain"></i> Kognitiv rivojlanish</span>
+                <span class="duo-pill green"><i class="fas fa-check-double"></i> Ilmiy metodika</span>
+            </div>
+        </div>
+        <div class="duo-feature-anim-wrap" data-parallax-target="visual" data-parallax-depth="0.2">
+            <div class="duo-anim-canvas" id="lottie-science">
+                <img src="{% static 'duo_splash/science_placeholder.svg' %}" alt="Ilmiy-pedagogik yondashuv" class="duo-anim-placeholder" id="placeholder-science">
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Ta’limga kuchli rag‘bat va motivatsiya -->
+    <div class="duo-feature-row duo-row-standard" data-duo-feature="motivation" data-scroll-parallax="true">
+        <div class="duo-feature-text" data-parallax-target="text">
+            <h2 class="duo-feature-h2 duo-color-orange">Ta’limga kuchli rag‘bat va motivatsiya</h2>
+            <p class="duo-feature-desc">
+                O‘yin elementlari, kunlik uzluksiz seriyalar (streak), qimmatbaho kristallar va do‘stona intellektual eslatmalar axloqiy ta’lim jarayonini har kungi sevimli va mustahkam odatga aylantiradi.
+            </p>
+            <div class="duo-feature-badge">
+                <span class="duo-pill orange"><i class="fas fa-fire"></i> Kunlik seriya (Streak)</span>
+                <span class="duo-pill yellow"><i class="fas fa-gem"></i> Kristal va mukofotlar</span>
+                <span class="duo-pill green"><i class="fas fa-trophy"></i> Yutuq nishonlari</span>
+            </div>
+        </div>
+        <div class="duo-feature-anim-wrap" data-parallax-target="visual" data-parallax-depth="0.2">
+            <div class="duo-anim-canvas" id="lottie-motivation">
+                <img src="{% static 'duo_splash/motivation_placeholder.svg' %}" alt="Ta’limga kuchli rag‘bat va motivatsiya" class="duo-anim-placeholder" id="placeholder-motivation">
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Har bir o‘quvchiga individual yondashuv (Flipped) -->
+    <div class="duo-feature-row duo-row-flipped" data-duo-feature="personalized" data-scroll-parallax="true">
+        <div class="duo-feature-text" data-parallax-target="text">
+            <h2 class="duo-feature-h2 duo-color-purple">Har bir o‘quvchiga individual yondashuv</h2>
+            <p class="duo-feature-desc">
+                Bizning darslarimiz ilg‘or pedagogik texnologiyalar va moslashuvchan ta’lim imkoniyatlarini birlashtiradi. Darslar murakkabligi va o‘zlashtirish sur’ati har bir o‘quvchining shaxsiy iqtidori va qobiliyatiga mos holda individual tarzda tartibga solinadi!
+            </p>
+            <div class="duo-feature-badge">
+                <span class="duo-pill purple"><i class="fas fa-robot"></i> Adaptiv ta’lim</span>
+                <span class="duo-pill green"><i class="fas fa-user-check"></i> Shaxsiy tezlik</span>
+                <span class="duo-pill blue"><i class="fas fa-compass"></i> Moslashuvchan modul</span>
+            </div>
+        </div>
+        <div class="duo-feature-anim-wrap" data-parallax-target="visual" data-parallax-depth="0.2">
+            <div class="duo-anim-canvas" id="lottie-personalized">
+                <img src="{% static 'duo_splash/personalized_placeholder.svg' %}" alt="Har bir o‘quvchiga individual yondashuv" class="duo-anim-placeholder" id="placeholder-personalized">
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Istalgan vaqtda va istalgan joyda ta’lim -->
+    <div class="duo-anytime-card" data-duo-feature="anytime" data-scroll-parallax="true">
+        <div class="duo-anytime-inner">
+            <div class="duo-anytime-text" data-parallax-target="text">
+                <h2 class="duo-anytime-title">Istalgan vaqtda va istalgan joyda ta’lim</h2>
+                <p class="duo-anytime-desc">
+                    Tanaffusda, yo‘lda yoki uyda bo‘sh vaqtingizni unumli bilim olishga sarflang! Darslar bor-yo‘g‘i 5–10 daqiqa davom etadi. Smartfon, planshet yoki kompyuter orqali platformadan cheklovlarsiz foydalaning.
+                </p>
+                <div class="duo-store-row">
+                    <a href="#yol" class="duo-store-badge">
+                        <i class="fas fa-mobile-screen-button"></i>
+                        <span>
+                            <small>Mobil qurilmalarda</small>
+                            <strong>Smartfon & Planshet</strong>
+                        </span>
+                    </a>
+                    <a href="#yol" class="duo-store-badge">
+                        <i class="fas fa-laptop"></i>
+                        <span>
+                            <small>Kompyuterda</small>
+                            <strong>Web Platforma</strong>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="duo-anytime-anim-wrap" data-parallax-target="visual" data-parallax-depth="0.25">
+                <div class="duo-anytime-canvas" id="lottie-anytime">
+                    <img src="{% static 'duo_splash/anytime_placeholder.svg' %}" alt="Istalgan vaqtda va istalgan joyda ta’lim" class="duo-anim-placeholder" id="placeholder-anytime">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. VUCA olamida o‘z kelajagingizni quring! (Bottom CTA Banner) -->
+    <div class="duo-bottom-banner" data-duo-feature="bottom" data-scroll-parallax="true">
+        <div class="duo-bottom-content" data-parallax-target="text">
+            <h2 class="duo-bottom-title">VUCA olamida o‘z kelajagingizni quring!</h2>
+            <p class="duo-bottom-sub">O‘zgaruvchan, noaniq va murakkab zamonda mustahkam axloqiy dunyoqarash — eng ishonchli kompasdir. O‘z ustingizda ishlashni hoziroq boshlang!</p>
+            <a href="#yol" class="btn btn-green btn-lg duo-bottom-cta">
+                <span>Hozir bepul boshlang</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="duo-bottom-anim-wrap" data-parallax-target="visual" data-parallax-depth="0.18">
+            <div class="duo-bottom-canvas" id="lottie-bottom">
+                <img src="{% static 'duo_splash/bottom_placeholder.svg' %}" alt="VUCA olamida o‘z kelajagingizni quring!" class="duo-anim-placeholder" id="placeholder-bottom">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+     LOYIHA RAHBARI VA DASTURNING ASOSIY MAQSADI HAMDA VAZIFALARI (ENG PASTI)
+     ========================================================================== -->
+<section class="project-overview-section reveal" id="loyiha-haqida" aria-label="Loyiha rahbari va dastur maqsadi">
+    <div class="section-title">
+        <div>
+            <h2><i class="fas fa-award" style="color: var(--kahoot);"></i> Loyiha Rahbari va Dastur Maqsadi</h2>
+            <span class="meta">VUCA-dunyo konseptida 9–11-sinf o‘quvchilarining axloqiy dunyoqarashini rivojlantirish</span>
+        </div>
+        <span class="badge purple"><i class="fas fa-certificate"></i> Ilmiy-amaliy ta’lim loyihasi</span>
+    </div>
+
+    <div class="leader-mission-grid">
+        <!-- 1. Loyiha Rahbari Card -->
+        <article class="leader-card">
+            <div class="leader-card-glow"></div>
+            <div class="leader-badge-top">
+                <i class="fas fa-crown"></i> Loyiha rahbari
+            </div>
+
+            <div class="leader-avatar-wrapper">
+                <div class="leader-avatar-ring">
+                    <img src="{% static 'img/leader.jpg' %}" alt="Xasanova Bo‘rigul Hasan qizi — Loyiha rahbari" class="leader-avatar-img">
+                </div>
+                <span class="leader-status-chip" title="Pedagogik tadqiqotchi">
+                    <i class="fas fa-circle-check"></i> Ilmiy izlanuvchi
+                </span>
+            </div>
+
+            <div class="leader-info">
+                <h3 class="leader-name">Xasanova Bo‘rigul Hasan qizi</h3>
+                <p class="leader-role">Loyiha rahbari · Pedagogik tadqiqotchi · VUCA ta’lim metodologi</p>
+                <div class="leader-quote">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>“Zamonaviy tez o‘zgaruvchan dunyoda o‘quvchilarimiz uchun eng kuchli tayanch — bu mustahkam axloqiy ong, tanqidiy fikrlash va mas’uliyatli mustaqil qaror qabul qilish ko‘nikmasidir.”</p>
+                </div>
+            </div>
+
+
+            <div class="leader-competencies">
+                <span class="comp-pill"><i class="fas fa-brain"></i> VUCA-pedagogika</span>
+                <span class="comp-pill"><i class="fas fa-users"></i> Collaborative Learning</span>
+                <span class="comp-pill"><i class="fas fa-bolt"></i> Microlearning & Gamification</span>
+                <span class="comp-pill"><i class="fas fa-book-open-reader"></i> Metodik tavsiyalar</span>
+            </div>
+
+            <div class="leader-actions">
+                <a href="#vazifalar" class="btn btn-purple btn-sm btn-block">
+                    <i class="fas fa-list-check"></i> Dastur vazifalari
+                </a>
+            </div>
+        </article>
+
+        <!-- 2. Dasturning Asosiy Maqsadi Card -->
+        <article class="mission-card">
+            <div class="mission-header">
+                <span class="mission-kicker"><i class="fas fa-bullseye"></i> Bosh Strategik Maqsad</span>
+                <h3>Dasturning Asosiy Maqsadi</h3>
+            </div>
+
+            <div class="mission-main-text">
+                <div class="lead-text">
+                    <strong>Dasturni o‘qitishdan asosiy maqsad</strong> – VUCA (o‘zgaruvchanlik, noaniqlik, murakkablik va mavhumlik) dunyo konseptida <strong>9–11-sinf o‘quvchilarida axloqiy dunyoqarashni rivojlantirishning</strong> nazariy-metodologik yondashuvlari, pedagogik asoslari, hamda bir qator amaliy axloqiy dunyoqarash ko‘nikmalarini rivojlantirishdir.
+                </div>
+                <p class="sub-text">
+                    Shuningdek, bugungi zamonaviy ta’limning imkoniyatlariga tayangan holda <strong>VUCA muhitida o‘quvchilarning axloqiy ongini rivojlantirish</strong>, ularda mustaqil hamda mas’uliyatli qaror qabul qilish kompetensiyalarini rivojlantirish, ta’lim-tarbiya jarayonini VUCA muhitiga mos tarzda samarali tashkil etish bundan tashqari pedagoglarning kasbiy va metodik kompetensiyalarini takomillashtirish uchun <strong>tegishli ilmiy-metodik tavsiyalar ishlab chiqish</strong> asosiy maqsad sifatida belgilanadi.
+                </p>
+            </div>
+
+            <div class="mission-pillars">
+                <div class="pillar-item" data-scroll-parallax="true">
+                    <div class="pillar-icon bg-blue">
+                        <img src="{% static 'duo_splash/science_placeholder.svg' %}" alt="Nazariy-metodologik asos" class="pillar-svg-accent">
+                    </div>
+                    <div class="pillar-content" data-parallax-target="text">
+                        <h4>Nazariy-metodologik asos</h4>
+                        <p>VUCA olamida axloqiy dunyoqarash rivojlanishining pedagogik poydevori.</p>
+                    </div>
+                </div>
+
+                <div class="pillar-item" data-scroll-parallax="true">
+                    <div class="pillar-icon bg-green">
+                        <img src="{% static 'duo_splash/effective_placeholder.svg' %}" alt="Axloqiy ong va mas’uliyat" class="pillar-svg-accent">
+                    </div>
+                    <div class="pillar-content" data-parallax-target="text">
+                        <h4>Axloqiy ong va mas’uliyat</h4>
+                        <p>Noaniq va murakkab vaziyatlarda mustaqil va mas’uliyatli qarorlar qabul qilish.</p>
+                    </div>
+                </div>
+
+                <div class="pillar-item" data-scroll-parallax="true">
+                    <div class="pillar-icon bg-purple">
+                        <img src="{% static 'duo_splash/personalized_placeholder.svg' %}" alt="Zamonaviy AKT & Gamifikatsiya" class="pillar-svg-accent">
+                    </div>
+                    <div class="pillar-content" data-parallax-target="text">
+                        <h4>Zamonaviy AKT & Gamifikatsiya</h4>
+                        <p>Microlearning, Kahoot, LearningApps va Collaborative Learning integratsiyasi.</p>
+                    </div>
+                </div>
+
+                <div class="pillar-item" data-scroll-parallax="true">
+                    <div class="pillar-icon bg-gold">
+                        <img src="{% static 'duo_splash/motivation_placeholder.svg' %}" alt="Pedagogik metodik ta’minot" class="pillar-svg-accent">
+                    </div>
+                    <div class="pillar-content" data-parallax-target="text">
+                        <h4>Pedagogik metodik ta’minot</h4>
+                        <p>O‘qituvchilarning kasbiy-metodik kompetensiyalarini oshiruvchi amaliy tavsiyalar.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- 3. Dasturning Asosiy Vazifalari Section -->
+    <div class="tasks-container" id="vazifalar" data-scroll-parallax="true">
+
+        <div class="tasks-head">
+            <div class="tasks-badge"><i class="fas fa-list-check"></i> Strategik 5 muhim qadam</div>
+            <h3 class="tasks-title">Dasturning Asosiy Vazifalari</h3>
+            <p class="tasks-desc">Dastur maqsadiga erishish va 9–11-sinf o‘quvchilarida axloqiy dunyoqarashni rivojlantirishga qaratilgan 5 ta asosiy vazifa:</p>
+        </div>
+
+        <div class="tasks-grid">
+            <!-- 1-vazifa -->
+            <div class="task-card task-v1">
+                <div class="task-num-badge">1</div>
+                <div class="task-icon-box"><i class="fas fa-book-bookmark"></i></div>
+                <div class="task-body">
+                    <span class="task-tag">Nazariy bilimlar bazasi</span>
+                    <h4>Nazariy bilimlarni o‘zlashtirish</h4>
+                    <p>VUCA-dunyo kontseptida o‘quvchilarda axloqiy dunyoqarashni rivojlantirishning mustahkam nazariy bilimlar bazasini o‘zlashtirish.</p>
+                    <div class="task-chips">
+                        <span><i class="fas fa-check"></i> Ilmiy konseptlar</span>
+                        <span><i class="fas fa-check"></i> Axloqiy mezonlar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2-vazifa -->
+            <div class="task-card task-v2">
+                <div class="task-num-badge">2</div>
+                <div class="task-icon-box"><i class="fas fa-users-gear"></i></div>
+                <div class="task-body">
+                    <span class="task-tag">AKT & Collaborative Learning</span>
+                    <h4>AKT va guruhiy tahlil</h4>
+                    <p>Axborot-kommunikatsiya texnologiyalarining ta’lim-tarbiya jarayonidagi tarbiyaviy xususiyatlarini o‘rganish va ularning axloqiy dunyoqarashni shakllantirishdagi tutgan o‘rni hamda ahamiyatini collaborative learning kabi qator texnologiyalarga tayangan holda guruhiy tahlil qilish.</p>
+                    <div class="task-chips">
+                        <span><i class="fas fa-check"></i> Hamkorlikda o‘rganish</span>
+                        <span><i class="fas fa-check"></i> Guruhiy tahlil</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-vazifa -->
+            <div class="task-card task-v3">
+                <div class="task-num-badge">3</div>
+                <div class="task-icon-box"><i class="fas fa-brain"></i></div>
+                <div class="task-body">
+                    <span class="task-tag">Ilmiy asoslar & Ko‘nikma</span>
+                    <h4>Pedagogik asoslar va muammolar tahlili</h4>
+                    <p>O‘zgaruvchan va noaniq muhitda o‘quvchilarda axloqiy dunyoqarashni rivojlantiruvchi pedagogik ilmiy asoslar va muammolarni tahlil etib, ko‘nikmalarini rivojlantirish.</p>
+                    <div class="task-chips">
+                        <span><i class="fas fa-check"></i> Tanqidiy tahlil</span>
+                        <span><i class="fas fa-check"></i> Vaziyatli yechimlar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4-vazifa -->
+            <div class="task-card task-v4">
+                <div class="task-num-badge">4</div>
+                <div class="task-icon-box"><i class="fas fa-gamepad"></i></div>
+                <div class="task-body">
+                    <span class="task-tag">Gamifikatsiya & Microlearning</span>
+                    <h4>Interaktiv ilovalar yordamida rivojlantirish</h4>
+                    <p>O‘quvchilarda axloqiy dunyoqarashni rivojlantirish jarayonini samarali boshqarilishini ta’minlashga qaratilgan microlearning texnologiyasi asosida tayyorlangan infografika, gamification texnologiyasi asosida, learning.app va kahoot.com ilovalari yordamida tayyorlangan topshiriqlarini bajarish orqali axloqiy ko‘nikmalarini rivojlantirish.</p>
+                    <div class="task-chips">
+                        <span><i class="fas fa-check"></i> Kahoot.com</span>
+                        <span><i class="fas fa-check"></i> LearningApps.org</span>
+                        <span><i class="fas fa-check"></i> Infografikalar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5-vazifa -->
+            <div class="task-card task-v5">
+                <div class="task-num-badge">5</div>
+                <div class="task-icon-box"><i class="fas fa-chalkboard-user"></i></div>
+                <div class="task-body">
+                    <span class="task-tag">Metodik ta’minot</span>
+                    <h4>O‘qituvchilar uchun metodik tavsiyalar</h4>
+                    <p>O‘qituvchilar uchun axloqiy dunyoqarashni rivojlantirishga qaratilgan metodik tavsiyalarni ishlab chiqish va ularni pedagoglarga taqdim etish hamda VUCA-dunyo konseptida o‘quvchilarda axloqiy dunyoqarashni rivojlantirishdan iborat.</p>
+                    <div class="task-chips">
+                        <span><i class="fas fa-check"></i> Metodik tavsiyalar</span>
+                        <span><i class="fas fa-check"></i> Pedagoglarga taqdimot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Natijalar va Ta'limiy Samara Strip -->
+    <div class="outcomes-strip">
+        <div class="outcome-box">
+            <div class="outcome-icon"><i class="fas fa-user-graduate"></i></div>
+            <div class="outcome-text">
+                <strong>O‘quvchilar uchun natija:</strong>
+                <span>Mustaqil axloqiy immunitet, raqamli madaniyat va mas’uliyatli qaror qabul qilish kompetensiyasi.</span>
+            </div>
+        </div>
+        <div class="outcome-box">
+            <div class="outcome-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="outcome-text">
+                <strong>Pedagoglar uchun natija:</strong>
+                <span>VUCA muhitida darslarni interaktiv, qiziqarli va tarbiyaviy tashkil etish bo‘yicha ilmiy-metodik qurol.</span>
+            </div>
+        </div>
+        <div class="outcome-box">
+            <div class="outcome-icon"><i class="fas fa-shield-halved"></i></div>
+            <div class="outcome-text">
+                <strong>Zamonaviy ta’lim muhiti:</strong>
+                <span>Microlearning, Kahoot, LearningApps va Collaborative Learning orqali o‘yinli va samarali ta’lim.</span>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

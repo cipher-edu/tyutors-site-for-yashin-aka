@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ course.title }} | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="section-title">
+    <h1>{{ course.title }}</h1>
+    <a class="btn btn-ghost btn-sm" href="{% url 'learning_platform:module_detail' pk=course.module.pk %}">← {{ course.module.title }}</a>
+</div>
+
+{% with embed_url=course.get_youtube_embed_url %}
+    {% if embed_url %}
+    <div class="video-wrap">
+        <iframe src="{{ embed_url }}" title="{{ course.title|escape }}" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+    {% elif course.video_url %}
+    <div class="messages"><li class="warning">Video havolasi bor, lekin pleerga joylashmadi.</li></div>
+    {% endif %}
+{% endwith %}
+
+{% if course.content %}
+<div class="card" style="margin-bottom: 20px;">
+    <div class="card-body">
+        <h3>Dars mazmuni</h3>
+        <div>{{ course.content|linebreaksbr }}</div>
+    </div>
+</div>
+{% endif %}
+
+{% if syllabi %}
+<h3>Ma’ruza materiallari (Word / PDF)</h3>
+<ul class="syllabus-list">
+    {% for syllabus in syllabi %}
+    <li>
+        <a class="doc-chip" href="{{ syllabus.file.url }}" target="_blank" rel="noopener">
+            <i class="fas {% if syllabus.is_word_file %}fa-file-word{% else %}fa-file-pdf{% endif %}"></i>
+            {% firstof syllabus.title syllabus.filename %}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if images %}
+<h3>Rasmlar</h3>
+<div class="image-gallery" style="margin-bottom: 20px;">
+    {% for image in images %}
+    <figure>
+        <a href="{{ image.image.url }}" target="_blank">
+            <img src="{{ image.image.url }}" alt="{{ image.caption|default:course.title }}">
+        </a>
+        {% if image.caption %}<figcaption class="meta">{{ image.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if external_activities %}
+<h3>Amaliyot: LearningApps va Kahoot</h3>
+{% for activity in external_activities %}
+<div class="activity-item">
+    <div class="section-title" style="margin: 0 0 10px;">
+        <strong>{{ activity.title }}</strong>
+        <span class="badge">{{ activity.get_activity_type_display }}</span>
+    </div>
+    {% with embed_url=activity.get_learningapps_embed_url %}
+        {% if activity.activity_type == activity.LEARNINGAPPS and embed_url %}
+        <div class="learningapps-embed-wrapper">
+            <iframe src="{{ embed_url }}" title="{{ activity.title|escape }}" allowfullscreen></iframe>
+        </div>
+        <a class="btn btn-ghost btn-sm" style="margin-top: 10px;" href="{{ activity.url }}" target="_blank" rel="noopener">Asl manbada ochish</a>
+        {% elif activity.url %}
+            {% if activity.activity_type == activity.KAHOOT %}
+            <a class="btn btn-purple" href="{{ activity.url }}" target="_blank" rel="noopener">
+                <i class="fas fa-rocket"></i> Kahootni boshlash!
+            </a>
+            {% else %}
+            <a class="btn btn-blue" href="{{ activity.url }}" target="_blank" rel="noopener">Mashg‘ulotni ochish</a>
+            {% endif %}
+        {% endif %}
+    {% endwith %}
+</div>
+{% endfor %}
+{% endif %}
+
+<div style="text-align: center; margin-top: 28px;">
+    {% if not is_completed %}
+    <form method="post" action="{% url 'learning_platform:mark_course_complete' pk=course.pk %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-green"><i class="fas fa-check"></i> Darsni tugatdim · +20 XP</button>
+    </form>
+    {% else %}
+    <p class="meta">Bu dars tugatilgan. Zo‘r!</p>
+    <a class="btn btn-blue" href="{% url 'learning_platform:module_detail' pk=course.module.pk %}">Keyingi darsga</a>
+    {% endif %}
+</div>
+{% endblock %}

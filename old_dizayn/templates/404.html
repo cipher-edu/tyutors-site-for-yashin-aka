@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}404 | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body result-hero">
+        <img class="brand-panda" src="{% static 'img/panda-logo.jpg' %}" alt="" style="width:88px;height:88px;margin:0 auto 8px;">
+        <h1>Sahifa topilmadi</h1>
+        <p class="meta">Bu yo‘l VUCA o‘rmonida yo‘qolgan. Bosh sahifaga qayting.</p>
+        <a class="btn btn-green" href="{% url 'learning_platform:module_list' %}">Bosh sahifa</a>
+    </div>
+</div>
+{% endblock %}

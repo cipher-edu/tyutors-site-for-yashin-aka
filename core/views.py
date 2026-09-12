@@ -1,76 +1,26 @@
-# learning_platform/views.py
-
 from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import LoginView # Login uchun Class-Based View
-from django.views.generic import CreateView # Registratsiya uchun Class-Based View
-from django.contrib import messages # Foydalanuvchiga xabarlar ko'rsatish uchun
-from django.http import HttpResponseForbidden, HttpResponseRedirect, Http404
-from django.db import transaction # Atomik operatsiyalar uchun (masalan, test natijasini saqlash)
+from django.contrib.auth.views import LoginView
+from django.views.generic import CreateView
+from django.contrib import messages
+from django.http import HttpResponseForbidden
+from django.db import transaction
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.forms import UserCreationForm
 
-# Modellar
-# Barcha kerakli modellarni core.models dan import qilamiz
 from core.models import (
-    Answer, Module, Course, Test, UserCourseProgress, UserTestResult, Certificate,
-    # YANGI: CourseSyllabus, CourseImage, ExternalActivity bu yerda to'g'ridan-to'g'ri kerak emas,
-    # chunki ular Course orqali olinadi.
+    Module,
+    Course,
+    UserCourseProgress,
+    UserTestResult,
+    Certificate,
+    Infographic,
+    SiteDocument,
 )
-
-
-# Formular
-from .forms import CustomAuthenticationForm, TestSubmissionForm # CustomUserCreationForm
-from django.contrib.auth.forms import UserCreationForm # Standard form used for simplicity
-
-# Yordamchi funksiyalar (utils.py mavjud deb faraz qilinadi)
-# Agar utils.py bo'lmasa, bu funksiyalarni shu yerga ko'chirish yoki yaratish kerak
-try:
-    from .utils import can_user_access_test, calculate_test_score, has_user_completed_module
-except ImportError:
-    # Placeholder functions if utils.py doesn't exist or has different names
-    def can_user_access_test(user, module):
-        # Implement actual logic: Check if all courses in the module are completed by the user
-        required_courses = module.courses.all()
-        completed_courses = UserCourseProgress.objects.filter(
-            user=user, course__in=required_courses
-        ).count()
-        return completed_courses >= required_courses.count()
-
-    def calculate_test_score(test, user_answers: dict):
-        # Implement actual logic: Compare user_answers with correct answers
-        score = 0
-        total_questions = test.questions.count()
-        if total_questions == 0:
-            return 0, False
-
-        correct_answers_pks = set(Answer.objects.filter(
-            question__test=test, is_correct=True
-        ).values_list('pk', flat=True))
-
-        user_correct_count = 0
-        for question_pk_str, answer_pk_str in user_answers.items():
-            try:
-                answer_pk = int(answer_pk_str)
-                if answer_pk in correct_answers_pks:
-                    user_correct_count += 1
-            except (ValueError, TypeError):
-                continue # Ignore invalid answer values
-
-        score_percent = round((user_correct_count / total_questions) * 100)
-        passed = score_percent >= test.passing_score_percent
-        return score_percent, passed
-
-    def has_user_completed_module(user, module):
-        # Implement actual logic: Check if all courses in the module are completed
-        required_courses = module.courses.all()
-        if not required_courses.exists():
-             return True # No courses means module is technically "completed"
-        completed_courses = UserCourseProgress.objects.filter(
-            user=user, course__in=required_courses
-        ).count()
-        return completed_courses >= required_courses.count()
+from .forms import CustomAuthenticationForm, TestSubmissionForm
+from .utils import can_user_access_test, calculate_test_score, has_user_completed_module
 
 
 def handler404(request, exception):
@@ -84,10 +34,10 @@ class RegisterView(CreateView):
     success_url = reverse_lazy('learning_platform:module_list') # Ro'yxatdan o'tgach yo'naltirish
 
     def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
+        self.object = form.save()
+        login(self.request, self.object)
         messages.success(self.request, _('Muvaffaqiyatli roʻyxatdan oʻtdingiz va tizimga kirdingiz!'))
-        return super().form_valid(form)
+        return redirect(self.get_success_url())
 
     def form_invalid(self, form):
         messages.error(self.request, _('Roʻyxatdan oʻtishda xatolik yuz berdi. Maʼlumotlarni tekshiring.'))
@@ -118,12 +68,52 @@ def logout_view(request):
 
 # --- Learning Content Views ---
 
-@login_required
 def module_list_view(request):
-    """ Barcha modullar ro'yxatini ko'rsatadi """
-    modules = Module.objects.order_by('order').prefetch_related('courses') # Kurslar sonini kamaytirish uchun
+    """Bosh sahifa: infografikalar, dastur/ish reja va modullar (login shart emas)."""
+    modules = list(Module.objects.order_by('order').prefetch_related('courses'))
+    infographics = Infographic.objects.filter(is_active=True).order_by('order', 'id')
+    site_documents = SiteDocument.objects.filter(is_active=True).order_by('order', 'id')
+    completed_pks = set()
+    if request.user.is_authenticated:
+        completed_pks = set(
+            UserCourseProgress.objects.filter(user=request.user).values_list('course_id', flat=True)
+        )
+    for n, module in enumerate(modules, start=1):
+        courses = list(module.courses.all())
+        total = len(courses)
+        done = sum(1 for course in courses if course.pk in completed_pks)
+        module.number = n
+        module.progress_total = total
+        module.progress_done = done
+        module.progress_percent = int(done / total * 100) if total else 0
+
+    unit_meta = [
+        ("1-qism · Asoslar", "VUCA, axloq va huquqiy poydevor"),
+        ("2-qism · Qadriyatlar", "Halollik, adolat, hurmat, mas’uliyat"),
+        ("3-qism · Raqamli dunyo", "Internet, tarmoq, jamoa, liderlik"),
+        ("4-qism · Jamiyat", "Tabiat, fuqarolik, stress va yakun"),
+    ]
+    module_units = []
+    for i in range(0, len(modules), 5):
+        chunk = modules[i:i + 5]
+        meta_i = i // 5
+        title, subtitle = unit_meta[meta_i] if meta_i < len(unit_meta) else (f"{meta_i + 1}-qism", "")
+        done_units = sum(1 for m in chunk if m.progress_percent == 100)
+        module_units.append({
+            'title': title,
+            'subtitle': subtitle,
+            'modules': chunk,
+            'done': done_units,
+            'total': len(chunk),
+            'complete': bool(chunk) and done_units == len(chunk),
+            'index': meta_i,
+        })
+
     context = {
-        'modules': modules
+        'modules': modules,
+        'module_units': module_units,
+        'infographics': infographics,
+        'site_documents': site_documents,
     }
     return render(request, 'learning_platform/module_list.html', context)
 
@@ -169,26 +159,33 @@ def module_detail_view(request, pk):
 def course_detail_view(request, pk):
     """ Bitta kursning (darsning) mazmunini ko'rsatadi """
     # YANILANGAN: prefetch_related bilan syllabus, images, activities olinadi
-    try:
-        course = get_object_or_404(
-            Course.objects.select_related('module') # Module ma'lumotlari uchun
-                         .prefetch_related(
-                             'syllabi',                 # Syllabi larni yuklash
-                             'images',                  # Rasmlarni yuklash
-                             'external_activities'      # Tashqi mashg'ulotlarni yuklash
-                         ),
-            pk=pk
-        )
-    except Http404:
-         messages.error(request, _("Kurs topilmadi."))
-         # Mumkin bo'lsa, oldingi sahifaga yoki modullar ro'yxatiga qaytarish
-         referer = request.META.get('HTTP_REFERER')
-         if referer:
-              return redirect(referer)
-         return redirect('learning_platform:module_list')
+    course = get_object_or_404(
+        Course.objects.select_related('module').prefetch_related(
+            'syllabi',
+            'images',
+            'external_activities',
+        ),
+        pk=pk,
+    )
 
 
     is_completed = UserCourseProgress.objects.filter(user=request.user, course=course).exists()
+
+    # Sibling courses navigation
+    module_courses = list(course.module.courses.order_by('order', 'id'))
+    user_completed_pks = set(UserCourseProgress.objects.filter(
+        user=request.user,
+        course__module=course.module
+    ).values_list('course_id', flat=True))
+
+    current_index = None
+    for idx, c in enumerate(module_courses):
+        c.is_done = c.pk in user_completed_pks
+        if c.pk == course.pk:
+            current_index = idx
+
+    prev_course = module_courses[current_index - 1] if current_index is not None and current_index > 0 else None
+    next_course = module_courses[current_index + 1] if current_index is not None and current_index < len(module_courses) - 1 else None
 
     # YANGI: Related objects ni contextga qo'shamiz
     syllabi = course.syllabi.all() # related manager orqali
@@ -198,11 +195,17 @@ def course_detail_view(request, pk):
     context = {
         'course': course,
         'is_completed': is_completed,
-        'syllabi': syllabi,                     # Contextga qo'shildi
-        'images': images,                       # Contextga qo'shildi
-        'external_activities': external_activities, # Contextga qo'shildi
+        'syllabi': syllabi,
+        'images': images,
+        'external_activities': external_activities,
+        'module_courses': module_courses,
+        'prev_course': prev_course,
+        'next_course': next_course,
+        'course_index': current_index + 1 if current_index is not None else 1,
+        'total_courses': len(module_courses),
     }
     return render(request, 'learning_platform/course_detail.html', context)
+
 
 
 @login_required
@@ -258,14 +261,12 @@ def take_test_view(request, module_pk):
             user_answers = form.get_user_answers()
             score, passed = calculate_test_score(test_instance, user_answers)
 
-            # Test natijasini bazaga saqlash
-            with transaction.atomic():
-                result = UserTestResult.objects.create(
-                    user=request.user,
-                    test=test_instance,
-                    score=score,
-                    passed=passed
-                )
+            result = UserTestResult.objects.create(
+                user=request.user,
+                test=test_instance,
+                score=score,
+                passed=passed,
+            )
             # Foydalanuvchini natija sahifasiga yo'naltiramiz
             messages.success(request, _("Test muvaffaqiyatli topshirildi! Natijangizni ko'ring."))
             return redirect('learning_platform:test_result', pk=result.pk)
@@ -297,12 +298,10 @@ def test_result_view(request, pk):
 
     certificate = None
     if result.passed:
-        try:
-            certificate = Certificate.objects.get(user=request.user, module=result.test.module)
-        except Certificate.DoesNotExist:
-            # Signal ishlamagan bo'lishi yoki hali yaratilmagan bo'lishi mumkin
-            # Bu yerda qayta yaratish logikasi qo'shish mumkin, lekin signalga ishonish yaxshiroq
-            pass
+        certificate, _ = Certificate.objects.get_or_create(
+            user=request.user,
+            module=result.test.module,
+        )
 
     context = {
         'result': result,
@@ -324,20 +323,11 @@ def my_certificates_view(request):
 
 @login_required
 def certificate_view(request, certificate_id):
-    """ Bitta sertifikatni ko'rsatish (detalli) - UUID bo'yicha """
-    try:
-        # UUID formatini tekshirish uchun
-        uuid.UUID(str(certificate_id))
-        certificate = get_object_or_404(
-            Certificate.objects.select_related('user', 'module'),
-            certificate_id=certificate_id
-        )
-    except (ValueError, Http404):
-        raise Http404(_("Bunday ID bilan sertifikat topilmadi."))
-
-
-    # Faqat sertifikat egasi yoki admin ko'ra olishi kerak (yoki public qilinishi kerak)
-    # Hozircha faqat egasiga ruxsat beramiz
+    """Bitta sertifikatni ko'rsatish — UUID bo'yicha."""
+    certificate = get_object_or_404(
+        Certificate.objects.select_related('user', 'module'),
+        certificate_id=certificate_id,
+    )
     if certificate.user != request.user and not request.user.is_staff:
         return HttpResponseForbidden(_("Sizga bu sertifikatni ko'rishga ruxsat yo'q."))
 

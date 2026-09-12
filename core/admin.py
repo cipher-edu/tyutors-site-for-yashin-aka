@@ -10,16 +10,17 @@ from django.utils.translation import gettext_lazy as _
 # Modellar
 from .models import (
     Module, Course, CourseSyllabus, CourseImage, ExternalActivity,
-    Test, Question, Answer, UserCourseProgress, UserTestResult, Certificate
+    Test, Question, Answer, UserCourseProgress, UserTestResult, Certificate,
+    Infographic, SiteDocument,
 )
 
 # --- Inlines ---
 class CourseSyllabusInline(admin.TabularInline):
     model = CourseSyllabus
-    fields = ('title', 'file') # filename bu yerda kerak emas
+    fields = ('title', 'file')
     extra = 1
-    verbose_name = _("Syllabus Fayli")
-    verbose_name_plural = _("Syllabus Fayllari")
+    verbose_name = _("Ma'ruza / material")
+    verbose_name_plural = _("Ma'ruza materiallari (Word/PDF)")
 
 class CourseImageInline(admin.TabularInline):
     model = CourseImage
@@ -218,7 +219,37 @@ class CertificateAdmin(admin.ModelAdmin):
     def has_delete_permission(self, request, obj=None): return False
 
 
-# --- Admin sayt sozlamalari ---
-admin.site.site_header = _("Platforma Admin Paneli")
-admin.site.site_title = _("Admin Panel")
+@admin.register(Infographic)
+class InfographicAdmin(admin.ModelAdmin):
+    list_display = ('title', 'order', 'is_active', 'image_preview', 'created_at')
+    list_editable = ('order', 'is_active')
+    list_filter = ('is_active',)
+    search_fields = ('title', 'caption')
+    ordering = ('order', 'id')
+
+    @admin.display(description=_('Rasm'))
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html(
+                '<img src="{}" style="max-height: 60px; max-width: 120px;" />',
+                obj.image.url,
+            )
+        return '—'
+
+
+@admin.register(SiteDocument)
+class SiteDocumentAdmin(admin.ModelAdmin):
+    list_display = ('title', 'document_type', 'order', 'is_active', 'filename_display')
+    list_editable = ('order', 'is_active')
+    list_filter = ('document_type', 'is_active')
+    search_fields = ('title',)
+    ordering = ('order', 'id')
+
+    @admin.display(description=_('Fayl'))
+    def filename_display(self, obj):
+        return obj.filename or '—'
+
+
+admin.site.site_header = _("VUCA-konseptida axloq — Admin")
+admin.site.site_title = _("VUCA Axloq")
 admin.site.index_title = _("Boshqaruv Paneli")

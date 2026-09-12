@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sertifikat | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="section-title">
+    <h1>Sertifikat</h1>
+    <a class="btn btn-ghost btn-sm" href="{% url 'learning_platform:my_certificates' %}">← Ro‘yxat</a>
+</div>
+
+<div class="certificate">
+    <div class="brand" style="justify-content: center; margin-bottom: 12px;">
+        <img class="brand-panda" src="{% static 'img/panda-logo.jpg' %}" alt="VUCA panda">
+        <span>{{ SITE_NAME }}</span>
+    </div>
+    <p class="hero-kicker">Rasmiy tasdiqnoma</p>
+    <h2 style="font-size: 2.2rem; margin: 16px 0;">SERTIFIKAT</h2>
+    <p>Ushbu hujjat</p>
+    <h3 style="font-size: 1.8rem; color: var(--kahoot);">
+        {{ certificate.user.get_full_name|default:certificate.user.username }}
+    </h3>
+    <p>ga quyidagi modulni muvaffaqiyatli yakunlagani uchun beriladi:</p>
+    <p style="font-size: 1.3rem; font-weight: 900;">«{{ certificate.module.title }}»</p>
+    <p class="meta">Sana: {{ certificate.issued_at|date:"d F Y" }}</p>
+    <p class="meta">ID: {{ certificate.certificate_id }}</p>
+</div>
+
+<div style="text-align: center; margin-top: 20px;">
+    <button class="btn btn-gold" type="button" onclick="window.print()">Chop etish</button>
+</div>
+{% endblock %}

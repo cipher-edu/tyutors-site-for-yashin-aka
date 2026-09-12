@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ro‘yxatdan o‘tish | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="card form-card">
+    <div class="card-body">
+        <div style="text-align:center; margin-bottom: 8px;">
+            <img class="brand-panda" src="{% static 'img/panda-logo.jpg' %}" alt="VUCA panda" style="width:72px;height:72px;">
+        </div>
+        <h1>O‘yinni boshlaymiz!</h1>
+        <p class="meta">9–11-sinf o‘quvchilari uchun. 2 daqiqada akkaunt.</p>
+        <form method="post" action="{% url 'learning_platform:register' %}">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+            <div class="messages"><li class="error">{% for error in form.non_field_errors %}{{ error }}{% endfor %}</li></div>
+            {% endif %}
+            {% for field in form %}
+            <div class="form-group">
+                <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                <input class="form-control {% if field.errors %}is-invalid{% endif %}"
+                       type="{{ field.field.widget.input_type }}"
+                       name="{{ field.name }}"
+                       id="{{ field.id_for_label }}"
+                       placeholder="{{ field.label }}"
+                       {% if field.field.required %}required{% endif %}>
+                {% if field.help_text %}<div class="form-text">{{ field.help_text|safe }}</div>{% endif %}
+                {% if field.errors %}<div class="invalid-feedback">{% for error in field.errors %}{{ error }}{% endfor %}</div>{% endif %}
+            </div>
+            {% endfor %}
+            <button class="btn btn-green btn-block" type="submit">Akkaunt yaratish</button>
+        </form>
+        <p class="meta" style="text-align:center; margin-top: 16px;">
+            Allaqachon bormi? <a href="{% url 'learning_platform:login' %}">Kirish</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

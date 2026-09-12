@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<section class="hero reveal">
+    <div class="hero-copy">
+        <span class="hero-kicker">9–11-sinf · Duolingo + Zehnly uslubi</span>
+        <h1>{{ SITE_NAME }}</h1>
+        <p>{{ SITE_TAGLINE }} Qisqa infografikalar, video-ma’ruzalar, Word materiallar, LearningApps va Kahoot — o‘yin kabi o‘rganasiz.</p>
+        <div class="hero-actions">
+            {% if user.is_authenticated %}
+                <a class="btn btn-green" href="#yol"><i class="fas fa-play"></i> Yo‘lni davom ettirish</a>
+            <div class="stat-row">
+                <span class="stat-pill">⚡ {{ user_xp }} XP</span>
+                <span class="stat-pill streak">🔥 {{ user_streak }} seriya</span>
+                <span class="stat-pill gem">💎 {{ user_gems }}</span>
+            </div>
+            {% else %}
+            <a class="btn btn-green" href="{% url 'learning_platform:register' %}"><i class="fas fa-bolt"></i> O‘yinni boshlash</a>
+            <a class="btn btn-ghost" href="{% url 'learning_platform:login' %}">Allaqachon bormi? Kirish</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="mascot-wrap">
+        <img class="mascot-panda" src="{% static 'img/panda-hero.jpg' %}" alt="VUCA panda — o‘rganish do‘stingiz">
+        <span class="mascot-hi">Salom!</span>
+    </div>
+</section>
+
+<section class="vuca-grid" aria-label="VUCA tushunchalari">
+    <div class="vuca-tile vuca-v"><b>V</b><span>Volatility<br>O‘zgaruvchanlik</span></div>
+    <div class="vuca-tile vuca-u"><b>U</b><span>Uncertainty<br>Noaniqlik</span></div>
+    <div class="vuca-tile vuca-c"><b>C</b><span>Complexity<br>Murakkablik</span></div>
+    <div class="vuca-tile vuca-a"><b>A</b><span>Ambiguity<br>Ikkiyoqlamalilik</span></div>
+</section>
+
+{% if infographics %}
+<section class="slider" data-slider aria-label="Infografikalar">
+    <div class="slider-head">
+        <div>
+            <h2>Microlearning infografikalar</h2>
+            <p class="meta">Qisqa axborotlar aylanib turadi — o‘qib, keyingisiga o‘ting.</p>
+        </div>
+        <span class="slider-count"><b data-current>1</b> / {{ infographics|length }}</span>
+    </div>
+    <div class="slider-viewport">
+        <div class="slider-track">
+            {% for item in infographics %}
+            <article class="slider-card {% if forloop.first %}is-active{% endif %}">
+                {% if item.link %}<a class="slider-link" href="{{ item.link }}">{% endif %}
+                <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                <div class="slider-caption">
+                    <span class="slider-badge">Infografika {{ forloop.counter }}</span>
+                    <h3>{{ item.title }}</h3>
+                    {% if item.caption %}<p>{{ item.caption }}</p>{% endif %}
+                </div>
+                {% if item.link %}</a>{% endif %}
+            </article>
+            {% endfor %}
+        </div>
+        {% if infographics|length > 1 %}
+        <button class="slider-btn prev" type="button" data-prev aria-label="Oldingi">‹</button>
+        <button class="slider-btn next" type="button" data-next aria-label="Keyingi">›</button>
+        {% endif %}
+    </div>
+    <div class="slider-timer" aria-hidden="true"><span data-timer></span></div>
+    <div class="slider-thumbs" data-thumbs>
+        {% for item in infographics %}
+        <button type="button" class="thumb {% if forloop.first %}is-active{% endif %}" data-goto="{{ forloop.counter0 }}" aria-label="{{ item.title }}">
+            <img src="{{ item.image.url }}" alt="">
+        </button>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% if site_documents %}
+<div class="section-title">
+    <h2>Dastur, ish reja, huquqiy asoslar</h2>
+</div>
+<div class="doc-row">
+    {% for doc in site_documents %}
+    <a class="doc-chip {{ doc.document_type }}" href="{{ doc.file.url }}" target="_blank" rel="noopener">
+        <i class="fas {% if doc.is_word_file %}fa-file-word{% else %}fa-file-pdf{% endif %}"></i>
+        {{ doc.get_document_type_display }}: {{ doc.title }}
+    </a>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="world-head" id="modullar">
+    <div>
+        <h2>Modullar</h2>
+        {% if user.is_authenticated %}
+        <p class="meta">{{ user_completed }} dars · {{ user_certs }} sertifikat</p>
+        {% else %}
+        <p class="meta">4 qism — har modul kartasi yo‘l bosqichi.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% if module_units %}
+<div id="yol">
+    {% for unit in module_units %}
+    <section class="unit unit-{{ unit.index }}">
+        <div class="unit-banner">
+            <div>
+                <strong>{{ unit.title }}</strong>
+                <p>{{ unit.subtitle }}</p>
+            </div>
+            <span class="unit-score">{{ unit.done }}/{{ unit.total }}</span>
+        </div>
+        <div class="path-grid">
+            {% for module in unit.modules %}
+            {% cycle 'var(--green)' 'var(--blue)' 'var(--kahoot)' 'var(--orange)' 'var(--purple)' as color silent %}
+            <a class="path-card {% if module.progress_percent == 100 %}is-done{% endif %}"
+               href="{% url 'learning_platform:module_detail' pk=module.pk %}">
+                <div class="path-rail">
+                    <span class="path-num" style="background: {{ color }};">
+                        {% if module.progress_percent == 100 %}★{% else %}{{ module.number }}{% endif %}
+                    </span>
+                    {% if not forloop.last %}<span class="path-join"></span>{% endif %}
+                </div>
+                <div class="path-body">
+                    {% if module.progress_percent == 100 %}
+                    <span class="badge ok">Tugatildi</span>
+                    {% else %}
+                    <span class="badge">{{ module.progress_percent }}%</span>
+                    {% endif %}
+                    <h3>{{ module.title }}</h3>
+                    {% if module.description %}
+                    <p class="meta">{{ module.description|truncatewords:14 }}</p>
+                    {% endif %}
+                    <div class="progress" aria-hidden="true"><span style="width: {{ module.progress_percent }}%;"></span></div>
+                    <div class="path-foot">
+                        <span class="meta">{{ module.progress_done }}/{{ module.progress_total }} dars</span>
+                        <span class="btn btn-green btn-sm">{% if module.progress_percent == 100 %}Qayta{% else %}Kirish{% endif %}</span>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% if not forloop.last %}
+        <div class="unit-chest {% if unit.complete %}is-open{% endif %}">
+            <span>{% if unit.complete %}🏆{% else %}🎁{% endif %}</span>
+            <small>{% if unit.complete %}Qism ochildi!{% else %}Qismni tugating — sandiq{% endif %}</small>
+        </div>
+        {% endif %}
+    </section>
+    {% endfor %}
+</div>
+{% else %}
+<div class="card"><div class="card-body empty">Hali modul qo‘shilmagan. Admin panelga kiring.</div></div>
+{% endif %}
+{% endblock %}

@@ -1,41 +1,61 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block title %}Mening Sertifikatlarim | AppName{% endblock %}
+{% block title %}Sertifikatlarim | {{ SITE_NAME }}{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1>Mening Sertifikatlarim</h1>
+<div class="section-title">
+    <div>
+        <a class="meta" href="{% url 'learning_platform:module_list' %}">
+            <i class="fas fa-arrow-left"></i> Bosh sahifa
+        </a>
+        <h1 style="margin: 6px 0 0; font-size: 1.85rem;">Sertifikatlarim va Yutuqlarim</h1>
+    </div>
+    <span class="stat-pill xp">⚡ {{ user_xp }} XP</span>
 </div>
 
 {% if certificates %}
-<ul class="list-group">
+<div class="grid">
     {% for cert in certificates %}
-    <li class="list-group-item">
-         <a href="{% url 'learning_platform:certificate_detail' certificate_id=cert.certificate_id %}">
-             <div>
-                <strong>{{ cert.module.title }}</strong>
-                <br>
-                <small style="color: var(--gray);">Berilgan sana: {{ cert.issued_at|date:"d F Y" }}</small>
-                <br>
-                <small style="color: var(--gray); font-size: 0.8em;">ID: {{ cert.certificate_id|slice:":8" }}...</small>
-             </div>
-         </a>
-        <a href="{% url 'learning_platform:certificate_detail' certificate_id=cert.certificate_id %}" class="btn btn-primary btn-sm">
-             <i class="fas fa-eye"></i> Ko'rish
-         </a>
-    </li>
+    <a class="path-card" href="{% url 'learning_platform:certificate_detail' certificate_id=cert.certificate_id %}" style="padding: 20px; text-decoration: none;">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 12px;">
+            <div style="width: 52px; height: 52px; border-radius: 16px; background: var(--gold); color: #1e293b; display: grid; place-items: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 4px 0 var(--gold-dark);">
+                🏆
+            </div>
+            <div>
+                <span class="badge ok"><i class="fas fa-check"></i> Rasmiy diplom</span>
+                <p class="meta" style="margin: 4px 0 0; font-size: 0.8rem;">
+                    <i class="fas fa-calendar-alt"></i> {{ cert.issued_at|date:"d F Y" }}
+                </p>
+            </div>
+        </div>
+
+        <h3 style="font-size: 1.15rem; color: var(--text-main); margin-bottom: 8px;">
+            {{ cert.module.title }}
+        </h3>
+
+        <div style="margin-top: auto; padding-top: 14px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color);">
+            <span class="meta" style="font-size: 0.75rem;">ID: {{ cert.certificate_id|stringformat:".8s" }}...</span>
+            <span class="btn btn-gold btn-sm">
+                <i class="fas fa-eye"></i> Ko‘rish
+            </span>
+        </div>
+    </a>
     {% endfor %}
-</ul>
+</div>
 {% else %}
-<div class="card">
-    <div class="card-content">
-        <p class="text-center card-text" style="text-align: center;">Sizda hozircha hech qanday sertifikat mavjud emas.</p>
-         <p class="text-center card-text" style="text-align: center; margin-top: 10px;">
-             <a href="{% url 'learning_platform:module_list' %}" >Modullarni ko'rish va testlarni topshirish</a>
-         </p>
+<div class="card" style="max-width: 600px; margin: 40px auto; text-align: center;">
+    <div class="card-body empty" style="padding: 44px 24px;">
+        <div style="font-size: 3.5rem; margin-bottom: 12px;">🎖️</div>
+        <h2 style="font-size: 1.6rem; margin-bottom: 8px;">Hozircha sertifikatlar yo‘q</h2>
+        <p class="meta" style="max-width: 440px; margin: 0 auto 24px; font-size: 0.95rem;">
+            Modullardagi barcha darslarni o‘rganing, testdan o‘ting va rasmiy tasdiqlangan raqamli sertifikatlarga ega bo‘ling!
+        </p>
+        <div>
+            <a class="btn btn-green btn-lg" href="{% url 'learning_platform:module_list' %}#yol">
+                <i class="fas fa-play"></i> O‘rganish yo‘liga o‘tish
+            </a>
+        </div>
     </div>
 </div>
 {% endif %}
-
 {% endblock %}

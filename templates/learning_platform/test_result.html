@@ -1,39 +1,76 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block title %}Test Natijasi | AppName{% endblock %}
+{% block title %}Natija | {{ SITE_NAME }}{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1>Test Natijasi: {{ result.test.module.title }}</h1>
-     <a href="{% url 'learning_platform:module_detail' pk=result.test.module.pk %}" class="btn btn-secondary btn-sm">
-        <i class="fas fa-arrow-left"></i> Modulga qaytish
-    </a>
-</div>
-
-<div class="card">
-    <div class="card-content" style="text-align: center;">
+<div class="card {% if result.passed %}celebrate{% endif %}" style="max-width: 680px; margin: 20px auto;">
+    <div class="card-body result-hero">
         {% if result.passed %}
-            <i class="fas fa-check-circle fa-3x" style="color: green; margin-bottom: 15px;"></i>
-            <h2 style="color: green;">Tabriklaymiz, testdan muvaffaqiyatli o'tdingiz!</h2>
-            <p class="card-text">Siz <strong>{{ result.score }}%</strong> natija ko'rsatdingiz (o'tish bali {{ result.test.passing_score_percent }}%).</p>
-             {% if certificate %}
-                  <p class="card-text" style="margin-top: 20px;">Modulni muvaffaqiyatli yakunlaganingiz uchun sizga quyidagi sertifikat taqdim etildi:</p>
-                  <a href="{% url 'learning_platform:certificate_detail' certificate_id=certificate.certificate_id %}" class="btn btn-success" style="margin-top: 10px;">
-                       <i class="fas fa-certificate"></i> Sertifikatni Ko'rish
-                  </a>
-             {% endif %}
-        {% else %}
-             <i class="fas fa-times-circle fa-3x" style="color: red; margin-bottom: 15px;"></i>
-            <h2 style="color: red;">Afsuski, testdan o'ta olmadingiz.</h2>
-             <p class="card-text">Siz <strong>{{ result.score }}%</strong> natija ko'rsatdingiz (o'tish bali {{ result.test.passing_score_percent }}%).</p>
-            <p class="card-text" style="margin-top: 10px;">Yaxshiroq tayyorlanib, qayta urinib ko'ring.</p>
-             <a href="{% url 'learning_platform:take_test' module_pk=result.test.module.pk %}" class="btn btn-primary" style="margin-top: 20px;">
-                <i class="fas fa-redo"></i> Testni Qayta Topshirish
+        <div style="font-size: 3.5rem; margin-bottom: 8px;">🏆</div>
+        <h1 style="color: var(--green-dark); font-size: 2.4rem;">G‘alaba! Tabriklaymiz!</h1>
+        <p class="meta">Siz modul testidan muvaffaqiyatli o‘tdingiz</p>
+
+        <div class="result-score-circle" style="background: linear-gradient(135deg, #10b981, #059669);">
+            {{ result.score }}%
+        </div>
+
+        <div style="margin: 14px 0 20px;">
+            <span class="badge ok" style="font-size: 0.95rem; padding: 6px 16px;">
+                <i class="fas fa-check-circle"></i> O‘tish bali: {{ result.test.passing_score_percent }}%
+            </span>
+            <span class="badge xp" style="font-size: 0.95rem; padding: 6px 16px; margin-left: 8px;">
+                <i class="fas fa-bolt"></i> +50 XP
+            </span>
+        </div>
+
+        {% if certificate %}
+        <div style="background: var(--gold-soft); border: 2px dashed var(--gold); border-radius: 16px; padding: 18px; margin: 22px 0;">
+            <h3 style="color: #854d0e; margin: 0 0 6px; font-size: 1.25rem;">
+                <i class="fas fa-award"></i> Rasmiy sertifikatingiz tayyor!
+            </h3>
+            <p style="color: #713f12; margin: 0 0 14px; font-size: 0.92rem;">
+                Siz ushbu modul bo‘yicha shaxsiy raqamli sertifikatga ega bo‘ldingiz. Uni ko‘rishingiz yoki chop etishingiz mumkin.
+            </p>
+            <a class="btn btn-gold btn-lg" href="{% url 'learning_platform:certificate_detail' certificate_id=certificate.certificate_id %}">
+                <i class="fas fa-medal"></i> Sertifikatni ochish va yuklab olish
             </a>
+        </div>
         {% endif %}
-        <hr style="margin: 30px 0;">
-        <p class="card-text text-muted" style="color: var(--gray);">Test topshirilgan sana: {{ result.attempted_at|date:"d F Y, H:i" }}</p>
+
+        {% else %}
+        <div style="font-size: 3.5rem; margin-bottom: 8px;">💪</div>
+        <h1 style="color: var(--kahoot); font-size: 2.2rem;">Yana bir urinish!</h1>
+        <p class="meta">Bu safar ozgina yetmadi, lekin siz buni albatta uddalaysiz!</p>
+
+        <div class="result-score-circle" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            {{ result.score }}%
+        </div>
+
+        <div style="margin: 14px 0 20px;">
+            <span class="badge" style="font-size: 0.92rem; padding: 6px 16px;">
+                Talab qilingan o‘tish bali: {{ result.test.passing_score_percent }}%
+            </span>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <a class="btn btn-purple btn-lg" href="{% url 'learning_platform:take_test' module_pk=result.test.module.pk %}">
+                <i class="fas fa-rotate-right"></i> Testni qayta topshirish
+            </a>
+        </div>
+        {% endif %}
+
+        <div style="margin-top: 24px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+            <a class="btn btn-ghost" href="{% url 'learning_platform:module_detail' pk=result.test.module.pk %}">
+                <i class="fas fa-arrow-left"></i> Modulga qaytish
+            </a>
+            <a class="btn btn-blue" href="{% url 'learning_platform:module_list' %}#yol">
+                <i class="fas fa-route"></i> O‘rganish yo‘liga
+            </a>
+        </div>
+
+        <p class="meta" style="margin-top: 24px; font-size: 0.8rem;">
+            <i class="fas fa-clock"></i> Urinish vaqti: {{ result.attempted_at|date:"d F Y, H:i" }}
+        </p>
     </div>
 </div>
 {% endblock %}

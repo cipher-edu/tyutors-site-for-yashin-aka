@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Natija | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body result-hero">
+        {% if result.passed %}
+        <div style="font-size: 3rem;">🎉</div>
+        <h1>G‘alaba!</h1>
+        <div class="result-score">{{ result.score }}%</div>
+        <p class="meta">O‘tish bali: {{ result.test.passing_score_percent }}% · +50 XP</p>
+        {% if certificate %}
+        <p>Sertifikat tayyor!</p>
+        <a class="btn btn-gold" href="{% url 'learning_platform:certificate_detail' certificate_id=certificate.certificate_id %}">
+            <i class="fas fa-medal"></i> Sertifikatni ochish
+        </a>
+        {% endif %}
+        {% else %}
+        <div style="font-size: 3rem;">💪</div>
+        <h1>Yana bir urinish!</h1>
+        <div class="result-score">{{ result.score }}%</div>
+        <p class="meta">O‘tish bali: {{ result.test.passing_score_percent }}%</p>
+        <a class="btn btn-purple" href="{% url 'learning_platform:take_test' module_pk=result.test.module.pk %}">Qayta topshirish</a>
+        {% endif %}
+        <div style="margin-top: 18px;">
+            <a class="btn btn-ghost" href="{% url 'learning_platform:module_detail' pk=result.test.module.pk %}">Modulga qaytish</a>
+        </div>
+        <p class="meta" style="margin-top: 20px;">{{ result.attempted_at|date:"d F Y, H:i" }}</p>
+    </div>
+</div>
+{% endblock %}

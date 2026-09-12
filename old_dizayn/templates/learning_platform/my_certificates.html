@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Sertifikatlarim | {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="section-title">
+    <h1>Sertifikatlarim</h1>
+    <span class="xp-chip">⚡ {{ user_xp }} XP</span>
+</div>
+
+{% if certificates %}
+<div class="grid">
+    {% for cert in certificates %}
+    <a class="module-card" href="{% url 'learning_platform:certificate_detail' certificate_id=cert.certificate_id %}">
+        <div class="module-icon" style="background: var(--gold); color: #3c3c3c;">🏆</div>
+        <h3>{{ cert.module.title }}</h3>
+        <p class="meta">{{ cert.issued_at|date:"d F Y" }}</p>
+        <span class="btn btn-gold btn-sm">Ko‘rish</span>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="card">
+    <div class="card-body empty">
+        Hali sertifikat yo‘q. Modullarni tugating, testdan o‘ting — medal sizniki!
+        <div style="margin-top: 16px;">
+            <a class="btn btn-green" href="{% url 'learning_platform:module_list' %}">Modullarga</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

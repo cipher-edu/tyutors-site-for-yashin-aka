@@ -1,48 +1,48 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Ro'yxatdan o'tish | AppName{% endblock %}
+{% block title %}Ro‘yxatdan o‘tish | {{ SITE_NAME }}{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1>Ro'yxatdan O'tish</h1>
-</div>
+<div class="card form-card">
+    <div class="card-body" style="padding: 32px 28px;">
+        <div style="text-align: center; margin-bottom: 16px;">
+            <img class="brand-panda" src="{% static 'img/panda-logo.jpg' %}" alt="VUCA panda" style="width: 76px; height: 76px; margin: 0 auto 12px;">
+            <h1 style="font-size: 1.7rem; margin-bottom: 6px;">O‘rganishni boshlaymiz!</h1>
+            <p class="meta">9–11-sinf o‘quvchilari uchun. Akkaunt yaratish juda tez va oson.</p>
+        </div>
 
-<div class="card" style="max-width: 500px; margin: 30px auto;">
-    <div class="card-content">
         <form method="post" action="{% url 'learning_platform:register' %}">
             {% csrf_token %}
-
-            {{ form.non_field_errors }}
+            {% if form.non_field_errors %}
+            <div class="messages"><li class="error"><i class="fas fa-exclamation-circle"></i> {% for error in form.non_field_errors %}{{ error }}{% endfor %}</li></div>
+            {% endif %}
 
             {% for field in form %}
             <div class="form-group">
-                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                <input type="{{ field.field.widget.input_type }}"
+                <label class="form-label" for="{{ field.id_for_label }}">
+                    {{ field.label }}
+                </label>
+                <input class="form-control {% if field.errors %}is-invalid{% endif %}"
+                       type="{{ field.field.widget.input_type }}"
                        name="{{ field.name }}"
                        id="{{ field.id_for_label }}"
-                       class="form-control {% if field.errors %}is-invalid{% endif %}"
-                       placeholder="{{ field.label }}"
+                       placeholder="{{ field.label }}ni kiriting"
                        {% if field.field.required %}required{% endif %}>
-                {% if field.help_text %}
-                    <small class="form-text">{{ field.help_text|safe }}</small>
-                {% endif %}
-                {% if field.errors %}
-                    <div class="invalid-feedback" style="color: var(--bs-danger); font-size: 0.875em; margin-top: 0.25rem;">
-                        {% for error in field.errors %}
-                            <span>{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                {% endif %}
+                {% if field.help_text %}<div class="meta" style="font-size: 0.78rem; margin-top: 4px;">{{ field.help_text|safe }}</div>{% endif %}
+                {% if field.errors %}<div class="invalid-feedback">{% for error in field.errors %}{{ error }}{% endfor %}</div>{% endif %}
             </div>
             {% endfor %}
 
-
-            <button type="submit" class="btn btn-primary w-100" style="width: 100%; margin-top: 10px;">Ro'yxatdan o'tish</button>
+            <div style="margin-top: 24px;">
+                <button class="btn btn-green btn-lg btn-block" type="submit">
+                    <i class="fas fa-user-plus"></i> Akkaunt yaratish
+                </button>
+            </div>
         </form>
-        <hr style="margin: 20px 0;">
-        <p class="text-center card-text" style="text-align: center;">
-            Akkauntingiz bormi? <a href="{% url 'learning_platform:login' %}">Tizimga kiring</a>
+
+        <p class="meta" style="text-align: center; margin-top: 22px; font-size: 0.92rem;">
+            Allaqachon akkauntingiz bormi? <a href="{% url 'learning_platform:login' %}" style="font-weight: 900;">Kirish</a>
         </p>
     </div>
 </div>

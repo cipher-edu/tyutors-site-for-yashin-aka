@@ -1,4 +1,3 @@
-
 import django.db.models.deletion
 import uuid
 from django.conf import settings
@@ -15,26 +14,6 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-<<<<<<< HEAD
-            name='Course',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Yaratilgan vaqti')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Yangilangan vaqti')),
-                ('title', models.CharField(max_length=255, verbose_name='Kurs sarlavhasi')),
-                ('content', models.TextField(blank=True, help_text='Kursning asosiy matnli mazmuni.', verbose_name='Kontent (mavzu)')),
-                ('video_url', models.URLField(blank=True, help_text="Agar mavjud bo'lsa, YouTube video havolasi.", null=True, verbose_name='Video havolasi (YouTube)')),
-                ('order', models.PositiveIntegerField(default=0, help_text="Modul ichidagi kurslarni ko'rsatish tartibi.", verbose_name='Tartib raqami')),
-            ],
-            options={
-                'verbose_name': 'Kurs',
-                'verbose_name_plural': 'Kurslar',
-                'ordering': ['module__order', 'order', 'title'],
-            },
-        ),
-        migrations.CreateModel(
-=======
->>>>>>> aeb74ee0da082676582a69441da7656c46579614
             name='Module',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -51,31 +30,29 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Question',
+            name='Course',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Yaratilgan vaqti')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Yangilangan vaqti')),
-                ('text', models.TextField(verbose_name='Savol matni')),
-                ('order', models.PositiveIntegerField(default=0, verbose_name='Tartib raqami')),
+                ('title', models.CharField(max_length=255, verbose_name='Kurs sarlavhasi')),
+                ('content', models.TextField(blank=True, help_text='Kursning asosiy matnli mazmuni.', verbose_name='Kontent (mavzu)')),
+                ('video_url', models.URLField(blank=True, help_text="Agar mavjud bo'lsa, YouTube video havolasi.", null=True, verbose_name='Video havolasi (YouTube)')),
+                ('order', models.PositiveIntegerField(default=0, help_text="Modul ichidagi kurslarni ko'rsatish tartibi.", verbose_name='Tartib raqami')),
+                ('module', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='courses', to='core.module', verbose_name='Modul')),
             ],
             options={
-                'verbose_name': 'Savol',
-                'verbose_name_plural': 'Savollar',
-                'ordering': ['test', 'order'],
+                'verbose_name': 'Kurs',
+                'verbose_name_plural': 'Kurslar',
+                'ordering': ['module__order', 'order', 'title'],
             },
         ),
         migrations.CreateModel(
-<<<<<<< HEAD
             name='CourseImage',
-=======
-            name='Course',
->>>>>>> aeb74ee0da082676582a69441da7656c46579614
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Yaratilgan vaqti')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Yangilangan vaqti')),
-<<<<<<< HEAD
                 ('image', models.ImageField(upload_to='course_images/%Y/%m/', verbose_name='Rasm')),
                 ('caption', models.CharField(blank=True, help_text="Rasm ostida ko'rinadigan qisqa izoh.", max_length=255, null=True, verbose_name='Rasm tavsifi')),
                 ('course', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='core.course', verbose_name='Kurs')),
@@ -120,27 +97,40 @@ class Migration(migrations.Migration):
                 'ordering': ['course', 'order', 'title'],
             },
         ),
-        migrations.AddField(
-            model_name='course',
-            name='module',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='courses', to='core.module', verbose_name='Modul'),
-        ),
         migrations.CreateModel(
-=======
-                ('title', models.CharField(max_length=255, verbose_name='Kurs sarlavhasi')),
-                ('content', models.TextField(help_text='Kursning asosiy matnli mazmuni.', verbose_name='Kontent (mavzu)')),
-                ('video_url', models.URLField(blank=True, help_text="Agar mavjud bo'lsa, YouTube video havolasi.", null=True, verbose_name='Video havolasi (YouTube)')),
-                ('order', models.PositiveIntegerField(default=0, help_text="Modul ichidagi kurslarni ko'rsatish tartibi.", verbose_name='Tartib raqami')),
-                ('module', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='courses', to='core.module', verbose_name='Modul')),
+            name='Test',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Yaratilgan vaqti')),
+                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Yangilangan vaqti')),
+                ('title', models.CharField(max_length=255, verbose_name='Test sarlavhasi')),
+                ('description', models.TextField(blank=True, null=True, verbose_name='Test tavsifi')),
+                ('passing_score_percent', models.PositiveIntegerField(default=70, help_text="Testdan muvaffaqiyatli o'tish uchun talab qilinadigan minimal foiz (0-100).", verbose_name="O'tish bali (foizda)")),
+                ('module', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='test', to='core.module', verbose_name='Modul')),
             ],
             options={
-                'verbose_name': 'Kurs',
-                'verbose_name_plural': 'Kurslar',
-                'ordering': ['module', 'order', 'title'],
+                'verbose_name': 'Test',
+                'verbose_name_plural': 'Testlar',
+                'ordering': ['module__order', 'module__title'],
             },
         ),
         migrations.CreateModel(
->>>>>>> aeb74ee0da082676582a69441da7656c46579614
+            name='Question',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Yaratilgan vaqti')),
+                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Yangilangan vaqti')),
+                ('text', models.TextField(verbose_name='Savol matni')),
+                ('order', models.PositiveIntegerField(default=0, verbose_name='Tartib raqami')),
+                ('test', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questions', to='core.test', verbose_name='Test')),
+            ],
+            options={
+                'verbose_name': 'Savol',
+                'verbose_name_plural': 'Savollar',
+                'ordering': ['test', 'order'],
+            },
+        ),
+        migrations.CreateModel(
             name='Answer',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -155,35 +145,6 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Javoblar',
                 'ordering': ['question', 'id'],
             },
-        ),
-        migrations.CreateModel(
-            name='Test',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Yaratilgan vaqti')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Yangilangan vaqti')),
-                ('title', models.CharField(max_length=255, verbose_name='Test sarlavhasi')),
-                ('description', models.TextField(blank=True, null=True, verbose_name='Test tavsifi')),
-<<<<<<< HEAD
-                ('passing_score_percent', models.PositiveIntegerField(default=70, help_text="Testdan muvaffaqiyatli o'tish uchun talab qilinadigan minimal foiz (0-100).", verbose_name="O'tish bali (foizda)")),
-=======
-                ('passing_score_percent', models.PositiveIntegerField(default=70, help_text="Testdan muvaffaqiyatli o'tish uchun talab qilinadigan minimal foiz.", verbose_name="O'tish bali (foizda)")),
->>>>>>> aeb74ee0da082676582a69441da7656c46579614
-                ('module', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='test', to='core.module', verbose_name='Modul')),
-            ],
-            options={
-                'verbose_name': 'Test',
-                'verbose_name_plural': 'Testlar',
-<<<<<<< HEAD
-                'ordering': ['module__order', 'module__title'],
-=======
->>>>>>> aeb74ee0da082676582a69441da7656c46579614
-            },
-        ),
-        migrations.AddField(
-            model_name='question',
-            name='test',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questions', to='core.test', verbose_name='Test'),
         ),
         migrations.CreateModel(
             name='UserTestResult',
